@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  lovelive_plus
-//
-//  Created by Linhao Li on 12/17/15.
-//  Copyright © 2015 Kevin Lee. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

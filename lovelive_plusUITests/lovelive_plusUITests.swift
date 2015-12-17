@@ -1,11 +1,3 @@
-//
-//  lovelive_plusUITests.swift
-//  lovelive_plusUITests
-//
-//  Created by Linhao Li on 12/17/15.
-//  Copyright © 2015 Kevin Lee. All rights reserved.
-//
-
 import XCTest
 
 class lovelive_plusUITests: XCTestCase {
