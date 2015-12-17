@@ -10,7 +10,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setShadowForNavigator()
+    }
+
+    func setShadowForNavigator() {
+        mfNavigator!.layer.shadowOffset = CGSizeMake(5, 5)
+        mfNavigator!.layer.shadowRadius = 5.0
+        mfNavigator!.layer.shadowOpacity = 0.8
+        mfNavigator!.clipsToBounds = true
+        mfNavigator!.layer.masksToBounds = false
+
+        smNavigator!.layer.shadowOffset = CGSizeMake(5, 5)
+        smNavigator!.layer.shadowRadius = 5.0
+        smNavigator!.layer.shadowOpacity = 0.8
+        smNavigator!.layer.masksToBounds = false
     }
 
     override func didReceiveMemoryWarning() {
