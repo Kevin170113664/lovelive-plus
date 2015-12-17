@@ -25,7 +25,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifq-vK-H1M">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NSD-eq-haw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="NSD-eq-haw">
                                         <rect key="frame" x="250" y="341" width="350" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="203" id="D9i-eG-hkO"/>
@@ -37,7 +37,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-Oy-D7o">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normalNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-Oy-D7o">
                                         <rect key="frame" x="250" y="519" width="350" height="236"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="203" id="ID7-7b-nDO"/>
@@ -49,7 +49,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XcU-vN-SRC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="XcU-vN-SRC">
                                         <rect key="frame" x="250" y="130" width="350" height="203"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="203" id="X9X-JX-EL1"/>
@@ -61,7 +61,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
                                         <rect key="frame" x="0.0" y="130" width="240" height="625"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="517" id="sU1-RD-UCN"/>
@@ -144,7 +144,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124" y="-24"/>
+            <point key="canvasLocation" x="-149" y="-160"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cardNavigator" width="300" height="1000"/>
+        <image name="mfNavigator" width="1000" height="350"/>
+        <image name="normalNavigator" width="1000" height="350"/>
+        <image name="smNavigator" width="1000" height="280"/>
+    </resources>
 </document>
