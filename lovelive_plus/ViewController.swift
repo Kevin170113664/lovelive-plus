@@ -1,14 +1,12 @@
-//
-//  ViewController.swift
-//  lovelive_plus
-//
-//  Created by Linhao Li on 12/17/15.
-//  Copyright © 2015 Kevin Lee. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet var eventImage: UIImageView
+    @IBOutlet var cardNavigator: UIImageView
+    @IBOutlet var mfNavigator: UIImageView
+    @IBOutlet var smNavigator: UIImageView
+    @IBOutlet var normalNavigator: UIImageView
 
     override func viewDidLoad() {
         super.viewDidLoad()
