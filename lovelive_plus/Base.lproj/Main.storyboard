@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTy-gU-7fJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -7,7 +7,23 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Card Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="9ya-fU-GZ2">
+            <objects>
+                <navigationController id="yTy-gU-7fJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qbo-qy-ghA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="27D-JQ-Ia4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwU-fM-HVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-450" y="-1528"/>
+        </scene>
+        <!--Card-->
         <scene sceneID="jIA-S6-UnL">
             <objects>
                 <viewController storyboardIdentifier="cardController" id="hah-xa-g4j" customClass="CardController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,15 +36,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Card" id="Gyt-3a-Lek">
+                        <barButtonItem key="rightBarButtonItem" title="Detail" id="PyS-Ta-n99">
+                            <connections>
+                                <segue destination="8Pr-yP-gZ1" kind="show" id="3es-Wk-573"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRa-EW-t7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="337" y="-572"/>
         </scene>
-        <!--View Controller-->
+        <!--Card Detail-->
+        <scene sceneID="GMu-Rq-8Jk">
+            <objects>
+                <viewController id="8Pr-yP-gZ1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jU1-uc-kYl"/>
+                        <viewControllerLayoutGuide type="bottom" id="1EJ-7V-4Bj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kqc-Vk-grW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Card Detail" id="ERy-Jb-iW1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-Fp-nup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="-561"/>
+        </scene>
+        <!--Lovelive+-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -41,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="729"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifq-vK-H1M">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="44" width="600" height="76"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normalNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-Oy-D7o">
                                         <rect key="frame" x="240" y="493" width="360" height="236"/>
@@ -95,7 +137,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="xdw-SV-yze" secondAttribute="top" constant="88" id="0pl-EV-BXY"/>
-                                    <constraint firstItem="ifq-vK-H1M" firstAttribute="height" secondItem="xdw-SV-yze" secondAttribute="height" multiplier="0.2" constant="-25.800000000000011" id="1eq-L1-llP"/>
+                                    <constraint firstItem="ifq-vK-H1M" firstAttribute="height" secondItem="xdw-SV-yze" secondAttribute="height" multiplier="0.2" constant="-69.800000000000011" id="1eq-L1-llP"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" multiplier="0.4" id="2BW-g6-2J2"/>
                                     <constraint firstItem="NSD-eq-haw" firstAttribute="top" secondItem="XcU-vN-SRC" secondAttribute="bottom" id="5c1-5C-Ksu"/>
                                     <constraint firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="603-vm-paF"/>
@@ -114,7 +156,7 @@
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" constant="8" symbolic="YES" id="ZyJ-JF-7M2"/>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="trailing" secondItem="NSD-eq-haw" secondAttribute="trailing" id="d2h-Jg-Lw7"/>
                                     <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="tBt-AA-ybL" secondAttribute="trailing" id="gjZ-MK-yuo"/>
-                                    <constraint firstItem="ifq-vK-H1M" firstAttribute="top" secondItem="xdw-SV-yze" secondAttribute="top" id="hmV-JQ-elr"/>
+                                    <constraint firstItem="ifq-vK-H1M" firstAttribute="top" secondItem="xdw-SV-yze" secondAttribute="top" constant="44" id="hmV-JQ-elr"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="mAw-zY-JZB"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" id="q9z-H9-9OP"/>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="qLz-6O-hqP"/>
@@ -142,7 +184,7 @@
                             <constraint firstItem="xdw-SV-yze" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OQ3-42-nF6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xdw-SV-yze" secondAttribute="trailing" id="bey-xH-Ht8"/>
                             <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" multiplier="8" id="gnX-yO-Tqh"/>
-                            <constraint firstItem="xdw-SV-yze" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qAQ-py-F3J"/>
+                            <constraint firstItem="xdw-SV-yze" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-44" id="qAQ-py-F3J"/>
                             <constraint firstItem="xdw-SV-yze" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qQA-At-tAI"/>
                             <constraint firstItem="xdw-SV-yze" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yO7-vR-DsI"/>
                         </constraints>
@@ -154,13 +196,19 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Lovelive+" id="4cq-eY-Bts">
+                        <barButtonItem key="rightBarButtonItem" title="Action" id="k62-GJ-6Fu">
+                            <connections>
+                                <segue destination="hah-xa-g4j" kind="show" id="v2e-5j-UAL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cardNavigator" destination="tBt-AA-ybL" id="fES-vv-hWt"/>
                         <outlet property="eventImage" destination="ifq-vK-H1M" id="UJ1-jn-SOc"/>
                         <outlet property="mfNavigator" destination="XcU-vN-SRC" id="1Gh-eH-T4G"/>
                         <outlet property="normalNavigator" destination="zF1-Oy-D7o" id="GCk-iX-nWS"/>
                         <outlet property="smNavigator" destination="NSD-eq-haw" id="6XL-Uf-Q54"/>
-                        <segue destination="hah-xa-g4j" kind="show" id="P0g-Sc-vlg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

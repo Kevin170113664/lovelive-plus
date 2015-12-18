@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class MainController: UIViewController {
 
     @IBOutlet var eventImage: UIImageView?
     @IBOutlet var cardNavigator: UIImageView?
