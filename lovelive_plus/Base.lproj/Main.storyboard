@@ -147,7 +147,7 @@
                                         </variation>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.72443181818181812" green="0.67807146178679811" blue="0.32022745102414524" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98622398187716509" green="0.96749529648454524" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="height" secondItem="xdw-SV-yze" secondAttribute="height" multiplier="0.2" constant="-69.800000000000011" id="1eq-L1-llP">
                                         <variation key="heightClass=regular-widthClass=compact" constant="-37.800000000000011"/>
