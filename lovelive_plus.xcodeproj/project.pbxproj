@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32ABFAF3641E3589943E1896 /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABFE573ADACDF13512225D /* Card.storyboard */; };
 		32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA1AE86493DE8F1190A4 /* CardController.swift */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4EF1C22C9C2008EF6F6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		32ABFA1AE86493DE8F1190A4 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
-		32ABFE573ADACDF13512225D /* Card.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -106,11 +104,10 @@
 				C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */,
 				C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */,
 				C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */,
+				32ABFA1AE86493DE8F1190A4 /* CardController.swift */,
 				C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */,
 				C3F0D4F51C22C9C2008EF6F6 /* LaunchScreen.storyboard */,
 				C3F0D4F81C22C9C2008EF6F6 /* Info.plist */,
-				32ABFA1AE86493DE8F1190A4 /* CardController.swift */,
-				32ABFE573ADACDF13512225D /* Card.storyboard */,
 			);
 			path = lovelive_plus;
 			sourceTree = "<group>";
@@ -241,7 +238,6 @@
 				C3F0D4F71C22C9C2008EF6F6 /* LaunchScreen.storyboard in Resources */,
 				C3F0D4F41C22C9C2008EF6F6 /* Assets.xcassets in Resources */,
 				C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */,
-				32ABFAF3641E3589943E1896 /* Card.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +495,7 @@
 				C3F0D5131C22C9C2008EF6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F0D5141C22C9C2008EF6F6 /* Build configuration list for PBXNativeTarget "lovelive_plusTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +504,7 @@
 				C3F0D5161C22C9C2008EF6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F0D5171C22C9C2008EF6F6 /* Build configuration list for PBXNativeTarget "lovelive_plusUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +513,7 @@
 				C3F0D5191C22C9C2008EF6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

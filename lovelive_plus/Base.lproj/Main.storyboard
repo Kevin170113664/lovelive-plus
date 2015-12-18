@@ -7,6 +7,24 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Card Controller-->
+        <scene sceneID="jIA-S6-UnL">
+            <objects>
+                <viewController storyboardIdentifier="cardController" id="hah-xa-g4j" customClass="CardController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ljB-ws-dPF"/>
+                        <viewControllerLayoutGuide type="bottom" id="aTJ-xb-WIR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yR7-VK-nas">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRa-EW-t7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="-572"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -61,7 +79,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
+                                    <imageView clipsSubviews="YES" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
                                         <rect key="frame" x="0.0" y="120" width="240" height="609"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="517" id="sU1-RD-UCN"/>
@@ -142,11 +160,12 @@
                         <outlet property="mfNavigator" destination="XcU-vN-SRC" id="1Gh-eH-T4G"/>
                         <outlet property="normalNavigator" destination="zF1-Oy-D7o" id="GCk-iX-nWS"/>
                         <outlet property="smNavigator" destination="NSD-eq-haw" id="6XL-Uf-Q54"/>
+                        <segue destination="hah-xa-g4j" kind="show" id="P0g-Sc-vlg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357" y="-572"/>
+            <point key="canvasLocation" x="-383" y="-572"/>
         </scene>
     </scenes>
     <resources>

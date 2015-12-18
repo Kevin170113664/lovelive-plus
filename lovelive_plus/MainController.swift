@@ -7,12 +7,23 @@ class ViewController: UIViewController {
     @IBOutlet var mfNavigator: UIImageView?
     @IBOutlet var smNavigator: UIImageView?
     @IBOutlet var normalNavigator: UIImageView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setShadowForNavigator()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("goToCardPage"))
+        cardNavigator!.userInteractionEnabled = true
+        cardNavigator!.addGestureRecognizer(tapGestureRecognizer)
     }
 
+    func goToCardPage() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        if let cardController = storyBoard.instantiateViewControllerWithIdentifier("cardController") as? CardController {
+            self.presentViewController(cardController, animated:true, completion:nil)
+        } else {}
+    }
+    
     func setShadowForNavigator() {
         mfNavigator!.layer.shadowOffset = CGSizeMake(5, 5)
         mfNavigator!.layer.shadowRadius = 5.0
@@ -34,7 +45,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
