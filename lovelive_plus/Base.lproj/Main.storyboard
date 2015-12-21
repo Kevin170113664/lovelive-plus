@@ -84,6 +84,19 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifq-vK-H1M">
                                         <rect key="frame" x="0.0" y="44" width="600" height="76"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
+                                        <rect key="frame" x="0.0" y="120" width="240" height="609"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="517" id="sU1-RD-UCN"/>
+                                            <constraint firstAttribute="width" constant="240" id="sln-NJ-Gnd"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="sU1-RD-UCN"/>
+                                                <exclude reference="sln-NJ-Gnd"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="XcU-vN-SRC">
                                         <rect key="frame" x="240" y="120" width="360" height="203"/>
                                         <constraints>
@@ -102,54 +115,29 @@
                                             </constraint>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
-                                        <rect key="frame" x="0.0" y="120" width="240" height="609"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="517" id="sU1-RD-UCN"/>
-                                            <constraint firstAttribute="width" constant="240" id="sln-NJ-Gnd"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="sU1-RD-UCN"/>
-                                                <exclude reference="sln-NJ-Gnd"/>
-                                            </mask>
-                                        </variation>
-                                    </imageView>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-7d-9Ud">
-                                        <rect key="frame" x="0.0" y="120" width="300" height="600"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="160" width="160" height="609"/>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="hah-xa-g4j" kind="show" id="tjH-Np-aCF"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzz-hG-A9A">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="160" y="363" width="240" height="176"/>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-Mj-Q0e">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="160" y="539" width="240" height="230"/>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-6r-ZFz">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="160" y="159" width="240" height="204"/>
-                                        </variation>
-                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normalNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-Oy-D7o">
                                         <rect key="frame" x="240" y="493" width="360" height="236"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="236" id="IQ1-jG-lHD">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="244"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="242"/>
                                             </constraint>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKI-Mz-TIT" userLabel="Card Navigator">
+                                        <rect key="frame" x="0.0" y="120" width="240" height="609"/>
+                                        <connections>
+                                            <segue destination="hah-xa-g4j" kind="show" id="xna-UY-W9c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-7L-CAe" userLabel="Mf Navigator">
+                                        <rect key="frame" x="240" y="120" width="360" height="203"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7V-po-SDT" userLabel="Normal Navigator">
+                                        <rect key="frame" x="240" y="493" width="360" height="236"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-gR-ZMw" userLabel="Sm Navigator">
+                                        <rect key="frame" x="240" y="317" width="360" height="176"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98622398187716509" green="0.96749529648454524" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -159,53 +147,83 @@
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" multiplier="0.4" id="2BW-g6-2J2">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-17"/>
                                     </constraint>
+                                    <constraint firstItem="g7V-po-SDT" firstAttribute="width" secondItem="zF1-Oy-D7o" secondAttribute="width" id="57X-zM-dTQ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="leading" secondItem="tBt-AA-ybL" secondAttribute="trailing" id="5RN-dL-IhF">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-6"/>
+                                    </constraint>
                                     <constraint firstItem="NSD-eq-haw" firstAttribute="top" secondItem="XcU-vN-SRC" secondAttribute="bottom" id="5c1-5C-Ksu">
                                         <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
                                         <variation key="heightClass=regular-widthClass=regular" constant="-13"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="603-vm-paF"/>
+                                    <constraint firstItem="g7V-po-SDT" firstAttribute="height" secondItem="zF1-Oy-D7o" secondAttribute="height" id="7Fc-as-uQI">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                                    </constraint>
+                                    <constraint firstItem="MRd-7L-CAe" firstAttribute="width" secondItem="XcU-vN-SRC" secondAttribute="width" id="9Qv-mq-GNf">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                                    </constraint>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" id="AHE-1S-SCk"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="leading" secondItem="xdw-SV-yze" secondAttribute="leading" id="EH6-ao-jvH"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="XcU-vN-SRC" secondAttribute="top" id="GfM-s6-N9F"/>
                                     <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="NSD-eq-haw" secondAttribute="leading" id="HUo-wR-IuE">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-3"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="top" secondItem="NSD-eq-haw" secondAttribute="bottom" id="HdJ-kJ-3lP">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-11"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-10"/>
                                     </constraint>
+                                    <constraint firstItem="KKI-Mz-TIT" firstAttribute="leading" secondItem="xdw-SV-yze" secondAttribute="leading" id="Kf3-Im-fbK"/>
                                     <constraint firstItem="NSD-eq-haw" firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="PEx-8r-2XW"/>
                                     <constraint firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="QBN-4g-yfN">
                                         <variation key="heightClass=regular-widthClass=regular" constant="160"/>
                                     </constraint>
+                                    <constraint firstItem="g7V-po-SDT" firstAttribute="top" secondItem="fc5-gR-ZMw" secondAttribute="bottom" id="S4Z-Mx-1du">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-13"/>
+                                    </constraint>
+                                    <constraint firstItem="KKI-Mz-TIT" firstAttribute="width" secondItem="tBt-AA-ybL" secondAttribute="width" id="UWn-BN-NdJ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-7"/>
+                                    </constraint>
+                                    <constraint firstItem="KKI-Mz-TIT" firstAttribute="height" secondItem="tBt-AA-ybL" secondAttribute="height" id="VeF-ye-mJ2"/>
+                                    <constraint firstItem="g7V-po-SDT" firstAttribute="leading" secondItem="KKI-Mz-TIT" secondAttribute="trailing" id="Vvg-MK-Jl5">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                                    </constraint>
+                                    <constraint firstItem="fc5-gR-ZMw" firstAttribute="top" secondItem="MRd-7L-CAe" secondAttribute="bottom" constant="-6" id="ZcU-2r-CRw">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-3"/>
+                                    </constraint>
+                                    <constraint firstItem="KKI-Mz-TIT" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" id="bYd-Oh-b1o"/>
+                                    <constraint firstItem="fc5-gR-ZMw" firstAttribute="leading" secondItem="KKI-Mz-TIT" secondAttribute="trailing" id="cdr-k7-w1t">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                                    </constraint>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="trailing" secondItem="NSD-eq-haw" secondAttribute="trailing" id="d2h-Jg-Lw7">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-1"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="MRd-7L-CAe" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" id="e1m-ZM-vJz"/>
+                                    <constraint firstItem="MRd-7L-CAe" firstAttribute="height" secondItem="XcU-vN-SRC" secondAttribute="height" id="g5s-Fo-kWN">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-13"/>
                                     </constraint>
                                     <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="tBt-AA-ybL" secondAttribute="trailing" id="gjZ-MK-yuo">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-6"/>
                                     </constraint>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="top" secondItem="xdw-SV-yze" secondAttribute="top" constant="44" id="hmV-JQ-elr"/>
+                                    <constraint firstItem="MRd-7L-CAe" firstAttribute="leading" secondItem="KKI-Mz-TIT" secondAttribute="trailing" id="lsb-UW-5BE"/>
+                                    <constraint firstItem="fc5-gR-ZMw" firstAttribute="height" secondItem="NSD-eq-haw" secondAttribute="height" constant="6" id="m09-7c-EGO"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="mAw-zY-JZB"/>
+                                    <constraint firstItem="tBt-AA-ybL" firstAttribute="leading" secondItem="xdw-SV-yze" secondAttribute="leading" id="nvj-x1-mOf"/>
+                                    <constraint firstItem="fc5-gR-ZMw" firstAttribute="width" secondItem="NSD-eq-haw" secondAttribute="width" id="pyA-33-kdT"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" id="q9z-H9-9OP"/>
-                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="qLz-6O-hqP"/>
+                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="qLz-6O-hqP">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-1"/>
+                                    </constraint>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="leading" secondItem="ifq-vK-H1M" secondAttribute="leading" id="tfF-qg-5UN"/>
+                                    <constraint firstItem="MRd-7L-CAe" firstAttribute="top" secondItem="KKI-Mz-TIT" secondAttribute="top" id="yme-zf-Ye0"/>
                                     <constraint firstItem="NSD-eq-haw" firstAttribute="leading" secondItem="zF1-Oy-D7o" secondAttribute="leading" id="zIj-VB-ZTC">
                                         <variation key="heightClass=regular-widthClass=regular" constant="3"/>
                                     </constraint>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="qy7-7d-9Ud"/>
-                                        <exclude reference="Fzz-hG-A9A"/>
-                                        <exclude reference="Dj3-Mj-Q0e"/>
-                                        <exclude reference="fDg-6r-ZFz"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="qy7-7d-9Ud"/>
-                                        <include reference="Fzz-hG-A9A"/>
-                                        <include reference="Dj3-Mj-Q0e"/>
-                                        <include reference="fDg-6r-ZFz"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="zIj-VB-ZTC"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -222,16 +240,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Lovelive+" id="4cq-eY-Bts"/>
                     <connections>
-                        <outlet property="cardNavigator" destination="qy7-7d-9Ud" id="OS3-kF-jG2"/>
+                        <outlet property="cardNavigator" destination="KKI-Mz-TIT" id="tzu-d9-cCq"/>
                         <outlet property="eventImage" destination="ifq-vK-H1M" id="UJ1-jn-SOc"/>
-                        <outlet property="mfNavigator" destination="fDg-6r-ZFz" id="je3-AJ-Om4"/>
-                        <outlet property="normalNavigator" destination="Dj3-Mj-Q0e" id="LsT-AB-d5P"/>
-                        <outlet property="smNavigator" destination="Fzz-hG-A9A" id="sAq-Wt-COJ"/>
+                        <outlet property="mfNavigator" destination="MRd-7L-CAe" id="Fyh-pF-B1f"/>
+                        <outlet property="normalNavigator" destination="g7V-po-SDT" id="d87-3W-T8O"/>
+                        <outlet property="smNavigator" destination="fc5-gR-ZMw" id="nHX-3j-of6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415.5" y="-737.25"/>
+            <point key="canvasLocation" x="-416.25" y="-738"/>
         </scene>
     </scenes>
     <resources>
