@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTy-gU-7fJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTy-gU-7fJ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -87,23 +87,19 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="XcU-vN-SRC">
                                         <rect key="frame" x="240" y="120" width="360" height="203"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="204" id="X9X-JX-EL1">
+                                            <constraint firstAttribute="height" constant="203" id="X9X-JX-EL1">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="204"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="213"/>
                                             </constraint>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="NSD-eq-haw">
                                         <rect key="frame" x="240" y="323" width="360" height="170"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="175" id="Y0C-hm-1HS">
+                                            <constraint firstAttribute="height" constant="170" id="Y0C-hm-1HS">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="175"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="176"/>
                                             </constraint>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normalNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-Oy-D7o">
-                                        <rect key="frame" x="240" y="493" width="360" height="236"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="236" id="IQ1-jG-lHD"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-AA-ybL">
@@ -120,7 +116,7 @@
                                         </variation>
                                     </imageView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-7d-9Ud">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="300" height="600"/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="160" width="160" height="609"/>
                                         </variation>
@@ -146,32 +142,55 @@
                                             <rect key="frame" x="160" y="159" width="240" height="204"/>
                                         </variation>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normalNavigator" translatesAutoresizingMaskIntoConstraints="NO" id="zF1-Oy-D7o">
+                                        <rect key="frame" x="240" y="493" width="360" height="236"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="236" id="IQ1-jG-lHD">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="244"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98622398187716509" green="0.96749529648454524" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="height" secondItem="xdw-SV-yze" secondAttribute="height" multiplier="0.2" constant="-69.800000000000011" id="1eq-L1-llP">
                                         <variation key="heightClass=regular-widthClass=compact" constant="-37.800000000000011"/>
                                     </constraint>
-                                    <constraint firstItem="tBt-AA-ybL" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" multiplier="0.4" id="2BW-g6-2J2"/>
+                                    <constraint firstItem="tBt-AA-ybL" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" multiplier="0.4" id="2BW-g6-2J2">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-17"/>
+                                    </constraint>
                                     <constraint firstItem="NSD-eq-haw" firstAttribute="top" secondItem="XcU-vN-SRC" secondAttribute="bottom" id="5c1-5C-Ksu">
                                         <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-13"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="603-vm-paF"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" id="AHE-1S-SCk"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="leading" secondItem="xdw-SV-yze" secondAttribute="leading" id="EH6-ao-jvH"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="XcU-vN-SRC" secondAttribute="top" id="GfM-s6-N9F"/>
-                                    <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="NSD-eq-haw" secondAttribute="leading" id="HUo-wR-IuE"/>
-                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="top" secondItem="NSD-eq-haw" secondAttribute="bottom" id="HdJ-kJ-3lP"/>
+                                    <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="NSD-eq-haw" secondAttribute="leading" id="HUo-wR-IuE">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-3"/>
+                                    </constraint>
+                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="top" secondItem="NSD-eq-haw" secondAttribute="bottom" id="HdJ-kJ-3lP">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-11"/>
+                                    </constraint>
                                     <constraint firstItem="NSD-eq-haw" firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="PEx-8r-2XW"/>
-                                    <constraint firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="QBN-4g-yfN"/>
-                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="trailing" secondItem="NSD-eq-haw" secondAttribute="trailing" id="d2h-Jg-Lw7"/>
-                                    <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="tBt-AA-ybL" secondAttribute="trailing" id="gjZ-MK-yuo"/>
+                                    <constraint firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="QBN-4g-yfN">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="160"/>
+                                    </constraint>
+                                    <constraint firstItem="zF1-Oy-D7o" firstAttribute="trailing" secondItem="NSD-eq-haw" secondAttribute="trailing" id="d2h-Jg-Lw7">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-1"/>
+                                    </constraint>
+                                    <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="tBt-AA-ybL" secondAttribute="trailing" id="gjZ-MK-yuo">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-6"/>
+                                    </constraint>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="top" secondItem="xdw-SV-yze" secondAttribute="top" constant="44" id="hmV-JQ-elr"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="trailing" secondItem="XcU-vN-SRC" secondAttribute="trailing" id="mAw-zY-JZB"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" id="q9z-H9-9OP"/>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="qLz-6O-hqP"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="leading" secondItem="ifq-vK-H1M" secondAttribute="leading" id="tfF-qg-5UN"/>
-                                    <constraint firstItem="NSD-eq-haw" firstAttribute="leading" secondItem="zF1-Oy-D7o" secondAttribute="leading" id="zIj-VB-ZTC"/>
+                                    <constraint firstItem="NSD-eq-haw" firstAttribute="leading" secondItem="zF1-Oy-D7o" secondAttribute="leading" id="zIj-VB-ZTC">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="3"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -203,7 +222,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Lovelive+" id="4cq-eY-Bts"/>
                     <connections>
-                        <outlet property="cardNavigator" destination="qy7-7d-9Ud" id="bKY-Tp-khP"/>
+                        <outlet property="cardNavigator" destination="qy7-7d-9Ud" id="OS3-kF-jG2"/>
                         <outlet property="eventImage" destination="ifq-vK-H1M" id="UJ1-jn-SOc"/>
                         <outlet property="mfNavigator" destination="fDg-6r-ZFz" id="je3-AJ-Om4"/>
                         <outlet property="normalNavigator" destination="Dj3-Mj-Q0e" id="LsT-AB-d5P"/>
