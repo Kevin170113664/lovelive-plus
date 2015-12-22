@@ -213,7 +213,7 @@
                                     <constraint firstItem="fc5-gR-ZMw" firstAttribute="width" secondItem="NSD-eq-haw" secondAttribute="width" id="pyA-33-kdT"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="ifq-vK-H1M" secondAttribute="bottom" id="q9z-H9-9OP"/>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="bottom" secondItem="tBt-AA-ybL" secondAttribute="bottom" id="qLz-6O-hqP">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-1"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="leading" secondItem="ifq-vK-H1M" secondAttribute="leading" id="tfF-qg-5UN"/>
                                     <constraint firstItem="MRd-7L-CAe" firstAttribute="top" secondItem="KKI-Mz-TIT" secondAttribute="top" id="yme-zf-Ye0"/>

@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		2B1B6D2D96A62EF1F8531CD4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EBD935EAAA33FDDC66019D /* Pods.framework */; };
 		32ABF100F79AC44F1673C446 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFDD4A8380FAE5CF401CD /* Card.swift */; };
+		32ABF3315C5D6E62F23278C2 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF49DA2E52B65AB755846 /* Idol.swift */; };
+		32ABF711159E2C5CDF581F16 /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFE2EB1A74481997A3676 /* Cv.swift */; };
 		32ABF9745496D034757686A8 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 32ABF7F657F6D61E8811C5B4 /* model */; };
+		32ABFDAE0BAACF0C3B2B2CC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF32F7CB66A48815962E8 /* Event.swift */; };
 		32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA1AE86493DE8F1190A4 /* CardController.swift */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4EF1C22C9C2008EF6F6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */; };
@@ -38,9 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32ABF32F7CB66A48815962E8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = model/Event.swift; sourceTree = "<group>"; };
+		32ABF49DA2E52B65AB755846 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Idol.swift; path = model/Idol.swift; sourceTree = "<group>"; };
 		32ABF7F657F6D61E8811C5B4 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
 		32ABFA1AE86493DE8F1190A4 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		32ABFDD4A8380FAE5CF401CD /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = model/Card.swift; sourceTree = "<group>"; };
+		32ABFE2EB1A74481997A3676 /* Cv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cv.swift; path = model/Cv.swift; sourceTree = "<group>"; };
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810BA84A8856D9DE592EF842 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A977597BCA03742C293574A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 				C3F0D4F81C22C9C2008EF6F6 /* Info.plist */,
 				32ABF7F657F6D61E8811C5B4 /* model */,
 				32ABFDD4A8380FAE5CF401CD /* Card.swift */,
+				32ABF32F7CB66A48815962E8 /* Event.swift */,
+				32ABF49DA2E52B65AB755846 /* Idol.swift */,
+				32ABFE2EB1A74481997A3676 /* Cv.swift */,
 			);
 			path = lovelive_plus;
 			sourceTree = "<group>";
@@ -348,6 +357,9 @@
 				C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */,
 				32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */,
 				32ABF100F79AC44F1673C446 /* Card.swift in Sources */,
+				32ABFDAE0BAACF0C3B2B2CC5 /* Event.swift in Sources */,
+				32ABF3315C5D6E62F23278C2 /* Idol.swift in Sources */,
+				32ABF711159E2C5CDF581F16 /* Cv.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
