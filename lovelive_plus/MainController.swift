@@ -12,9 +12,9 @@ class MainController: UIViewController {
         super.viewDidLoad()
         setShadowForNavigator()
 
-        let cardService = CardService()
-        cardService.getCardList(75, callback: { (cardList: NSArray) -> Void in
-            print(cardList)
+        let eventService = EventService()
+        eventService.getLatestEvent({ (latestEvent: NSArray) -> Void in
+            print(latestEvent[0]["image"])
         })
     }
 
