@@ -13,7 +13,9 @@ class MainController: UIViewController {
         setShadowForNavigator()
 
         let cardService = CardService()
-        cardService.getCardList(75)
+        cardService.getCardList(75, callback: { (cardList: NSArray) -> Void in
+            print(cardList)
+        })
     }
 
     func setShadowForNavigator() {

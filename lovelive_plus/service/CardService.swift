@@ -1,5 +1,6 @@
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class CardService {
 
@@ -10,18 +11,21 @@ class CardService {
 
     }
 
-    func getCardList(page: Int) {
+    func getCardList(page: Int, callback: (NSArray) -> Void) -> Void {
         let url = baseUrl + cards
         Alamofire.request(.GET, url, parameters: ["page": page])
         .responseJSON {
             response in
-
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            guard response.result.error == nil else {
+                print(response.result.error!)
+                return
+            }
+            if let value: AnyObject = response.result.value {
+                let json = JSON(value)
+                callback(json["results"].arrayObject!)
             }
         }
     }
-
 }
 
 
