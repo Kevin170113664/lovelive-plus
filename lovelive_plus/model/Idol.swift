@@ -8,7 +8,7 @@ class Idol {
     var birthday: String
     var astrologicalSign: String
     var blood: String
-    var height: Integer
+    var height: Int
     var measurements: String
     var favoriteFood: String
     var leastFavoriteFood: String
@@ -26,7 +26,7 @@ class Idol {
     var chibiSmall: String
 
     init(name: String, japaneseName: String, main: Bool, age: Int, birthday: String, astrologicalSign: String,
-         blood: String, height: Integer, measurements: String, favoriteFood: String, leastFavoriteFood: String,
+         blood: String, height: Int, measurements: String, favoriteFood: String, leastFavoriteFood: String,
          hobbies: String, attribute: String, year: String, subUnit: String, cvModel: Cv, summary: String,
          websiteUrl: String, wikiUrl: String, wikiaUrl: String, officialUrl: String, chibi: String, chibiSmall: String) {
         self.name = name
