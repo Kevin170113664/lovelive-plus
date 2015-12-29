@@ -12,18 +12,18 @@ class MainController: UIViewController {
         super.viewDidLoad()
         setShadowForNavigator()
 
-        
         let eventService = EventService()
-        eventService.getLatestEvent({ (latestEvent: NSArray) -> Void in
-           let imageUrl = latestEvent[0]["image"]as! String
-            let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+        eventService.getLatestEvent({
+            (latestEvent: NSArray) -> Void in
+            let imageUrl = latestEvent[0]["image"] as! String
+            let block: SDWebImageCompletionBlock! = {
+                (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
                 print(self)
             }
-            
+
             self.eventImage!.sd_setImageWithURL(NSURL(string: imageUrl), completed: block)
         })
-        
-        
+
     }
 
     func setShadowForNavigator() {
