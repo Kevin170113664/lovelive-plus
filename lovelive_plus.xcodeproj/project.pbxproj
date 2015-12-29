@@ -12,11 +12,22 @@
 		32ABF100F79AC44F1673C446 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFDD4A8380FAE5CF401CD /* Card.swift */; };
 		32ABF3315C5D6E62F23278C2 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF49DA2E52B65AB755846 /* Idol.swift */; };
 		32ABF361E72E25E7EF5FC0F4 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFEC9818A2F95F8E0AF6D /* CardService.swift */; };
+		32ABF42D53030AC55EFF9B15 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFF0084E1B52567EA9C1F /* CardManager.swift */; };
+		32ABF4B17DD53C4A46BF28DE /* manager in Resources */ = {isa = PBXBuildFile; fileRef = 32ABFEDA579ADF6909773D9F /* manager */; };
 		32ABF711159E2C5CDF581F16 /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFE2EB1A74481997A3676 /* Cv.swift */; };
 		32ABF8971A4819B4F69AE51D /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFC60F33CD7A4A56771D0 /* EventService.swift */; };
 		32ABF9745496D034757686A8 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 32ABF7F657F6D61E8811C5B4 /* model */; };
 		32ABFDAE0BAACF0C3B2B2CC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF32F7CB66A48815962E8 /* Event.swift */; };
 		32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA1AE86493DE8F1190A4 /* CardController.swift */; };
+		32ABFE0AC28AC546DD16C85D /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9E2943013B00F0AEC84 /* EventManager.swift */; };
+		32ABFFB66240DABD764ADC4A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9A8C24A5239C603BC86 /* DatabaseManager.swift */; };
+		C355411F1C326FA100149A14 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C355411E1C326F9F00149A14 /* libsqlite3.dylib */; };
+		C35541211C326FB800149A14 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C35541201C326FB500149A14 /* libsqlite3.0.dylib */; };
+		C355412D1C3271FB00149A14 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C35541231C3271FB00149A14 /* FMDatabase.m */; };
+		C355412E1C3271FB00149A14 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C35541251C3271FB00149A14 /* FMDatabaseAdditions.m */; };
+		C355412F1C3271FB00149A14 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C35541271C3271FB00149A14 /* FMDatabasePool.m */; };
+		C35541301C3271FB00149A14 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C35541291C3271FB00149A14 /* FMDatabaseQueue.m */; };
+		C35541311C3271FB00149A14 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C355412C1C3271FB00149A14 /* FMResultSet.m */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4EF1C22C9C2008EF6F6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */; };
 		C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */; };
@@ -48,14 +59,31 @@
 		32ABF49DA2E52B65AB755846 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Idol.swift; path = model/Idol.swift; sourceTree = "<group>"; };
 		32ABF6E670C0EB2927E070B7 /* service */ = {isa = PBXFileReference; lastKnownFileType = folder; path = service; sourceTree = "<group>"; };
 		32ABF7F657F6D61E8811C5B4 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
+		32ABF9A8C24A5239C603BC86 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = manager/DatabaseManager.swift; sourceTree = "<group>"; };
+		32ABF9E2943013B00F0AEC84 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventManager.swift; path = manager/EventManager.swift; sourceTree = "<group>"; };
 		32ABFA1AE86493DE8F1190A4 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		32ABFC60F33CD7A4A56771D0 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventService.swift; path = service/EventService.swift; sourceTree = "<group>"; };
 		32ABFDD4A8380FAE5CF401CD /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = model/Card.swift; sourceTree = "<group>"; };
 		32ABFE2EB1A74481997A3676 /* Cv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cv.swift; path = model/Cv.swift; sourceTree = "<group>"; };
 		32ABFEC9818A2F95F8E0AF6D /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardService.swift; path = service/CardService.swift; sourceTree = "<group>"; };
+		32ABFEDA579ADF6909773D9F /* manager */ = {isa = PBXFileReference; lastKnownFileType = folder; path = manager; sourceTree = "<group>"; };
+		32ABFF0084E1B52567EA9C1F /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardManager.swift; path = manager/CardManager.swift; sourceTree = "<group>"; };
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810BA84A8856D9DE592EF842 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A977597BCA03742C293574A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C355411E1C326F9F00149A14 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/libsqlite3.dylib; sourceTree = DEVELOPER_DIR; };
+		C35541201C326FB500149A14 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/libsqlite3.0.dylib; sourceTree = DEVELOPER_DIR; };
+		C35541221C3271FB00149A14 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		C35541231C3271FB00149A14 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		C35541241C3271FB00149A14 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		C35541251C3271FB00149A14 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		C35541261C3271FB00149A14 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		C35541271C3271FB00149A14 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		C35541281C3271FB00149A14 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		C35541291C3271FB00149A14 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		C355412A1C3271FB00149A14 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		C355412B1C3271FB00149A14 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		C355412C1C3271FB00149A14 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +108,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1B6D2D96A62EF1F8531CD4 /* Pods.framework in Frameworks */,
+				C355411F1C326FA100149A14 /* libsqlite3.dylib in Frameworks */,
+				C35541211C326FB800149A14 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +133,8 @@
 		0E3165E50B301551677FC681 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C35541201C326FB500149A14 /* libsqlite3.0.dylib */,
+				C355411E1C326F9F00149A14 /* libsqlite3.dylib */,
 				38EBD935EAAA33FDDC66019D /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -115,6 +147,24 @@
 				A977597BCA03742C293574A2 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C35541321C32721000149A14 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				C35541221C3271FB00149A14 /* FMDatabase.h */,
+				C35541231C3271FB00149A14 /* FMDatabase.m */,
+				C35541241C3271FB00149A14 /* FMDatabaseAdditions.h */,
+				C35541251C3271FB00149A14 /* FMDatabaseAdditions.m */,
+				C35541261C3271FB00149A14 /* FMDatabasePool.h */,
+				C35541271C3271FB00149A14 /* FMDatabasePool.m */,
+				C35541281C3271FB00149A14 /* FMDatabaseQueue.h */,
+				C35541291C3271FB00149A14 /* FMDatabaseQueue.m */,
+				C355412A1C3271FB00149A14 /* FMDB.h */,
+				C355412B1C3271FB00149A14 /* FMResultSet.h */,
+				C355412C1C3271FB00149A14 /* FMResultSet.m */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 		C3F0D4E01C22C9C2008EF6F6 = {
@@ -142,6 +192,7 @@
 		C3F0D4EB1C22C9C2008EF6F6 /* lovelive_plus */ = {
 			isa = PBXGroup;
 			children = (
+				C35541321C32721000149A14 /* FMDB */,
 				C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */,
 				C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */,
 				C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */,
@@ -158,6 +209,10 @@
 				32ABFEC9818A2F95F8E0AF6D /* CardService.swift */,
 				32ABFC60F33CD7A4A56771D0 /* EventService.swift */,
 				C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */,
+				32ABFEDA579ADF6909773D9F /* manager */,
+				32ABF9A8C24A5239C603BC86 /* DatabaseManager.swift */,
+				32ABFF0084E1B52567EA9C1F /* CardManager.swift */,
+				32ABF9E2943013B00F0AEC84 /* EventManager.swift */,
 			);
 			path = lovelive_plus;
 			sourceTree = "<group>";
@@ -293,6 +348,7 @@
 				C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */,
 				32ABF9745496D034757686A8 /* model in Resources */,
 				32ABF031C90DEC38CFDAD9DD /* service in Resources */,
+				32ABF4B17DD53C4A46BF28DE /* manager in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,13 +423,21 @@
 			files = (
 				C3F0D4EF1C22C9C2008EF6F6 /* MainController.swift in Sources */,
 				C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */,
+				C355412D1C3271FB00149A14 /* FMDatabase.m in Sources */,
 				32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */,
 				32ABF100F79AC44F1673C446 /* Card.swift in Sources */,
+				C355412E1C3271FB00149A14 /* FMDatabaseAdditions.m in Sources */,
 				32ABFDAE0BAACF0C3B2B2CC5 /* Event.swift in Sources */,
+				C355412F1C3271FB00149A14 /* FMDatabasePool.m in Sources */,
 				32ABF3315C5D6E62F23278C2 /* Idol.swift in Sources */,
+				C35541301C3271FB00149A14 /* FMDatabaseQueue.m in Sources */,
 				32ABF711159E2C5CDF581F16 /* Cv.swift in Sources */,
 				32ABF361E72E25E7EF5FC0F4 /* CardService.swift in Sources */,
 				32ABF8971A4819B4F69AE51D /* EventService.swift in Sources */,
+				C35541311C3271FB00149A14 /* FMResultSet.m in Sources */,
+				32ABFFB66240DABD764ADC4A /* DatabaseManager.swift in Sources */,
+				32ABF42D53030AC55EFF9B15 /* CardManager.swift in Sources */,
+				32ABFE0AC28AC546DD16C85D /* EventManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -479,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -518,6 +584,7 @@
 			baseConfigurationReference = 810BA84A8856D9DE592EF842 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = lovelive_plus/Info.plist;
@@ -533,6 +600,7 @@
 			baseConfigurationReference = A977597BCA03742C293574A2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = lovelive_plus/Info.plist;

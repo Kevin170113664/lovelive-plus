@@ -11,7 +11,10 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setShadowForNavigator()
+        showLatestEventImage()
+    }
 
+    func showLatestEventImage() {
         let eventService = EventService()
         eventService.getLatestEvent({
             (latestEvent: NSArray) -> Void in
@@ -23,7 +26,6 @@ class MainController: UIViewController {
 
             self.eventImage!.sd_setImageWithURL(NSURL(string: imageUrl), completed: block)
         })
-
     }
 
     func setShadowForNavigator() {
@@ -48,4 +50,3 @@ class MainController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
