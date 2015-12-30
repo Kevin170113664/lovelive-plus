@@ -2,7 +2,7 @@ import Foundation
 
 class CardManager {
 
-    func getAllCards() -> NSArray<Card> {
-
+    func getAllCards() -> NSArray {
+        return NSArray()
     }
 }

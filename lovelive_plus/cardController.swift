@@ -6,8 +6,8 @@ class CardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let databaseManager = DatabaseManager()
-        databaseManager.initDatabase()
+        let plistManager = PlistManager()
+        plistManager.cacheAllCards()
     }
     
     override func didReceiveMemoryWarning() {

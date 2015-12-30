@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
-    <entity name="Card" syncable="YES">
+    <entity name="Card" representedClassName=".Card" syncable="YES">
         <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardIdolizedImage" optional="YES" attributeType="String" syncable="YES"/>
@@ -47,14 +47,14 @@
         <relationship name="eventModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" syncable="YES"/>
         <relationship name="idolModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idol" syncable="YES"/>
     </entity>
-    <entity name="Cv" parentEntity="Idol" syncable="YES">
+    <entity name="Cv" representedClassName=".Cv" syncable="YES">
         <attribute name="instagram" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Event" parentEntity="Card" syncable="YES">
+    <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="beginning" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cards" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end" optional="YES" attributeType="String" syncable="YES"/>
@@ -78,7 +78,7 @@
         <attribute name="song" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="worldCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
-    <entity name="Idol" parentEntity="Card" syncable="YES">
+    <entity name="Idol" representedClassName=".Idol" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="astrologicalSign" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
@@ -105,7 +105,7 @@
     </entity>
     <elements>
         <element name="Card" positionX="-63" positionY="-18" width="128" height="720"/>
-        <element name="Cv" positionX="-36" positionY="9" width="128" height="120"/>
+        <element name="Cv" positionX="-36" positionY="9" width="128" height="118"/>
         <element name="Event" positionX="-54" positionY="0" width="128" height="375"/>
         <element name="Idol" positionX="-18" positionY="27" width="128" height="390"/>
     </elements>
