@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+    <entity name="Card" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardIdolizedImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="centerSkill" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idolizedMaximumStatisticsCool" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idolizedMaximumStatisticsPure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idolizedMaximumStatisticsSmile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idolizedMaxLevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPromo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSpecial" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="japaneseAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseCenterSkill" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseCenterSkillDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseCollection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseSkill" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseSkillDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseVideoStory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japanOnly" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="minimumStatisticsCool" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minimumStatisticsPure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minimumStatisticsSmile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonIdolizedMaximumStatisticsCool" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonIdolizedMaximumStatisticsPure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonIdolizedMaximumStatisticsSmile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonIdolizedMaxLevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ownedCards" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="promoItem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rarity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roundCardIdolizedImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roundCardImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skill" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skillDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transparentIdolizedImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transparentIdolizedUrPair" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transparentImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transparentUrPair" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoStory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="websiteUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="eventModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" syncable="YES"/>
+        <relationship name="idolModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idol" syncable="YES"/>
+    </entity>
+    <entity name="Cv" parentEntity="Idol" syncable="YES">
+        <attribute name="instagram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Event" parentEntity="Card" syncable="YES">
+        <attribute name="beginning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cards" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="englishBeginning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="englishEnd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="englishImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="englishName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="englishT1Points" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="englishT1Rank" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="englishT2Points" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="englishT2Rank" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japanCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="japaneseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseT1Points" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="japaneseT1Rank" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="japaneseT2Points" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="japaneseT2Rank" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="romajiName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="song" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="worldCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="Idol" parentEntity="Card" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="astrologicalSign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chibi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chibiSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favoriteFood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hobbies" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="japaneseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leastFavoriteFood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="measurements" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="officialUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="websiteUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wikiaUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wikiUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cvModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cv" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="720"/>
+        <element name="Cv" positionX="-36" positionY="9" width="128" height="120"/>
+        <element name="Event" positionX="-54" positionY="0" width="128" height="375"/>
+        <element name="Idol" positionX="-18" positionY="27" width="128" height="390"/>
+    </elements>
+</model>
