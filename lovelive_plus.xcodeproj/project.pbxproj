@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2B1B6D2D96A62EF1F8531CD4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EBD935EAAA33FDDC66019D /* Pods.framework */; };
-		32ABF031C90DEC38CFDAD9DD /* service in Resources */ = {isa = PBXBuildFile; fileRef = 32ABF6E670C0EB2927E070B7 /* service */; };
-		32ABF361E72E25E7EF5FC0F4 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFEC9818A2F95F8E0AF6D /* CardService.swift */; };
-		32ABF42D53030AC55EFF9B15 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFF0084E1B52567EA9C1F /* CardManager.swift */; };
-		32ABF4B17DD53C4A46BF28DE /* manager in Resources */ = {isa = PBXBuildFile; fileRef = 32ABFEDA579ADF6909773D9F /* manager */; };
-		32ABF8971A4819B4F69AE51D /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFC60F33CD7A4A56771D0 /* EventService.swift */; };
-		32ABF9745496D034757686A8 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 32ABF7F657F6D61E8811C5B4 /* model */; };
-		32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA1AE86493DE8F1190A4 /* CardController.swift */; };
-		32ABFE0AC28AC546DD16C85D /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9E2943013B00F0AEC84 /* EventManager.swift */; };
-		32ABFFB66240DABD764ADC4A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9A8C24A5239C603BC86 /* CoreDataManager.swift */; };
+		32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8DBFFACA0C5E70AFBBA /* Card.swift */; };
+		32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF974A3C80D09F52238F0 /* EventService.swift */; };
+		32ABF3D65B4446F8E17594CB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF5F19657F7788C9A90AF /* DataController.swift */; };
+		32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */; };
+		32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF6034229FDEBB17818BD /* MainController.swift */; };
+		32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA04173E3C52EEE5B458 /* Cv.swift */; };
+		32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8E9CF3E09673908DD59 /* CardManager.swift */; };
+		32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */; };
+		32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */; };
+		32ABF9307034F5583660F2ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8CD8859DF3FF88132A7 /* Event.swift */; };
+		32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */; };
+		32ABFB71436DB98AD907474E /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFCB1D60FD120E75D35DC /* CardService.swift */; };
+		32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF34F85DC2251C6011330 /* Idol.swift */; };
+		32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */; };
+		32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFFE34AEA18144D1559B5 /* CardController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
-		C35B1E521C33BE740083F86D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35B1E511C33BE740083F86D /* CoreDataStack.swift */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
-		C3F0D4EF1C22C9C2008EF6F6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */; };
 		C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */; };
 		C3F0D4F41C22C9C2008EF6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */; };
 		C3F0D4F71C22C9C2008EF6F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F51C22C9C2008EF6F6 /* LaunchScreen.storyboard */; };
@@ -46,24 +50,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		32ABF6E670C0EB2927E070B7 /* service */ = {isa = PBXFileReference; lastKnownFileType = folder; path = service; sourceTree = "<group>"; };
-		32ABF7F657F6D61E8811C5B4 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
-		32ABF9A8C24A5239C603BC86 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = manager/CoreDataManager.swift; sourceTree = "<group>"; };
-		32ABF9E2943013B00F0AEC84 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventManager.swift; path = manager/EventManager.swift; sourceTree = "<group>"; };
-		32ABFA1AE86493DE8F1190A4 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
-		32ABFC60F33CD7A4A56771D0 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventService.swift; path = service/EventService.swift; sourceTree = "<group>"; };
-		32ABFEC9818A2F95F8E0AF6D /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardService.swift; path = service/CardService.swift; sourceTree = "<group>"; };
-		32ABFEDA579ADF6909773D9F /* manager */ = {isa = PBXFileReference; lastKnownFileType = folder; path = manager; sourceTree = "<group>"; };
-		32ABFF0084E1B52567EA9C1F /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardManager.swift; path = manager/CardManager.swift; sourceTree = "<group>"; };
+		32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		32ABF34F85DC2251C6011330 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idol.swift; sourceTree = "<group>"; };
+		32ABF5F19657F7788C9A90AF /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		32ABF6034229FDEBB17818BD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idol+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cv+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32ABF8CD8859DF3FF88132A7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		32ABF8DBFFACA0C5E70AFBBA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		32ABF8E9CF3E09673908DD59 /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
+		32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32ABF974A3C80D09F52238F0 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		32ABFA04173E3C52EEE5B458 /* Cv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cv.swift; sourceTree = "<group>"; };
+		32ABFCB1D60FD120E75D35DC /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32ABFFE34AEA18144D1559B5 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810BA84A8856D9DE592EF842 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A977597BCA03742C293574A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
-		C35B1E511C33BE740083F86D /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		C3F0D4F11C22C9C2008EF6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3F0D4F61C22C9C2008EF6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +120,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		32ABF3CBF25199EF24E0C1AD /* service */ = {
+			isa = PBXGroup;
+			children = (
+				32ABFCB1D60FD120E75D35DC /* CardService.swift */,
+				32ABF974A3C80D09F52238F0 /* EventService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		32ABF5F830BE34C439B9FA7D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				32ABF5F19657F7788C9A90AF /* DataController.swift */,
+				32ABFFE34AEA18144D1559B5 /* CardController.swift */,
+				32ABF6034229FDEBB17818BD /* MainController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		32ABF7FBF0B03E2079EBBE4B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */,
+				32ABF34F85DC2251C6011330 /* Idol.swift */,
+				32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */,
+				32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */,
+				32ABF8DBFFACA0C5E70AFBBA /* Card.swift */,
+				32ABFA04173E3C52EEE5B458 /* Cv.swift */,
+				32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */,
+				32ABF8CD8859DF3FF88132A7 /* Event.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		32ABFDF33A7DBA0B72A51D7A /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */,
+				32ABF8E9CF3E09673908DD59 /* CardManager.swift */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
 		96E78631471484FE041187C9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,24 +197,17 @@
 		C3F0D4EB1C22C9C2008EF6F6 /* lovelive_plus */ = {
 			isa = PBXGroup;
 			children = (
-				C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */,
-				C3F0D4EE1C22C9C2008EF6F6 /* MainController.swift */,
-				C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */,
-				32ABFA1AE86493DE8F1190A4 /* CardController.swift */,
-				C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */,
-				C3F0D4F51C22C9C2008EF6F6 /* LaunchScreen.storyboard */,
-				C3F0D4F81C22C9C2008EF6F6 /* Info.plist */,
-				32ABF7F657F6D61E8811C5B4 /* model */,
-				32ABF6E670C0EB2927E070B7 /* service */,
-				32ABFEC9818A2F95F8E0AF6D /* CardService.swift */,
-				32ABFC60F33CD7A4A56771D0 /* EventService.swift */,
 				C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */,
-				32ABFEDA579ADF6909773D9F /* manager */,
-				32ABF9A8C24A5239C603BC86 /* CoreDataManager.swift */,
-				32ABFF0084E1B52567EA9C1F /* CardManager.swift */,
-				32ABF9E2943013B00F0AEC84 /* EventManager.swift */,
+				C3F0D4F81C22C9C2008EF6F6 /* Info.plist */,
+				C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */,
+				C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */,
 				C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */,
-				C35B1E511C33BE740083F86D /* CoreDataStack.swift */,
+				C3F0D4F51C22C9C2008EF6F6 /* LaunchScreen.storyboard */,
+				C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */,
+				32ABF5F830BE34C439B9FA7D /* controller */,
+				32ABFDF33A7DBA0B72A51D7A /* manager */,
+				32ABF7FBF0B03E2079EBBE4B /* model */,
+				32ABF3CBF25199EF24E0C1AD /* service */,
 			);
 			path = lovelive_plus;
 			sourceTree = "<group>";
@@ -297,9 +341,6 @@
 				C3F0D4F71C22C9C2008EF6F6 /* LaunchScreen.storyboard in Resources */,
 				C3F0D4F41C22C9C2008EF6F6 /* Assets.xcassets in Resources */,
 				C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */,
-				32ABF9745496D034757686A8 /* model in Resources */,
-				32ABF031C90DEC38CFDAD9DD /* service in Resources */,
-				32ABF4B17DD53C4A46BF28DE /* manager in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,16 +413,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F0D4EF1C22C9C2008EF6F6 /* MainController.swift in Sources */,
 				C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */,
-				32ABFDFFF1C0335B9070E348 /* CardController.swift in Sources */,
-				32ABF361E72E25E7EF5FC0F4 /* CardService.swift in Sources */,
 				C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */,
-				32ABF8971A4819B4F69AE51D /* EventService.swift in Sources */,
-				32ABFFB66240DABD764ADC4A /* CoreDataManager.swift in Sources */,
-				32ABF42D53030AC55EFF9B15 /* CardManager.swift in Sources */,
-				32ABFE0AC28AC546DD16C85D /* EventManager.swift in Sources */,
-				C35B1E521C33BE740083F86D /* CoreDataStack.swift in Sources */,
+				32ABF3D65B4446F8E17594CB /* DataController.swift in Sources */,
+				32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */,
+				32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */,
+				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,
+				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
+				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
+				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,
+				32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */,
+				32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */,
+				32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */,
+				32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */,
+				32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */,
+				32ABF9307034F5583660F2ED /* Event.swift in Sources */,
+				32ABFB71436DB98AD907474E /* CardService.swift in Sources */,
+				32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

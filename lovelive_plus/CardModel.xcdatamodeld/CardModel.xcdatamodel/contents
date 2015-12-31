@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
     <entity name="Card" representedClassName=".Card" syncable="YES">
         <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cardId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardId" attributeType="String" syncable="YES"/>
         <attribute name="cardIdolizedImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="centerSkill" optional="YES" attributeType="String" syncable="YES"/>
@@ -104,7 +104,7 @@
         <relationship name="cvModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cv" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="720"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="718"/>
         <element name="Cv" positionX="-36" positionY="9" width="128" height="118"/>
         <element name="Event" positionX="-54" positionY="0" width="128" height="375"/>
         <element name="Idol" positionX="-18" positionY="27" width="128" height="390"/>
