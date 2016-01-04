@@ -28,7 +28,7 @@ class DataController: NSObject {
             }
         }
     }
-    
+
     func calculateMaxPage(maxCardId: Int) -> Int {
         return maxCardId / 10 + 1
     }
@@ -51,8 +51,8 @@ class DataController: NSObject {
         cardService.getAllCardIds({
             (cardIdArray: NSArray) -> Void in
             self.maxPage = self.calculateMaxPage(cardIdArray.lastObject as! Int)
-            
-            for index in 1...self.maxPage {
+
+            for index in 1 ... self.maxPage {
                 self.cardService.getCardList(index, callback: {
                     (onePageOfCards: NSArray) -> Void in
                     self.cacheOnePageOfCards(onePageOfCards)
@@ -63,24 +63,14 @@ class DataController: NSObject {
 
     func cacheOnePageOfCards(onePageOfCards: NSArray) -> Void {
         for (_, cardObject) in onePageOfCards.enumerate() {
-            if let cardDictionary = cardObject as? [String: AnyObject] {
-                var card = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
-                card = self.mapCard(card, dictionary: cardDictionary)
+            let card = newCard(cardObject)
+
+            if let idol = newIdol(cardObject as! [String:AnyObject]) {
+                card.setValue(idol, forKey: "idolModel")
             }
 
-            if let idolDictionary = cardObject["idol"] as? [String: AnyObject] {
-                var idol = NSEntityDescription.insertNewObjectForEntityForName("Idol", inManagedObjectContext: self.managedObjectContext) as! Idol
-                idol = self.mapIdol(idol, dictionary: idolDictionary)
-            }
-
-            if let eventDictionary = cardObject["event"] as? [String: AnyObject] {
-                var event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
-                event = self.mapEvent(event, dictionary: eventDictionary)
-            }
-
-            if let cvDictionary = (cardObject["idol"] as? [String: AnyObject])!["cv"] as? [String: AnyObject] {
-                var cv = NSEntityDescription.insertNewObjectForEntityForName("Cv", inManagedObjectContext: self.managedObjectContext) as! Cv
-                cv = self.mapCv(cv, dictionary: cvDictionary)
+            if let event = newEvent(cardObject as! [String:AnyObject]) {
+                card.setValue(event, forKey: "eventModel")
             }
 
             do {
@@ -90,8 +80,48 @@ class DataController: NSObject {
             }
         }
     }
-    
-    func mapCard(card: Card, dictionary: [String: AnyObject]) -> Card {
+
+    func newCard(cardObject: AnyObject) -> Card {
+        let cardDictionary = cardObject as! [String:AnyObject]
+        let card = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
+
+        return self.mapCard(card, dictionary: cardDictionary)
+    }
+
+    func newIdol(cardDictionary: [String:AnyObject]) -> Idol? {
+        if let idolDictionary = cardDictionary["idol"] as? [String:AnyObject] {
+            var idol = NSEntityDescription.insertNewObjectForEntityForName("Idol", inManagedObjectContext: self.managedObjectContext) as! Idol
+            idol = self.mapIdol(idol, dictionary: idolDictionary)
+
+            if let cv = newCv(idolDictionary) {
+                idol.setValue(cv, forKey: "cvModel")
+            }
+
+            return idol
+        } else {
+            return nil
+        }
+    }
+
+    func newEvent(cardDictionary: [String:AnyObject]) -> Event? {
+        if let eventDictionary = cardDictionary["event"] as? [String:AnyObject] {
+            let event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
+            return self.mapEvent(event, dictionary: eventDictionary)
+        } else {
+            return nil
+        }
+    }
+
+    func newCv(idolDictionary: [String:AnyObject]) -> Cv? {
+        if let cvDictionary = idolDictionary["cv"] as? [String:AnyObject] {
+            let cv = NSEntityDescription.insertNewObjectForEntityForName("Cv", inManagedObjectContext: self.managedObjectContext) as! Cv
+            return self.mapCv(cv, dictionary: cvDictionary)
+        } else {
+            return nil
+        }
+    }
+
+    func mapCard(card: Card, dictionary: [String:AnyObject]) -> Card {
         card.attribute = dictionary["attribute"] as? String
         card.cardId = String(dictionary["id"] as! Int)
         card.cardIdolizedImage = dictionary["card_idolized_image"] as? String
@@ -139,7 +169,7 @@ class DataController: NSObject {
         return card
     }
 
-    func mapIdol(idol: Idol, dictionary: [String: AnyObject]) -> Idol {
+    func mapIdol(idol: Idol, dictionary: [String:AnyObject]) -> Idol {
         idol.age = dictionary["age"] as? Int
         idol.astrologicalSign = dictionary["astrological_sign"] as? String
         idol.attribute = dictionary["attribute"] as? String
@@ -166,7 +196,7 @@ class DataController: NSObject {
         return idol
     }
 
-    func mapEvent(event: Event, dictionary: [String: AnyObject]) -> Event {
+    func mapEvent(event: Event, dictionary: [String:AnyObject]) -> Event {
         event.beginning = dictionary["beginning"] as? String
         event.cards = dictionary["cards"] as? String
         event.end = dictionary["end"] as? String
@@ -193,13 +223,13 @@ class DataController: NSObject {
         return event
     }
 
-    func mapCv(cv: Cv, dictionary: [String: AnyObject]) -> Cv {
+    func mapCv(cv: Cv, dictionary: [String:AnyObject]) -> Cv {
         cv.instagram = dictionary["instagram"] as? String
         cv.name = dictionary["name"] as? String
         cv.nickname = dictionary["nickname"] as? String
         cv.twitter = dictionary["twitter"] as? String
         cv.url = dictionary["url"] as? String
-        
+
         return cv
     }
 }
