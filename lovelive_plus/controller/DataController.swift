@@ -37,13 +37,14 @@ class DataController: NSObject {
         let cardFetch = NSFetchRequest(entityName: "Card")
 
         do {
-            let fetchedCards = try self.managedObjectContext.executeFetchRequest(cardFetch) as! [Card]
-            return fetchedCards
+            if let fetchedCards = try self.managedObjectContext.executeFetchRequest(cardFetch) as? [Card] {
+                return fetchedCards
+            } else {
+                return []
+            }
         } catch {
             fatalError("Failed to fetch cards: \(error)")
         }
-
-        return []
     }
 
     func cacheAllCards() -> Void {
@@ -62,9 +63,25 @@ class DataController: NSObject {
 
     func cacheOnePageOfCards(onePageOfCards: NSArray) -> Void {
         for (_, cardObject) in onePageOfCards.enumerate() {
-            let cardDictionary = cardObject as! [String: AnyObject]
-            var card = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
-            card = self.mapDictionary(card, dictionary: cardDictionary)
+            if let cardDictionary = cardObject as? [String: AnyObject] {
+                var card = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
+                card = self.mapCard(card, dictionary: cardDictionary)
+            }
+
+            if let idolDictionary = cardObject["idol"] as? [String: AnyObject] {
+                var idol = NSEntityDescription.insertNewObjectForEntityForName("Idol", inManagedObjectContext: self.managedObjectContext) as! Idol
+                idol = self.mapIdol(idol, dictionary: idolDictionary)
+            }
+
+            if let eventDictionary = cardObject["event"] as? [String: AnyObject] {
+                var event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
+                event = self.mapEvent(event, dictionary: eventDictionary)
+            }
+
+            if let cvDictionary = (cardObject["idol"] as? [String: AnyObject])!["cv"] as? [String: AnyObject] {
+                var cv = NSEntityDescription.insertNewObjectForEntityForName("Cv", inManagedObjectContext: self.managedObjectContext) as! Cv
+                cv = self.mapCv(cv, dictionary: cvDictionary)
+            }
 
             do {
                 try self.managedObjectContext.save()
@@ -74,7 +91,7 @@ class DataController: NSObject {
         }
     }
     
-    func mapDictionary(card: Card, dictionary: [String: AnyObject]) -> Card {
+    func mapCard(card: Card, dictionary: [String: AnyObject]) -> Card {
         card.attribute = dictionary["attribute"] as? String
         card.cardId = String(dictionary["id"] as! Int)
         card.cardIdolizedImage = dictionary["card_idolized_image"] as? String
@@ -118,10 +135,71 @@ class DataController: NSObject {
         card.transparentUrPair = dictionary["transparent_ur_pair"] as? String
         card.videoStory = dictionary["video_story"] as? String
         card.websiteUrl = dictionary["website_url"] as? String
-        card.eventModel = dictionary["event"] as? NSManagedObject
-        card.idolModel = dictionary["idol"] as? NSManagedObject
 
         return card
     }
 
+    func mapIdol(idol: Idol, dictionary: [String: AnyObject]) -> Idol {
+        idol.age = dictionary["age"] as? Int
+        idol.astrologicalSign = dictionary["astrological_sign"] as? String
+        idol.attribute = dictionary["attribute"] as? String
+        idol.birthday = dictionary["birthday"] as? String
+        idol.blood = dictionary["blood"] as? String
+        idol.chibi = dictionary["chibi"] as? String
+        idol.chibiSmall = dictionary["chibi_small"] as? String
+        idol.favoriteFood = dictionary["favorite_food"] as? String
+        idol.height = dictionary["height"] as? Int
+        idol.hobbies = dictionary["hobbies"] as? String
+        idol.japaneseName = dictionary["japanese_name"] as? String
+        idol.leastFavoriteFood = dictionary["least_favorite_food"] as? String
+        idol.main = dictionary["main"] as? Bool
+        idol.measurements = dictionary["measurements"] as? String
+        idol.name = dictionary["name"] as? String
+        idol.officialUrl = dictionary["official_url"] as? String
+        idol.subUnit = dictionary["sub_unit"] as? String
+        idol.summary = dictionary["summary"] as? String
+        idol.websiteUrl = dictionary["website_url"] as? String
+        idol.wikiaUrl = dictionary["wikia_url"] as? String
+        idol.wikiUrl = dictionary["wiki_url"] as? String
+        idol.year = dictionary["year"] as? String
+
+        return idol
+    }
+
+    func mapEvent(event: Event, dictionary: [String: AnyObject]) -> Event {
+        event.beginning = dictionary["beginning"] as? String
+        event.cards = dictionary["cards"] as? String
+        event.end = dictionary["end"] as? String
+        event.englishBeginning = dictionary["english_beginning"] as? String
+        event.englishEnd = dictionary["english_end"] as? String
+        event.englishImage = dictionary["english_image"] as? String
+        event.englishName = dictionary["english_name"] as? String
+        event.englishT1Points = dictionary["english_t1_points"] as? Int
+        event.englishT1Rank = dictionary["english_t1_rank"] as? Int
+        event.englishT2Points = dictionary["english_t2_points"] as? Int
+        event.englishT2Rank = dictionary["english_t2_rank"] as? Int
+        event.image = dictionary["image"] as? String
+        event.japanCurrent = dictionary["japan_current"] as? Bool
+        event.japaneseName = dictionary["japanese_name"] as? String
+        event.japaneseT1Points = dictionary["japanese_t1_points"] as? Int
+        event.japaneseT1Rank = dictionary["japanese_t1_rank"] as? Int
+        event.japaneseT2Points = dictionary["japanese_t2_points"] as? Int
+        event.japaneseT2Rank = dictionary["japanese_t2_rank"] as? Int
+        event.note = dictionary["note"] as? String
+        event.romajiName = dictionary["romaji_name"] as? String
+        event.song = dictionary["song"] as? String
+        event.worldCurrent = dictionary["world_current"] as? Bool
+
+        return event
+    }
+
+    func mapCv(cv: Cv, dictionary: [String: AnyObject]) -> Cv {
+        cv.instagram = dictionary["instagram"] as? String
+        cv.name = dictionary["name"] as? String
+        cv.nickname = dictionary["nickname"] as? String
+        cv.twitter = dictionary["twitter"] as? String
+        cv.url = dictionary["url"] as? String
+        
+        return cv
+    }
 }

@@ -6,8 +6,7 @@ class CardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cardArray = DataController().queryAllCards()
-        print(cardArray.endIndex)
+        DataController().cacheAllCards()
     }
     
     override func didReceiveMemoryWarning() {
