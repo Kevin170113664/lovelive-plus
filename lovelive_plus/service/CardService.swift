@@ -6,6 +6,7 @@ class CardService {
 
     let baseUrl = "http://schoolido.lu/api/"
     let cards = "cards/"
+    let cardIds = "cardids/"
 
     init() {
 
@@ -21,8 +22,7 @@ class CardService {
                 return
             }
             if let value: AnyObject = response.result.value {
-                let json = JSON(value)
-                callback(json["results"].arrayObject!)
+                callback(JSON(value)["results"].arrayObject!)
             }
         }
     }
@@ -37,8 +37,22 @@ class CardService {
                 return
             }
             if let value: AnyObject = response.result.value {
-                let json = JSON(value)
-                callback(json.dictionaryObject!)
+                callback(JSON(value).dictionaryObject!)
+            }
+        }
+    }
+
+    func getAllCardIds(callback: (NSArray) -> Void) -> Void {
+        let url = baseUrl + cardIds
+        Alamofire.request(.GET, url)
+        .responseJSON {
+            response in
+            guard response.result.error == nil else {
+                print(response.result.error!)
+                return
+            }
+            if let value: AnyObject = response.result.value {
+                callback(JSON(value).arrayObject!)
             }
         }
     }

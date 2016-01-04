@@ -3,8 +3,9 @@ import UIKit
 import CoreData
 
 class DataController: NSObject {
-    let maxPage = 77
+    var maxPage = 0
     var managedObjectContext: NSManagedObjectContext
+    let cardService = CardService()
 
     override init() {
         guard let modelURL = NSBundle.mainBundle().URLForResource("CardModel", withExtension: "momd") else {
@@ -27,6 +28,10 @@ class DataController: NSObject {
             }
         }
     }
+    
+    func calculateMaxPage(maxCardId: Int) -> Int {
+        return maxCardId / 10 + 1
+    }
 
     func queryAllCards() -> [Card] {
         let cardFetch = NSFetchRequest(entityName: "Card")
@@ -42,26 +47,31 @@ class DataController: NSObject {
     }
 
     func cacheAllCards() -> Void {
-        let cardService = CardService()
+        cardService.getAllCardIds({
+            (cardIdArray: NSArray) -> Void in
+            self.maxPage = self.calculateMaxPage(cardIdArray.lastObject as! Int)
+            
+            for index in 1...self.maxPage {
+                self.cardService.getCardList(index, callback: {
+                    (onePageOfCards: NSArray) -> Void in
+                    self.cacheOnePageOfCards(onePageOfCards)
+                })
+            }
+        })
+    }
 
-        for index in 74...maxPage {
-            cardService.getCardList(index, callback: {
-                (onePageOfCards: NSArray) -> Void in
+    func cacheOnePageOfCards(onePageOfCards: NSArray) -> Void {
+        for (_, cardObject) in onePageOfCards.enumerate() {
+            let cardDictionary = cardObject as! [String: AnyObject]
+            var card = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
+            card = self.mapDictionary(card, dictionary: cardDictionary)
 
-                for (_, cardObject) in onePageOfCards.enumerate() {
-                    let cardDictionary = cardObject as! [String: AnyObject]
-                    var card = NSEntityDescription.insertNewObjectForEntityForName("Card", inManagedObjectContext: self.managedObjectContext) as! Card
-                    card = self.mapDictionary(card, dictionary: cardDictionary)
-                    
-                    do {
-                        try self.managedObjectContext.save()
-                    } catch {
-                        fatalError("Failure to save context: \(error)")
-                    }
-                }
-            })
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
+            }
         }
-        
     }
     
     func mapDictionary(card: Card, dictionary: [String: AnyObject]) -> Card {
