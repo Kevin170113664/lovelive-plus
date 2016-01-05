@@ -14,18 +14,19 @@ class DataController: NSObject {
         guard let mom = NSManagedObjectModel(contentsOfURL: modelURL) else {
             fatalError("Error initializing mom from: \(modelURL)")
         }
+        
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
         self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         self.managedObjectContext.persistentStoreCoordinator = psc
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-            let docURL = urls[urls.endIndex - 1]
-            let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
-            do {
-                try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
-            } catch {
-                fatalError("Error migrating store: \(error)")
-            }
+        
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docURL = urls[urls.endIndex - 1]
+        let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
+        
+        do {
+            try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+        } catch {
+            fatalError("Error migrating store: \(error)")
         }
     }
 
@@ -37,8 +38,8 @@ class DataController: NSObject {
         let cardFetch = NSFetchRequest(entityName: "Card")
 
         do {
-            if let fetchedCards = try self.managedObjectContext.executeFetchRequest(cardFetch) as? [Card] {
-                return fetchedCards
+            if let cardList = try self.managedObjectContext.executeFetchRequest(cardFetch) as? [Card] {
+                return cardList
             } else {
                 return []
             }
@@ -75,6 +76,7 @@ class DataController: NSObject {
 
             do {
                 try self.managedObjectContext.save()
+                print(cardObject["id"] as! Int)
             } catch {
                 fatalError("Failure to save context: \(error)")
             }
