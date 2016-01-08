@@ -14,15 +14,15 @@ class DataController: NSObject {
         guard let mom = NSManagedObjectModel(contentsOfURL: modelURL) else {
             fatalError("Error initializing mom from: \(modelURL)")
         }
-        
+
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
         self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         self.managedObjectContext.persistentStoreCoordinator = psc
-        
+
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let docURL = urls[urls.endIndex - 1]
         let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
-        
+
         do {
             try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
         } catch {
@@ -48,6 +48,22 @@ class DataController: NSObject {
         }
     }
 
+    func queryCardById(cardId: String) -> Card? {
+        let cardFetch = NSFetchRequest(entityName: "Card")
+        cardFetch.predicate = NSPredicate(format: "cardId = %@", cardId)
+
+        do {
+            let cardList = try self.managedObjectContext.executeFetchRequest(cardFetch) as? [Card]
+            if (cardList?.count > 0) {
+                return cardList![0]
+            } else {
+                return nil
+            }
+        } catch {
+            fatalError("Failed to fetch cards: \(error)")
+        }
+    }
+
     func cacheAllCards() -> Void {
         cardService.getAllCardIds({
             (cardIdArray: NSArray) -> Void in
@@ -64,22 +80,30 @@ class DataController: NSObject {
 
     func cacheOnePageOfCards(onePageOfCards: NSArray) -> Void {
         for (_, cardObject) in onePageOfCards.enumerate() {
-            let card = newCard(cardObject)
-
-            if let idol = newIdol(cardObject as! [String:AnyObject]) {
-                card.setValue(idol, forKey: "idolModel")
+            let cardDictionary = cardObject as! [String:AnyObject]
+            if (queryCardById(String(cardDictionary["id"] as! Int)) != nil) {
+                continue
+            } else {
+                self.cacheCard(cardObject)
             }
+        }
+    }
 
-            if let event = newEvent(cardObject as! [String:AnyObject]) {
-                card.setValue(event, forKey: "eventModel")
-            }
+    func cacheCard(cardObject: AnyObject) -> Void {
+        let card = newCard(cardObject)
 
-            do {
-                try self.managedObjectContext.save()
-                print(cardObject["id"] as! Int)
-            } catch {
-                fatalError("Failure to save context: \(error)")
-            }
+        if let idol = newIdol(cardObject as! [String:AnyObject]) {
+            card.setValue(idol, forKey: "idolModel")
+        }
+
+        if let event = newEvent(cardObject as! [String:AnyObject]) {
+            card.setValue(event, forKey: "eventModel")
+        }
+
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
         }
     }
 
