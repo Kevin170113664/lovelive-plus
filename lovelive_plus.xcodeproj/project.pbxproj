@@ -23,6 +23,7 @@
 		32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF34F85DC2251C6011330 /* Idol.swift */; };
 		32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */; };
 		32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFFE34AEA18144D1559B5 /* CardController.swift */; };
+		C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810BA84A8856D9DE592EF842 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A977597BCA03742C293574A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardCollectionViewCell.swift; path = ../CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				32ABF5F19657F7788C9A90AF /* DataController.swift */,
 				32ABFFE34AEA18144D1559B5 /* CardController.swift */,
 				32ABF6034229FDEBB17818BD /* MainController.swift */,
+				C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				32ABF3D65B4446F8E17594CB /* DataController.swift in Sources */,
 				32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */,
 				32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */,
+				C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */,
 				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,
 				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
 				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
