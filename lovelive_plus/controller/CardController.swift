@@ -11,6 +11,8 @@ class CardController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRoundImageArray()
+        
+        cardCollectionView?.backgroundColor = Color.Blue50()
     }
 
     func loadRoundImageArray() {
@@ -51,7 +53,7 @@ extension CardController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
-        cell.backgroundColor = UIColor.whiteColor()
+        cell.backgroundColor = Color.Blue50()
         if let url :String = roundIdolizeImageArray[indexPath.row] {
             cell.imageView!.sd_setImageWithURL(NSURL(string: url))
         }

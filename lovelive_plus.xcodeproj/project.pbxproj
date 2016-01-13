@@ -18,6 +18,7 @@
 		32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */; };
 		32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */; };
 		32ABF9307034F5583660F2ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8CD8859DF3FF88132A7 /* Event.swift */; };
+		32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */; };
 		32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */; };
 		32ABFB71436DB98AD907474E /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFCB1D60FD120E75D35DC /* CardService.swift */; };
 		32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF34F85DC2251C6011330 /* Idol.swift */; };
@@ -58,6 +59,7 @@
 		32ABF6034229FDEBB17818BD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idol+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cv+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailController.swift; sourceTree = "<group>"; };
 		32ABF8CD8859DF3FF88132A7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		32ABF8DBFFACA0C5E70AFBBA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		32ABF8E9CF3E09673908DD59 /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				32ABFFE34AEA18144D1559B5 /* CardController.swift */,
 				32ABF6034229FDEBB17818BD /* MainController.swift */,
 				C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */,
+				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				32ABF9307034F5583660F2ED /* Event.swift in Sources */,
 				32ABFB71436DB98AD907474E /* CardService.swift in Sources */,
 				32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */,
+				32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

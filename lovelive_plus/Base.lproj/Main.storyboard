@@ -81,7 +81,7 @@
         <!--Card Detail-->
         <scene sceneID="GMu-Rq-8Jk">
             <objects>
-                <viewController id="8Pr-yP-gZ1" sceneMemberID="viewController">
+                <viewController id="8Pr-yP-gZ1" customClass="CardDetailController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jU1-uc-kYl"/>
                         <viewControllerLayoutGuide type="bottom" id="1EJ-7V-4Bj"/>
@@ -92,6 +92,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Card Detail" id="ERy-Jb-iW1"/>
+                    <connections>
+                        <outlet property="cardDetailView" destination="kqc-Vk-grW" id="pYB-7H-NFv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-Fp-nup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
