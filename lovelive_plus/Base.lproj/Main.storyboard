@@ -24,60 +24,6 @@
             <point key="canvasLocation" x="-392" y="-1489"/>
         </scene>
         <!--Card-->
-        <scene sceneID="jIA-S6-UnL">
-            <objects>
-                <viewController storyboardIdentifier="cardController" id="hah-xa-g4j" customClass="UICollectionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ljB-ws-dPF"/>
-                        <viewControllerLayoutGuide type="bottom" id="aTJ-xb-WIR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yR7-VK-nas">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-Bu-tMm">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Ol-fP-vfe">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="HfL-4b-zqb">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="hah-xa-g4j" id="3cj-nn-9bk"/>
-                                    <outlet property="delegate" destination="hah-xa-g4j" id="3QP-s0-eaW"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Card" id="Gyt-3a-Lek">
-                        <barButtonItem key="rightBarButtonItem" title="Detail" id="PyS-Ta-n99">
-                            <connections>
-                                <segue destination="8Pr-yP-gZ1" kind="show" id="3es-Wk-573"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="collectionView" destination="6Lg-Bu-tMm" id="aw0-Kp-cNh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wRa-EW-t7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="337" y="-572"/>
-        </scene>
-        <!--Card-->
         <scene sceneID="V0l-hD-PAJ">
             <objects>
                 <collectionViewController id="awk-gQ-s4R" customClass="CardController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,6 +60,7 @@
                                 <size key="customSize" width="220" height="220"/>
                                 <connections>
                                     <outlet property="imageView" destination="Efs-Xv-VJF" id="7KN-Vl-eSN"/>
+                                    <segue destination="8Pr-yP-gZ1" kind="show" id="XYs-mE-Dm3"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -148,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-Fp-nup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="-572"/>
+            <point key="canvasLocation" x="858" y="103.5"/>
         </scene>
         <!--Lovelive+-->
         <scene sceneID="tne-QT-ifu">
@@ -312,7 +259,6 @@
                                 </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xdw-SV-yze" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="129" id="BrU-om-dvO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-31"/>
@@ -328,6 +274,7 @@
                         <outlet property="eventImage" destination="ifq-vK-H1M" id="UJ1-jn-SOc"/>
                         <outlet property="mfNavigator" destination="MRd-7L-CAe" id="Fyh-pF-B1f"/>
                         <outlet property="normalNavigator" destination="g7V-po-SDT" id="d87-3W-T8O"/>
+                        <outlet property="scrollView" destination="xdw-SV-yze" id="91d-LP-Kvq"/>
                         <outlet property="smNavigator" destination="fc5-gR-ZMw" id="nHX-3j-of6"/>
                     </connections>
                 </viewController>
