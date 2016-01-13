@@ -124,7 +124,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Card" id="psb-aV-Nue"/>
                     <connections>
-                        <outlet property="cardCollectionView" destination="kPr-SG-g6i" id="pQV-nU-cMI"/>
+                        <outlet property="cardCollectionView" destination="kPr-SG-g6i" id="m2g-SA-luX"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgB-Xx-gdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
