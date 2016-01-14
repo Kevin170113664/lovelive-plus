@@ -64,7 +64,7 @@ class DataController: NSObject {
         }
     }
 
-    func cacheAllCards() -> Void {
+    func cacheAllCards(callback: () -> Void) -> Void {
         cardService.getAllCardIds({
             (cardIdArray: NSArray) -> Void in
             self.maxPage = self.calculateMaxPage(cardIdArray.lastObject as! Int)
@@ -73,6 +73,7 @@ class DataController: NSObject {
                 self.cardService.getCardList(index, callback: {
                     (onePageOfCards: NSArray) -> Void in
                     self.cacheOnePageOfCards(onePageOfCards)
+                    callback()
                 })
             }
         })
