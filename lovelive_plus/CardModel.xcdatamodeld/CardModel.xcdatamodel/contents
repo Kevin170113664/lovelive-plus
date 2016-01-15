@@ -104,7 +104,7 @@
         <relationship name="cvModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cv" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="718"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="720"/>
         <element name="Cv" positionX="-36" positionY="9" width="128" height="118"/>
         <element name="Event" positionX="-54" positionY="0" width="128" height="375"/>
         <element name="Idol" positionX="-18" positionY="27" width="128" height="390"/>

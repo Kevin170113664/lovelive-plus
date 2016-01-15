@@ -103,14 +103,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="OW5-G1-Qhl" secondAttribute="height" multiplier="145:204" id="hb2-2A-jyq"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="761idolizedHanayo"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-tA-KR1">
                                                 <rect key="frame" x="285" y="0.0" width="285" height="401"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ill-tA-KR1" secondAttribute="height" multiplier="145:204" id="PIu-PK-B9g"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="761idolizedHanayo"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQQ-v0-vqp">
                                                 <rect key="frame" x="0.0" y="416" width="285" height="20.5"/>
@@ -233,43 +231,44 @@
                                         <rect key="frame" x="15" y="583" width="570" height="253"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Skill Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-KS-GmH">
-                                                <rect key="frame" x="25" y="25" width="570" height="20.5"/>
+                                                <rect key="frame" x="25" y="25" width="520" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIF-qK-TNG">
-                                                <rect key="frame" x="25" y="55.5" width="570" height="20.5"/>
+                                                <rect key="frame" x="25" y="55.5" width="520" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Center Skill Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-oT-2qA">
-                                                <rect key="frame" x="25" y="101" width="570" height="20.5"/>
+                                                <rect key="frame" x="25" y="101" width="520" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Center Skill Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYm-Dc-IrW">
-                                                <rect key="frame" x="25" y="131.5" width="570" height="20.5"/>
+                                                <rect key="frame" x="25" y="131.5" width="520" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Skill Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-kS-o7i">
-                                                <rect key="frame" x="25" y="177" width="570" height="20.5"/>
+                                                <rect key="frame" x="25" y="177" width="520" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Skill Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syj-h0-82t">
-                                                <rect key="frame" x="25" y="207.5" width="570" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Skill Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syj-h0-82t">
+                                                <rect key="frame" x="25" y="207.5" width="520" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QUy-KS-GmH" secondAttribute="trailing" constant="25" id="20E-ml-W5Y"/>
                                             <constraint firstAttribute="bottom" secondItem="syj-h0-82t" secondAttribute="bottom" constant="25" id="8Cy-DN-CJE"/>
                                             <constraint firstItem="syj-h0-82t" firstAttribute="top" secondItem="iFq-kS-o7i" secondAttribute="bottom" constant="10" id="9lW-ub-FYg"/>
                                             <constraint firstItem="FYm-Dc-IrW" firstAttribute="width" secondItem="QUy-KS-GmH" secondAttribute="width" id="D1O-LR-5SP"/>
@@ -279,17 +278,26 @@
                                             <constraint firstItem="CgW-oT-2qA" firstAttribute="leading" secondItem="QUy-KS-GmH" secondAttribute="leading" id="OXk-aY-GPY"/>
                                             <constraint firstItem="FYm-Dc-IrW" firstAttribute="leading" secondItem="QUy-KS-GmH" secondAttribute="leading" id="UXQ-Yi-jDy"/>
                                             <constraint firstItem="QUy-KS-GmH" firstAttribute="leading" secondItem="FcZ-2u-FfJ" secondAttribute="leading" constant="25" id="Y7z-ex-up4"/>
+                                            <constraint firstAttribute="trailing" secondItem="QUy-KS-GmH" secondAttribute="trailing" constant="25" id="aJw-fP-cob"/>
                                             <constraint firstItem="FYm-Dc-IrW" firstAttribute="top" secondItem="CgW-oT-2qA" secondAttribute="bottom" constant="10" id="aR8-6e-Mtg"/>
                                             <constraint firstItem="CgW-oT-2qA" firstAttribute="top" secondItem="bIF-qK-TNG" secondAttribute="bottom" constant="25" id="dw9-op-4tp"/>
                                             <constraint firstItem="bIF-qK-TNG" firstAttribute="top" secondItem="QUy-KS-GmH" secondAttribute="bottom" constant="10" id="ePk-de-ygm"/>
                                             <constraint firstItem="iFq-kS-o7i" firstAttribute="width" secondItem="QUy-KS-GmH" secondAttribute="width" id="h7R-xI-LNt"/>
                                             <constraint firstItem="QUy-KS-GmH" firstAttribute="top" secondItem="FcZ-2u-FfJ" secondAttribute="top" constant="25" id="jgs-Nw-zA0"/>
                                             <constraint firstItem="syj-h0-82t" firstAttribute="width" secondItem="QUy-KS-GmH" secondAttribute="width" id="oIl-kM-Kd9"/>
+                                            <constraint firstAttribute="trailing" secondItem="syj-h0-82t" secondAttribute="trailing" constant="25" id="oPx-tk-fGz"/>
                                             <constraint firstItem="CgW-oT-2qA" firstAttribute="width" secondItem="QUy-KS-GmH" secondAttribute="width" id="trn-Q5-KbJ"/>
                                             <constraint firstItem="bIF-qK-TNG" firstAttribute="width" secondItem="QUy-KS-GmH" secondAttribute="width" id="uDi-a5-7nj"/>
                                             <constraint firstItem="QUy-KS-GmH" firstAttribute="width" secondItem="FcZ-2u-FfJ" secondAttribute="width" id="wlM-rJ-mSe"/>
                                             <constraint firstItem="syj-h0-82t" firstAttribute="leading" secondItem="QUy-KS-GmH" secondAttribute="leading" id="zOa-XC-jDU"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="20E-ml-W5Y"/>
+                                                <exclude reference="wlM-rJ-mSe"/>
+                                                <exclude reference="oPx-tk-fGz"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -544,7 +552,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="761idolizedHanayo" width="512" height="720"/>
         <image name="cardNavigator" width="300" height="1000"/>
         <image name="mfNavigator" width="1000" height="350"/>
         <image name="normalNavigator" width="1000" height="350"/>
