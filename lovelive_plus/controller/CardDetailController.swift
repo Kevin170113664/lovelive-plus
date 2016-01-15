@@ -1,6 +1,9 @@
 import UIKit
 
 class CardDetailController: UIViewController {
+    internal var cardId: String?
+    internal var card: Card?
+    
     @IBOutlet var cardDetailView: UIView!
     @IBOutlet weak var cardDetailScrollView: UIScrollView!
     @IBOutlet weak var cardNonIdolizedImageButton: UIButton!
@@ -31,6 +34,15 @@ class CardDetailController: UIViewController {
         cardDetailView.backgroundColor = Color.Blue50()
         setShadowForView(cardPanelView)
         setShadowForView(cardSkillPanelView)
+        idlabel.text = cardId ?? "Unknown"
+//        setCardDetail()
+    }
+    
+    func setCardDetail() {
+        cardNonIdolizedImageButton.imageView?.sd_setImageWithURL(NSURL(string: card!.cardImage!))
+        cardIdolizedImageButton.imageView?.sd_setImageWithURL(NSURL(string: card!.cardIdolizedImage!))
+        nameLabel.text = card!.name ?? "Unknown"
+        idlabel.text = card!.cardId ?? "Unknown"
     }
 
     func setShadowForView(view: UIView) {

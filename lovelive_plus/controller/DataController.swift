@@ -3,6 +3,7 @@ import UIKit
 import CoreData
 
 class DataController: NSObject {
+    let numberOfCardInOnePage = 10
     var maxPage = 0
     var managedObjectContext: NSManagedObjectContext
     let cardService = CardService()
@@ -31,7 +32,7 @@ class DataController: NSObject {
     }
 
     func calculateMaxPage(maxCardId: Int) -> Int {
-        return maxCardId / 10 + 1
+        return maxCardId / numberOfCardInOnePage + 1
     }
 
     func queryAllCards() -> [Card] {

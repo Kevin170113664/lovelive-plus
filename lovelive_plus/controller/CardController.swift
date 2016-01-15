@@ -6,8 +6,9 @@ class CardController: UICollectionViewController {
 
     private let reuseIdentifier = "CardCell"
     private var cardArray = [Card]()
-    private var roundIdolizeImageArray = [String]()
+    private var roundIdolizeImageDictionary = NSMutableDictionary()
     private var maxCardId = 0
+    private var selectedIndexPath: NSIndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +44,10 @@ class CardController: UICollectionViewController {
     func updateCardArray() {
         cardArray = removeDuplicateCard()
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-        roundIdolizeImageArray.removeAll()
+        roundIdolizeImageDictionary.removeAllObjects()
 
         for card in cardArray {
-            roundIdolizeImageArray.append(card.roundCardIdolizedImage!)
+            roundIdolizeImageDictionary.setValue(card.roundCardIdolizedImage!, forKey: card.cardId!)
         }
     }
 
@@ -79,12 +80,32 @@ extension CardController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
         cell.backgroundColor = Color.Blue50()
-        if roundIdolizeImageArray.count > indexPath.row {
-            if let url: String = roundIdolizeImageArray[indexPath.row] {
+        
+        if roundIdolizeImageDictionary.count > indexPath.row {
+            if let url = roundIdolizeImageDictionary[String(roundIdolizeImageDictionary.count - indexPath.row)] as? String {
                 cell.imageView!.sd_setImageWithURL(NSURL(string: url))
             }
         }
 
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
+            selectedIndexPath = indexPath
+            performSegueWithIdentifier("CardDetail", sender: cell)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "CardDetail" && selectedIndexPath != nil) {
+            let cardDetailController = segue.destinationViewController as! CardDetailController;
+            cardDetailController.cardId = String(roundIdolizeImageDictionary.count - selectedIndexPath!.row)
+        }
+        selectedIndexPath = nil
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        return (selectedIndexPath != nil) ? true : false
     }
 }
