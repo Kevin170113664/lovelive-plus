@@ -6,6 +6,7 @@ class CardDetailController: UIViewController {
 
     @IBOutlet var cardDetailView: UIView!
     @IBOutlet weak var cardDetailScrollView: UIScrollView!
+    
     @IBOutlet weak var cardNonIdolizedImageButton: UIButton!
     @IBOutlet weak var cardIdolizedImageButton: UIButton!
     @IBOutlet weak var cardPanelView: UIView!
@@ -32,6 +33,7 @@ class CardDetailController: UIViewController {
 
     override func viewDidLoad() {
         cardDetailView.backgroundColor = Color.Blue50()
+        cardDetailScrollView.showsVerticalScrollIndicator = false
         setShadowForView(cardPanelView)
         setShadowForView(cardSkillPanelView)
         setCardDetail()

@@ -3,12 +3,16 @@ import UIKit
 class CardController: UICollectionViewController {
 
     @IBOutlet var cardCollectionView: UICollectionView?
-
+    @IBOutlet weak var searchItem: UIBarButtonItem!
+    @IBOutlet weak var isIdolized: UIBarButtonItem!
+    
     private let reuseIdentifier = "CardCell"
     private var cardArray = [Card]()
-    private var roundIdolizeImageDictionary = NSMutableDictionary()
+    private var roundIdolizedImageDictionary = NSMutableDictionary()
+    private var roundNonIdolizedImageDictionary = NSMutableDictionary()
     private var maxCardId = 0
     private var selectedIndexPath: NSIndexPath?
+    private var isIdolizedIcon = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +47,13 @@ class CardController: UICollectionViewController {
 
     func updateCardArray() {
         cardArray = removeDuplicateCard()
-        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-        roundIdolizeImageDictionary.removeAllObjects()
+//        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
+        roundIdolizedImageDictionary.removeAllObjects()
+        roundNonIdolizedImageDictionary.removeAllObjects()
 
         for card in cardArray {
-            roundIdolizeImageDictionary.setValue(card.roundCardIdolizedImage!, forKey: card.cardId!)
+            roundIdolizedImageDictionary.setValue(card.roundCardIdolizedImage!, forKey: card.cardId!)
+            roundNonIdolizedImageDictionary.setValue(card.roundCardImage!, forKey: card.cardId!)
         }
     }
 
@@ -81,11 +87,16 @@ extension CardController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
         cell.backgroundColor = Color.Blue50()
         
-        if roundIdolizeImageDictionary.count > indexPath.row {
-            if let url = roundIdolizeImageDictionary[String(roundIdolizeImageDictionary.count - indexPath.row)] as? String {
+        if roundIdolizedImageDictionary.count > indexPath.row {
+            if let url = roundIdolizedImageDictionary[String(roundIdolizedImageDictionary.count - indexPath.row)] as? String {
                 cell.imageView!.sd_setImageWithURL(NSURL(string: url))
             }
         }
+//        if roundNonIdolizedImageDictionary.count > indexPath.row {
+//            if let url = roundNonIdolizedImageDictionary[String(roundNonIdolizedImageDictionary.count - indexPath.row)] as? String {
+//                cell.imageView!.sd_setImageWithURL(NSURL(string: url))
+//            }
+//        }
 
         return cell
     }
@@ -100,12 +111,16 @@ extension CardController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "CardDetail" && selectedIndexPath != nil) {
             let cardDetailController = segue.destinationViewController as! CardDetailController;
-            cardDetailController.cardId = String(roundIdolizeImageDictionary.count - selectedIndexPath!.row)
+            cardDetailController.cardId = String(roundIdolizedImageDictionary.count - selectedIndexPath!.row)
         }
         selectedIndexPath = nil
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         return (selectedIndexPath != nil) ? true : false
+    }
+
+    func nonIdolizedImageExist(cardId: String?) {
+
     }
 }
