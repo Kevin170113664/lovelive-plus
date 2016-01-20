@@ -26,6 +26,7 @@
 		32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFFE34AEA18144D1559B5 /* CardController.swift */; };
 		C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */; };
 		C3269F061C4647CB00919A95 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3269F051C4647CB00919A95 /* Color.swift */; };
+		C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3304BED1C4F308A00F96999 /* FilterController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		A977597BCA03742C293574A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardCollectionViewCell.swift; path = ../CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3269F051C4647CB00919A95 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C3304BED1C4F308A00F96999 /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				32ABF6034229FDEBB17818BD /* MainController.swift */,
 				C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */,
 				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
+				C3304BED1C4F308A00F96999 /* FilterController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				32ABF9307034F5583660F2ED /* Event.swift in Sources */,
 				32ABFB71436DB98AD907474E /* CardService.swift in Sources */,
 				32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */,
+				C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */,
 				32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -74,22 +74,43 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Card" id="psb-aV-Nue">
                         <rightBarButtonItems>
-                            <barButtonItem image="faceIcon" id="nFF-pq-Vtd">
+                            <barButtonItem image="faceIcon" id="nFF-pq-Vtd" userLabel="Change Face Item">
                                 <connections>
                                     <action selector="changeFaceAction:" destination="awk-gQ-s4R" id="k90-DD-Fl9"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="filterIcon" id="6vK-Xz-rf9"/>
+                            <barButtonItem image="filterIcon" id="6vK-Xz-rf9">
+                                <connections>
+                                    <segue destination="nmN-lO-iQa" kind="show" id="Fat-aq-qjG"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="cardCollectionView" destination="kPr-SG-g6i" id="m2g-SA-luX"/>
-                        <outlet property="searchItem" destination="6vK-Xz-rf9" id="Q8p-bG-25u"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgB-Xx-gdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5" y="104"/>
+        </scene>
+        <!--Filter Controller-->
+        <scene sceneID="pVS-db-wmi">
+            <objects>
+                <viewController id="nmN-lO-iQa" customClass="FilterController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6pW-SU-4QF"/>
+                        <viewControllerLayoutGuide type="bottom" id="GsL-oJ-rvM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GRs-1N-4iS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qH5-qg-jqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-214"/>
         </scene>
         <!--Card Detail-->
         <scene sceneID="GMu-Rq-8Jk">
@@ -361,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-Fp-nup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="77"/>
+            <point key="canvasLocation" x="755" y="461"/>
         </scene>
         <!--Lovelive+-->
         <scene sceneID="tne-QT-ifu">
@@ -433,12 +454,21 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-7L-CAe" userLabel="Mf Navigator">
                                         <rect key="frame" x="240" y="184" width="360" height="203"/>
+                                        <connections>
+                                            <action selector="clickMfNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbA-Ex-47j"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7V-po-SDT" userLabel="Normal Navigator">
                                         <rect key="frame" x="240" y="493" width="360" height="236"/>
+                                        <connections>
+                                            <action selector="clickNormalNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zNW-LT-JNZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-gR-ZMw" userLabel="Sm Navigator">
                                         <rect key="frame" x="240" y="317" width="360" height="176"/>
+                                        <connections>
+                                            <action selector="clickSmNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jrc-zQ-zRn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98622398187716509" green="0.96749529648454524" blue="1" alpha="1" colorSpace="calibratedRGB"/>

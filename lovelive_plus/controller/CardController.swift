@@ -3,7 +3,6 @@ import UIKit
 class CardController: UICollectionViewController {
 
     @IBOutlet var cardCollectionView: UICollectionView?
-    @IBOutlet weak var searchItem: UIBarButtonItem!
     
     @IBAction func changeFaceAction(sender: AnyObject) {
         cardCollectionView?.reloadData()
