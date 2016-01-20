@@ -125,5 +125,5 @@ extension CardController {
 
     func shouldShowNonIdolizedImage(card: Card) -> Bool {
         return !isIdolized && card.isSpecial == 0 && card.isPromo == 0
-    }Implemented
+    }
 }
