@@ -5,8 +5,14 @@ class CardController: UICollectionViewController {
     @IBOutlet var cardCollectionView: UICollectionView?
     
     @IBAction func changeFaceAction(sender: AnyObject) {
-        cardCollectionView?.reloadData()
         isIdolized = !isIdolized
+        cardCollectionView?.reloadData()
+    }
+    
+    @IBAction func showFilterAction(sender: AnyObject) {
+        (sender as! UIBarButtonItem).enabled = false
+        let filterController = self.storyboard?.instantiateViewControllerWithIdentifier("FilterController")
+        (filterController as! FilterController).showInView(self.view, animated: true)
     }
     
     private let reuseIdentifier = "CardCell"

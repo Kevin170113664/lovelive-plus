@@ -79,9 +79,9 @@
                                     <action selector="changeFaceAction:" destination="awk-gQ-s4R" id="k90-DD-Fl9"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="filterIcon" id="6vK-Xz-rf9">
+                            <barButtonItem image="filterIcon" id="6vK-Xz-rf9" userLabel="Filter Item">
                                 <connections>
-                                    <segue destination="nmN-lO-iQa" kind="show" id="Fat-aq-qjG"/>
+                                    <action selector="showFilterAction:" destination="awk-gQ-s4R" id="zl8-NJ-R1v"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -97,7 +97,7 @@
         <!--Filter Controller-->
         <scene sceneID="pVS-db-wmi">
             <objects>
-                <viewController id="nmN-lO-iQa" customClass="FilterController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterController" id="nmN-lO-iQa" customClass="FilterController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6pW-SU-4QF"/>
                         <viewControllerLayoutGuide type="bottom" id="GsL-oJ-rvM"/>
@@ -105,8 +105,64 @@
                     <view key="view" contentMode="scaleToFill" id="GRs-1N-4iS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-WL-37Q">
+                                <rect key="frame" x="20" y="165" width="560" height="270"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-vl-HRN">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="WuM-0m-7BJ"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-hm-czf">
+                                        <rect key="frame" x="0.0" y="90" width="560" height="90"/>
+                                    </pickerView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-0V-cwp">
+                                        <rect key="frame" x="0.0" y="180" width="560" height="90"/>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EMI-0V-cwp" firstAttribute="height" secondItem="lsa-vl-HRN" secondAttribute="height" id="1eu-Dz-5bg"/>
+                                    <constraint firstItem="EMI-0V-cwp" firstAttribute="width" secondItem="lsa-vl-HRN" secondAttribute="width" id="5Z5-WA-4lm"/>
+                                    <constraint firstItem="9Ie-hm-czf" firstAttribute="height" secondItem="lsa-vl-HRN" secondAttribute="height" id="7J6-Mz-cl8"/>
+                                    <constraint firstAttribute="height" secondItem="9Ie-hm-czf" secondAttribute="height" multiplier="3" id="8WG-1d-Ie6"/>
+                                    <constraint firstItem="9Ie-hm-czf" firstAttribute="top" secondItem="lsa-vl-HRN" secondAttribute="bottom" id="Ex0-vg-DT2"/>
+                                    <constraint firstItem="9Ie-hm-czf" firstAttribute="width" secondItem="lsa-vl-HRN" secondAttribute="width" id="J6v-Jo-pG6"/>
+                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="top" secondItem="fcH-WL-37Q" secondAttribute="top" id="LtI-Hh-t86"/>
+                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="leading" secondItem="fcH-WL-37Q" secondAttribute="leading" id="NL2-EZ-omj"/>
+                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="width" secondItem="fcH-WL-37Q" secondAttribute="width" id="NeE-Eg-eot"/>
+                                    <constraint firstItem="9Ie-hm-czf" firstAttribute="leading" secondItem="lsa-vl-HRN" secondAttribute="leading" id="RLc-Dn-FyE"/>
+                                    <constraint firstItem="EMI-0V-cwp" firstAttribute="top" secondItem="9Ie-hm-czf" secondAttribute="bottom" id="Wm7-GF-VDa"/>
+                                    <constraint firstItem="EMI-0V-cwp" firstAttribute="leading" secondItem="9Ie-hm-czf" secondAttribute="leading" id="j17-KT-d7o"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="centerY" secondItem="GRs-1N-4iS" secondAttribute="centerY" id="II2-Aa-yqD"/>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="width" secondItem="GRs-1N-4iS" secondAttribute="width" constant="-40" id="Otp-K9-Apd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fcH-WL-37Q" secondAttribute="leading" constant="20" id="bpF-Wz-ob3"/>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="leading" secondItem="GRs-1N-4iS" secondAttribute="leadingMargin" constant="20" id="leV-h7-xR5"/>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="centerX" secondItem="GRs-1N-4iS" secondAttribute="centerX" id="mIx-le-MIT"/>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="top" secondItem="6pW-SU-4QF" secondAttribute="bottom" constant="77" id="oaq-YT-g5L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fcH-WL-37Q" secondAttribute="trailing" constant="20" id="tXk-dn-BoO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bpF-Wz-ob3"/>
+                                <exclude reference="leV-h7-xR5"/>
+                                <exclude reference="oaq-YT-g5L"/>
+                                <exclude reference="tXk-dn-BoO"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="FirstLinePicker" destination="lsa-vl-HRN" id="Inp-BY-0wE"/>
+                        <outlet property="SecondLinePicker" destination="9Ie-hm-czf" id="FhC-Yq-5Db"/>
+                        <outlet property="ThirdLinePicker" destination="EMI-0V-cwp" id="PE1-Nk-hXT"/>
+                        <outlet property="popupFilter" destination="fcH-WL-37Q" id="H1n-Px-2Mr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qH5-qg-jqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
