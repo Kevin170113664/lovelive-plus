@@ -4,14 +4,18 @@ class CardController: UICollectionViewController {
 
     @IBOutlet var cardCollectionView: UICollectionView?
     @IBOutlet weak var searchItem: UIBarButtonItem!
-    @IBOutlet weak var isIdolized: UIBarButtonItem!
+    
+    @IBAction func changeFaceAction(sender: AnyObject) {
+        cardCollectionView?.reloadData()
+        isIdolized = !isIdolized
+    }
     
     private let reuseIdentifier = "CardCell"
     private let segueIdentifier = "CardDetail"
     private var cardArray = [Card]()
     private var maxCardId = 782
     private var selectedIndexPath: NSIndexPath?
-    private var isIdolizedIcon = true
+    private var isIdolized = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +92,14 @@ extension CardController {
         cell.backgroundColor = Color.Blue50()
         
         if let card = DataController().queryCardById(String(maxCardId - indexPath.row)) {
-            if let url = card.roundCardIdolizedImage {
-                cell.imageView!.sd_setImageWithURL(NSURL(string: url))
+            if (shouldShowNonIdolizedImage(card)) {
+                if let url = card.roundCardImage {
+                    cell.imageView!.sd_setImageWithURL(NSURL(string: url))
+                }
+            } else {
+                if let url = card.roundCardIdolizedImage {
+                    cell.imageView!.sd_setImageWithURL(NSURL(string: url))
+                }
             }
         }
 
@@ -113,7 +123,7 @@ extension CardController {
         return (selectedIndexPath != nil) ? true : false
     }
 
-    func nonIdolizedImageExist(cardId: String?) {
-
-    }
+    func shouldShowNonIdolizedImage(card: Card) -> Bool {
+        return !isIdolized && card.isSpecial == 0 && card.isPromo == 0
+    }Implemented
 }
