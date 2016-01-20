@@ -7,10 +7,9 @@ class CardController: UICollectionViewController {
     @IBOutlet weak var isIdolized: UIBarButtonItem!
     
     private let reuseIdentifier = "CardCell"
+    private let segueIdentifier = "CardDetail"
     private var cardArray = [Card]()
-    private var roundIdolizedImageDictionary = NSMutableDictionary()
-    private var roundNonIdolizedImageDictionary = NSMutableDictionary()
-    private var maxCardId = 0
+    private var maxCardId = 782
     private var selectedIndexPath: NSIndexPath?
     private var isIdolizedIcon = true
 
@@ -23,7 +22,7 @@ class CardController: UICollectionViewController {
 
     func loadRoundImageArray() {
         cardArray = DataController().queryAllCards()
-        cardArray.count < 60 ? fetchCardDataFromInternet() : updateCardArray()
+        cardArray.count < maxCardId ? fetchCardDataFromInternet() : updateCardArray()
     }
 
     func fetchCardDataFromInternet() {
@@ -47,14 +46,15 @@ class CardController: UICollectionViewController {
 
     func updateCardArray() {
         cardArray = removeDuplicateCard()
-//        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-        roundIdolizedImageDictionary.removeAllObjects()
-        roundNonIdolizedImageDictionary.removeAllObjects()
-
-        for card in cardArray {
-            roundIdolizedImageDictionary.setValue(card.roundCardIdolizedImage!, forKey: card.cardId!)
-            roundNonIdolizedImageDictionary.setValue(card.roundCardImage!, forKey: card.cardId!)
-        }
+        maxCardId = cardArray.count
+        
+        CardService().getAllCardIds({
+            (cardIdArray: NSArray) -> Void in
+            self.maxCardId = cardIdArray.lastObject as! Int
+            if (self.maxCardId > self.cardArray.count) {
+                self.fetchCardAccordingToMaxCardId()
+            }
+        })
     }
 
     func removeDuplicateCard() -> [Card] {
@@ -87,16 +87,11 @@ extension CardController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
         cell.backgroundColor = Color.Blue50()
         
-        if roundIdolizedImageDictionary.count > indexPath.row {
-            if let url = roundIdolizedImageDictionary[String(roundIdolizedImageDictionary.count - indexPath.row)] as? String {
+        if let card = DataController().queryCardById(String(maxCardId - indexPath.row)) {
+            if let url = card.roundCardIdolizedImage {
                 cell.imageView!.sd_setImageWithURL(NSURL(string: url))
             }
         }
-//        if roundNonIdolizedImageDictionary.count > indexPath.row {
-//            if let url = roundNonIdolizedImageDictionary[String(roundNonIdolizedImageDictionary.count - indexPath.row)] as? String {
-//                cell.imageView!.sd_setImageWithURL(NSURL(string: url))
-//            }
-//        }
 
         return cell
     }
@@ -104,15 +99,13 @@ extension CardController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             selectedIndexPath = indexPath
-            performSegueWithIdentifier("CardDetail", sender: cell)
+            performSegueWithIdentifier(segueIdentifier, sender: cell)
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "CardDetail" && selectedIndexPath != nil) {
-            let cardDetailController = segue.destinationViewController as! CardDetailController;
-            cardDetailController.cardId = String(roundIdolizedImageDictionary.count - selectedIndexPath!.row)
-        }
+        let cardDetailController = segue.destinationViewController as! CardDetailController;
+        cardDetailController.cardId = String(maxCardId - selectedIndexPath!.row)
         selectedIndexPath = nil
     }
     
