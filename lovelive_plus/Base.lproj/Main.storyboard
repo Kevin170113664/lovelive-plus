@@ -82,6 +82,9 @@
                             <barButtonItem image="filterIcon" id="6vK-Xz-rf9" userLabel="Filter Item">
                                 <connections>
                                     <action selector="showFilterAction:" destination="awk-gQ-s4R" id="zl8-NJ-R1v"/>
+                                    <segue destination="nmN-lO-iQa" kind="popoverPresentation" identifier="Filter" popoverAnchorBarButtonItem="6vK-Xz-rf9" id="Dri-S9-IAj">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -103,23 +106,23 @@
                         <viewControllerLayoutGuide type="bottom" id="GsL-oJ-rvM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GRs-1N-4iS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="580" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-WL-37Q">
-                                <rect key="frame" x="20" y="165" width="560" height="270"/>
+                                <rect key="frame" x="20" y="40" width="540" height="270"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-vl-HRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="WuM-0m-7BJ"/>
                                         </constraints>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-hm-czf">
-                                        <rect key="frame" x="0.0" y="90" width="560" height="90"/>
+                                        <rect key="frame" x="0.0" y="90" width="540" height="90"/>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-0V-cwp">
-                                        <rect key="frame" x="0.0" y="180" width="560" height="90"/>
+                                        <rect key="frame" x="0.0" y="180" width="540" height="90"/>
                                     </pickerView>
                                 </subviews>
                                 <constraints>
@@ -157,11 +160,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="580" height="350"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="580" height="350"/>
                     <connections>
-                        <outlet property="FirstLinePicker" destination="lsa-vl-HRN" id="Inp-BY-0wE"/>
-                        <outlet property="SecondLinePicker" destination="9Ie-hm-czf" id="FhC-Yq-5Db"/>
-                        <outlet property="ThirdLinePicker" destination="EMI-0V-cwp" id="PE1-Nk-hXT"/>
+                        <outlet property="firstLinePicker" destination="lsa-vl-HRN" id="ET8-S9-KXL"/>
                         <outlet property="popupFilter" destination="fcH-WL-37Q" id="H1n-Px-2Mr"/>
+                        <outlet property="secondLinePicker" destination="9Ie-hm-czf" id="3E3-dQ-XWI"/>
+                        <outlet property="thirdLinePicker" destination="EMI-0V-cwp" id="jbg-Pg-Ryv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qH5-qg-jqG" userLabel="First Responder" sceneMemberID="firstResponder"/>

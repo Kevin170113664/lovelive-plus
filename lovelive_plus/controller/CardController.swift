@@ -1,6 +1,6 @@
 import UIKit
 
-class CardController: UICollectionViewController {
+class CardController: UICollectionViewController, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet var cardCollectionView: UICollectionView?
     
@@ -9,16 +9,10 @@ class CardController: UICollectionViewController {
         cardCollectionView?.reloadData()
     }
     
-    @IBAction func showFilterAction(sender: AnyObject) {
-        (sender as! UIBarButtonItem).enabled = false
-        let filterController = self.storyboard?.instantiateViewControllerWithIdentifier("FilterController")
-        (filterController as! FilterController).showInView(self.view, animated: true)
-    }
-    
     private let reuseIdentifier = "CardCell"
     private let segueIdentifier = "CardDetail"
     private var cardArray = [Card]()
-    private var maxCardId = 782
+    private var maxCardId = 784
     private var selectedIndexPath: NSIndexPath?
     private var isIdolized = true
 
@@ -119,13 +113,27 @@ extension CardController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        segue.identifier == "CardDetail" ? showCardDetailView(segue) : showFilterView(segue)
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "CardDetail" {
+            return (selectedIndexPath != nil) ? true : false
+        } else {
+            return true
+        }
+    }
+    
+    func showCardDetailView(segue: UIStoryboardSegue) {
         let cardDetailController = segue.destinationViewController as! CardDetailController;
         cardDetailController.cardId = String(maxCardId - selectedIndexPath!.row)
         selectedIndexPath = nil
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        return (selectedIndexPath != nil) ? true : false
+    func showFilterView(segue: UIStoryboardSegue) {
+        let filterController = segue.destinationViewController
+        filterController.modalPresentationStyle = UIModalPresentationStyle.Popover
+        filterController.popoverPresentationController!.delegate = self
     }
 
     func shouldShowNonIdolizedImage(card: Card) -> Bool {
