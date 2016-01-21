@@ -106,45 +106,59 @@
                         <viewControllerLayoutGuide type="bottom" id="GsL-oJ-rvM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GRs-1N-4iS">
-                        <rect key="frame" x="0.0" y="0.0" width="580" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="235"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-WL-37Q">
-                                <rect key="frame" x="20" y="40" width="540" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="235"/>
                                 <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-vl-HRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="90"/>
+                                    <pickerView clipsSubviews="YES" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-vl-HRN">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="WuM-0m-7BJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="WuM-0m-7BJ"/>
                                         </constraints>
                                     </pickerView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-hm-czf">
-                                        <rect key="frame" x="0.0" y="90" width="540" height="90"/>
+                                    <pickerView clipsSubviews="YES" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-hm-czf">
+                                        <rect key="frame" x="0.0" y="70" width="400" height="50"/>
                                     </pickerView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-0V-cwp">
-                                        <rect key="frame" x="0.0" y="180" width="540" height="90"/>
+                                    <pickerView clipsSubviews="YES" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-0V-cwp">
+                                        <rect key="frame" x="0.0" y="140" width="400" height="50"/>
                                     </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEQ-UV-yd8">
+                                        <rect key="frame" x="185" y="195" width="30" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="f41-um-Cbf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="OK"/>
+                                        <connections>
+                                            <action selector="okButtonClick:" destination="nmN-lO-iQa" eventType="touchUpInside" id="2eb-ZZ-r5q"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="EMI-0V-cwp" firstAttribute="height" secondItem="lsa-vl-HRN" secondAttribute="height" id="1eu-Dz-5bg"/>
                                     <constraint firstItem="EMI-0V-cwp" firstAttribute="width" secondItem="lsa-vl-HRN" secondAttribute="width" id="5Z5-WA-4lm"/>
                                     <constraint firstItem="9Ie-hm-czf" firstAttribute="height" secondItem="lsa-vl-HRN" secondAttribute="height" id="7J6-Mz-cl8"/>
-                                    <constraint firstAttribute="height" secondItem="9Ie-hm-czf" secondAttribute="height" multiplier="3" id="8WG-1d-Ie6"/>
-                                    <constraint firstItem="9Ie-hm-czf" firstAttribute="top" secondItem="lsa-vl-HRN" secondAttribute="bottom" id="Ex0-vg-DT2"/>
+                                    <constraint firstAttribute="height" secondItem="9Ie-hm-czf" secondAttribute="height" multiplier="3" constant="85" id="8WG-1d-Ie6"/>
+                                    <constraint firstItem="9Ie-hm-czf" firstAttribute="top" secondItem="lsa-vl-HRN" secondAttribute="bottom" constant="20" id="Ex0-vg-DT2"/>
                                     <constraint firstItem="9Ie-hm-czf" firstAttribute="width" secondItem="lsa-vl-HRN" secondAttribute="width" id="J6v-Jo-pG6"/>
                                     <constraint firstItem="lsa-vl-HRN" firstAttribute="top" secondItem="fcH-WL-37Q" secondAttribute="top" id="LtI-Hh-t86"/>
                                     <constraint firstItem="lsa-vl-HRN" firstAttribute="leading" secondItem="fcH-WL-37Q" secondAttribute="leading" id="NL2-EZ-omj"/>
                                     <constraint firstItem="lsa-vl-HRN" firstAttribute="width" secondItem="fcH-WL-37Q" secondAttribute="width" id="NeE-Eg-eot"/>
                                     <constraint firstItem="9Ie-hm-czf" firstAttribute="leading" secondItem="lsa-vl-HRN" secondAttribute="leading" id="RLc-Dn-FyE"/>
-                                    <constraint firstItem="EMI-0V-cwp" firstAttribute="top" secondItem="9Ie-hm-czf" secondAttribute="bottom" id="Wm7-GF-VDa"/>
+                                    <constraint firstItem="EMI-0V-cwp" firstAttribute="top" secondItem="9Ie-hm-czf" secondAttribute="bottom" constant="20" id="Wm7-GF-VDa"/>
+                                    <constraint firstItem="oEQ-UV-yd8" firstAttribute="top" secondItem="EMI-0V-cwp" secondAttribute="bottom" constant="5" id="Xh2-DB-Rin"/>
+                                    <constraint firstItem="oEQ-UV-yd8" firstAttribute="centerX" secondItem="fcH-WL-37Q" secondAttribute="centerX" id="aPj-Ia-3OB"/>
                                     <constraint firstItem="EMI-0V-cwp" firstAttribute="leading" secondItem="9Ie-hm-czf" secondAttribute="leading" id="j17-KT-d7o"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="top" secondItem="6pW-SU-4QF" secondAttribute="bottom" id="5fn-1r-zm9"/>
                             <constraint firstItem="fcH-WL-37Q" firstAttribute="centerY" secondItem="GRs-1N-4iS" secondAttribute="centerY" id="II2-Aa-yqD"/>
-                            <constraint firstItem="fcH-WL-37Q" firstAttribute="width" secondItem="GRs-1N-4iS" secondAttribute="width" constant="-40" id="Otp-K9-Apd"/>
+                            <constraint firstItem="fcH-WL-37Q" firstAttribute="width" secondItem="GRs-1N-4iS" secondAttribute="width" id="Otp-K9-Apd"/>
                             <constraint firstAttribute="leadingMargin" secondItem="fcH-WL-37Q" secondAttribute="leading" constant="20" id="bpF-Wz-ob3"/>
                             <constraint firstItem="fcH-WL-37Q" firstAttribute="leading" secondItem="GRs-1N-4iS" secondAttribute="leadingMargin" constant="20" id="leV-h7-xR5"/>
                             <constraint firstItem="fcH-WL-37Q" firstAttribute="centerX" secondItem="GRs-1N-4iS" secondAttribute="centerX" id="mIx-le-MIT"/>
@@ -153,6 +167,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="II2-Aa-yqD"/>
                                 <exclude reference="bpF-Wz-ob3"/>
                                 <exclude reference="leV-h7-xR5"/>
                                 <exclude reference="oaq-YT-g5L"/>
@@ -163,7 +178,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="580" height="350"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="580" height="350"/>
+                    <size key="freeformSize" width="400" height="235"/>
                     <connections>
                         <outlet property="firstLinePicker" destination="lsa-vl-HRN" id="ET8-S9-KXL"/>
                         <outlet property="popupFilter" destination="fcH-WL-37Q" id="H1n-Px-2Mr"/>

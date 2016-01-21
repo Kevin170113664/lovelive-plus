@@ -134,6 +134,7 @@ extension CardController {
         let filterController = segue.destinationViewController
         filterController.modalPresentationStyle = UIModalPresentationStyle.Popover
         filterController.popoverPresentationController!.delegate = self
+        filterController.preferredContentSize = CGSizeMake(400, 235)
     }
 
     func shouldShowNonIdolizedImage(card: Card) -> Bool {

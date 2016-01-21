@@ -6,6 +6,10 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet weak var firstLinePicker: UIPickerView!
     @IBOutlet weak var secondLinePicker: UIPickerView!
     @IBOutlet weak var thirdLinePicker: UIPickerView!
+
+    @IBAction func okButtonClick(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true) { () -> Void in }
+    }
     
     let rarityPickerData = [["稀有度", "UR", "SR", "R", "N"],
         ["角色", "高坂穂乃果", "南ことり", "園田海未", "小泉花陽", "西木野真姫", "星空凛", "東條希", "矢澤にこ", "絢瀬絵里"],
@@ -25,15 +29,18 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Color.Blue100()
+        self.view.backgroundColor = Color.Blue50()
 
         firstLinePicker.delegate = self
         firstLinePicker.dataSource = self
+        firstLinePicker.showsSelectionIndicator = false
 
         secondLinePicker.delegate = self
         secondLinePicker.dataSource = self
+        secondLinePicker.showsSelectionIndicator = false
 
         thirdLinePicker.delegate = self
         thirdLinePicker.dataSource = self
+        thirdLinePicker.showsSelectionIndicator = false
     }
 }
