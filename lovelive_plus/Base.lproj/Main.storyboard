@@ -106,26 +106,26 @@
                         <viewControllerLayoutGuide type="bottom" id="GsL-oJ-rvM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GRs-1N-4iS">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="235"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="235"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-WL-37Q">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="235"/>
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="235"/>
                                 <subviews>
                                     <pickerView clipsSubviews="YES" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-vl-HRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                                        <rect key="frame" x="5" y="0.0" width="420" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WuM-0m-7BJ"/>
                                         </constraints>
                                     </pickerView>
                                     <pickerView clipsSubviews="YES" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-hm-czf">
-                                        <rect key="frame" x="0.0" y="70" width="400" height="50"/>
+                                        <rect key="frame" x="5" y="70" width="420" height="50"/>
                                     </pickerView>
                                     <pickerView clipsSubviews="YES" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-0V-cwp">
-                                        <rect key="frame" x="0.0" y="140" width="400" height="50"/>
+                                        <rect key="frame" x="5" y="140" width="420" height="50"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEQ-UV-yd8">
-                                        <rect key="frame" x="185" y="195" width="30" height="36"/>
+                                        <rect key="frame" x="200" y="195" width="30" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="f41-um-Cbf"/>
                                         </constraints>
@@ -144,8 +144,8 @@
                                     <constraint firstItem="9Ie-hm-czf" firstAttribute="top" secondItem="lsa-vl-HRN" secondAttribute="bottom" constant="20" id="Ex0-vg-DT2"/>
                                     <constraint firstItem="9Ie-hm-czf" firstAttribute="width" secondItem="lsa-vl-HRN" secondAttribute="width" id="J6v-Jo-pG6"/>
                                     <constraint firstItem="lsa-vl-HRN" firstAttribute="top" secondItem="fcH-WL-37Q" secondAttribute="top" id="LtI-Hh-t86"/>
-                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="leading" secondItem="fcH-WL-37Q" secondAttribute="leading" id="NL2-EZ-omj"/>
-                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="width" secondItem="fcH-WL-37Q" secondAttribute="width" id="NeE-Eg-eot"/>
+                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="leading" secondItem="fcH-WL-37Q" secondAttribute="leading" constant="5" id="NL2-EZ-omj"/>
+                                    <constraint firstItem="lsa-vl-HRN" firstAttribute="width" secondItem="fcH-WL-37Q" secondAttribute="width" constant="-10" id="NeE-Eg-eot"/>
                                     <constraint firstItem="9Ie-hm-czf" firstAttribute="leading" secondItem="lsa-vl-HRN" secondAttribute="leading" id="RLc-Dn-FyE"/>
                                     <constraint firstItem="EMI-0V-cwp" firstAttribute="top" secondItem="9Ie-hm-czf" secondAttribute="bottom" constant="20" id="Wm7-GF-VDa"/>
                                     <constraint firstItem="oEQ-UV-yd8" firstAttribute="top" secondItem="EMI-0V-cwp" secondAttribute="bottom" constant="5" id="Xh2-DB-Rin"/>
@@ -178,7 +178,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="580" height="350"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="235"/>
+                    <size key="freeformSize" width="430" height="235"/>
                     <connections>
                         <outlet property="firstLinePicker" destination="lsa-vl-HRN" id="ET8-S9-KXL"/>
                         <outlet property="popupFilter" destination="fcH-WL-37Q" id="H1n-Px-2Mr"/>

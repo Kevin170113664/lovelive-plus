@@ -3,12 +3,12 @@ import UIKit
 class CardController: UICollectionViewController, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet var cardCollectionView: UICollectionView?
-    
+
     @IBAction func changeFaceAction(sender: AnyObject) {
         isIdolized = !isIdolized
         cardCollectionView?.reloadData()
     }
-    
+
     private let reuseIdentifier = "CardCell"
     private let segueIdentifier = "CardDetail"
     private var cardArray = [Card]()
@@ -50,7 +50,7 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
     func updateCardArray() {
         cardArray = removeDuplicateCard()
         maxCardId = cardArray.count
-        
+
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
             self.maxCardId = cardIdArray.lastObject as! Int
@@ -89,7 +89,7 @@ extension CardController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
         cell.backgroundColor = Color.Blue50()
-        
+
         if let card = DataController().queryCardById(String(maxCardId - indexPath.row)) {
             if (shouldShowNonIdolizedImage(card)) {
                 if let url = card.roundCardImage {
@@ -104,18 +104,18 @@ extension CardController {
 
         return cell
     }
-    
+
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             selectedIndexPath = indexPath
             performSegueWithIdentifier(segueIdentifier, sender: cell)
         }
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         segue.identifier == "CardDetail" ? showCardDetailView(segue) : showFilterView(segue)
     }
-    
+
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "CardDetail" {
             return (selectedIndexPath != nil) ? true : false
@@ -123,18 +123,18 @@ extension CardController {
             return true
         }
     }
-    
+
     func showCardDetailView(segue: UIStoryboardSegue) {
         let cardDetailController = segue.destinationViewController as! CardDetailController;
         cardDetailController.cardId = String(maxCardId - selectedIndexPath!.row)
         selectedIndexPath = nil
     }
-    
+
     func showFilterView(segue: UIStoryboardSegue) {
         let filterController = segue.destinationViewController
         filterController.modalPresentationStyle = UIModalPresentationStyle.Popover
         filterController.popoverPresentationController!.delegate = self
-        filterController.preferredContentSize = CGSizeMake(400, 235)
+        filterController.preferredContentSize = CGSizeMake(430, 235)
     }
 
     func shouldShowNonIdolizedImage(card: Card) -> Bool {
