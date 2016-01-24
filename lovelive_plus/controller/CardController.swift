@@ -120,6 +120,15 @@ extension CardController {
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let card = DataController().queryCardById(cardIdArray[indexPath.row])
+        
+        if (isPromoCard(card!)) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("PromoCardDetail") as! CardDetailController
+            vc.cardId = card?.cardId
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             selectedIndexPath = indexPath
             performSegueWithIdentifier(segueIdentifier, sender: cell)
@@ -153,5 +162,9 @@ extension CardController {
 
     func shouldShowNonIdolizedImage(card: Card) -> Bool {
         return !isIdolized && card.isSpecial == 0 && card.isPromo == 0
+    }
+    
+    func isPromoCard(card: Card) -> Bool {
+        return card.isSpecial == 1 || card.isPromo == 1
     }
 }
