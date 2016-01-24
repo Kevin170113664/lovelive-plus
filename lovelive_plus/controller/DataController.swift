@@ -90,6 +90,35 @@ class DataController: NSObject {
             }
         }
     }
+    
+    func updateLatest20Cards(maxCardId: Int) {
+        if maxCardId > 20 {
+            for var cardId = maxCardId; cardId >= maxCardId - 19; cardId-- {
+                self.cardService.getCardById(String(cardId), callback: {
+                    (card: NSDictionary) -> Void in
+                    self.updateCard(card)
+                })
+            }
+        }
+    }
+    
+    func updateCard(card: NSDictionary) {
+        deleteCardById(String(card["id"] as! Int))
+        cacheCard(card)
+    }
+    
+    func deleteCardById(cardId: String) {
+        let cardFetch = NSFetchRequest(entityName: "Card")
+        cardFetch.predicate = NSPredicate(format: "cardId = %@", cardId)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: cardFetch)
+        
+        do {
+            try managedObjectContext.executeRequest(deleteRequest)
+        } catch let error as NSError {
+            print("Failed to delete card by id: \(cardId)")
+            fatalError("Failed to delete card: \(error)")
+        }
+    }
 
     func cacheCard(cardObject: AnyObject) -> Void {
         let card = newCard(cardObject)

@@ -12,7 +12,8 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
     private let reuseIdentifier = "CardCell"
     private let segueIdentifier = "CardDetail"
     private var cardArray = [Card]()
-    private var maxCardId = 784
+    private var cardIdArray = [String]()
+    private var maxCardId = 10
     private var selectedIndexPath: NSIndexPath?
     private var isIdolized = true
 
@@ -26,6 +27,7 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
     func loadRoundImageArray() {
         cardArray = DataController().queryAllCards()
         cardArray.count < maxCardId ? fetchCardDataFromInternet() : updateCardArray()
+        updateLatestCards()
     }
 
     func fetchCardDataFromInternet() {
@@ -33,6 +35,13 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
             (cardIdArray: NSArray) -> Void in
             self.maxCardId = cardIdArray.lastObject as! Int
             self.fetchCardAccordingToMaxCardId()
+        })
+    }
+    
+    func updateLatestCards() {
+        CardService().getAllCardIds({
+            (cardIdArray: NSArray) -> Void in
+            DataController().updateLatest20Cards(cardIdArray.lastObject as! Int)
         })
     }
 
@@ -49,7 +58,12 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
 
     func updateCardArray() {
         cardArray = removeDuplicateCard()
+        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
         maxCardId = cardArray.count
+        
+        for card in cardArray {
+            cardIdArray.append(card.cardId!)
+        }
 
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
@@ -90,7 +104,7 @@ extension CardController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
         cell.backgroundColor = Color.Blue50()
 
-        if let card = DataController().queryCardById(String(maxCardId - indexPath.row)) {
+        if let card = DataController().queryCardById(cardIdArray[indexPath.row]) {
             if (shouldShowNonIdolizedImage(card)) {
                 if let url = card.roundCardImage {
                     cell.imageView!.sd_setImageWithURL(NSURL(string: url))
@@ -126,7 +140,7 @@ extension CardController {
 
     func showCardDetailView(segue: UIStoryboardSegue) {
         let cardDetailController = segue.destinationViewController as! CardDetailController;
-        cardDetailController.cardId = String(maxCardId - selectedIndexPath!.row)
+        cardDetailController.cardId = cardIdArray[(selectedIndexPath?.row)!]
         selectedIndexPath = nil
     }
 
