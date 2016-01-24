@@ -11,6 +11,7 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
 
     private let reuseIdentifier = "CardCell"
     private let segueIdentifier = "CardDetail"
+    private let promoSegueIdentifier = "PromoCardDetail"
     private var cardArray = [Card]()
     private var cardIdArray = [String]()
     private var maxCardId = 10
@@ -121,26 +122,23 @@ extension CardController {
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let card = DataController().queryCardById(cardIdArray[indexPath.row])
-        
-        if (isPromoCard(card!)) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("PromoCardDetail") as! CardDetailController
-            vc.cardId = card?.cardId
-            self.presentViewController(vc, animated: true, completion: nil)
-        }
-        
+
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             selectedIndexPath = indexPath
-            performSegueWithIdentifier(segueIdentifier, sender: cell)
+            if (isPromoCard(card!)) {
+                performSegueWithIdentifier(promoSegueIdentifier, sender: cell)
+            } else {
+                performSegueWithIdentifier(segueIdentifier, sender: cell)
+            }
         }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        segue.identifier == "CardDetail" ? showCardDetailView(segue) : showFilterView(segue)
+        isCardDetailSegue() ? showCardDetailView(segue) : showFilterView(segue)
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "CardDetail" {
+        if isCardDetailSegue() {
             return (selectedIndexPath != nil) ? true : false
         } else {
             return true
@@ -166,5 +164,9 @@ extension CardController {
     
     func isPromoCard(card: Card) -> Bool {
         return card.isSpecial == 1 || card.isPromo == 1
+    }
+
+    func isCardDetailSegue() {
+        identifier == "CardDetail" || identifier == "PromoCardDetail"
     }
 }
