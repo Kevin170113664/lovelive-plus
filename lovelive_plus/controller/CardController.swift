@@ -134,11 +134,11 @@ extension CardController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        isCardDetailSegue() ? showCardDetailView(segue) : showFilterView(segue)
+        isCardDetailSegue(segue.identifier!) ? showCardDetailView(segue) : showFilterView(segue)
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if isCardDetailSegue() {
+        if isCardDetailSegue(identifier) {
             return (selectedIndexPath != nil) ? true : false
         } else {
             return true
@@ -166,7 +166,7 @@ extension CardController {
         return card.isSpecial == 1 || card.isPromo == 1
     }
 
-    func isCardDetailSegue() {
-        identifier == "CardDetail" || identifier == "PromoCardDetail"
+    func isCardDetailSegue(identifier: String) -> Bool {
+        return identifier == "CardDetail" || identifier == "PromoCardDetail"
     }
 }
