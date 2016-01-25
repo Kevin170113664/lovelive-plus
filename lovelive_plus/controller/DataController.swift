@@ -64,64 +64,6 @@ class DataController: NSObject {
         }
     }
     
-    func getPredicateByFilter(filterDictionary: NSMutableDictionary) -> NSPredicate {
-        var predicateArray = [NSPredicate]()
-        
-        if filterDictionary["稀有度"] as! String != "稀有度" {
-            let rarityPredicate = NSPredicate(format: "rarity = %@", filterDictionary["稀有度"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["角色"] as! String != "角色" {
-            let rarityPredicate = NSPredicate(format: "japaneseName = %@", filterDictionary["角色"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["属性"] as! String != "属性" {
-            let rarityPredicate = NSPredicate(format: "attribute = %@", filterDictionary["属性"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["年级"] as! String != "年级" {
-            let gradeDictionary = NSMutableDictionary()
-            gradeDictionary.setValue(["小泉 花陽", "西木野 真姫", "星空 凛"], forKey: "一年级")
-            gradeDictionary.setValue(["高坂 穂乃果", "南 ことり", "園田 海未"], forKey: "二年级")
-            gradeDictionary.setValue(["東條 希", "矢澤 にこ", "絢瀬 絵里"], forKey: "三年级")
-            
-            let nameArray = gradeDictionary[filterDictionary["年级"] as! String] as! [String]
-            
-            let rarityPredicate = NSPredicate(format: "japaneseName = %@ OR japaneseName = %@ OR japaneseName = %@", nameArray[0], nameArray[1], nameArray[2])
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["小组"] as! String != "小组" {
-            let rarityPredicate = NSPredicate(format: "rarity = %@", filterDictionary["小组"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["技能类型"] as! String != "技能类型" {
-            let rarityPredicate = NSPredicate(format: "rarity = %@", filterDictionary["技能类型"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["活动卡"] as! String != "活动卡" {
-            let rarityPredicate = NSPredicate(format: "eventModel != Null")
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["特典卡"] as! String != "特典卡" {
-            let rarityPredicate = NSPredicate(format: "isPromo = %@", filterDictionary["特典卡"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        if filterDictionary["卡牌主题"] as! String != "卡牌主题" {
-            let rarityPredicate = NSPredicate(format: "japaneseCollection = %@", filterDictionary["卡牌主题"] as! String)
-            predicateArray.append(rarityPredicate)
-        }
-        
-        return NSCompoundPredicate(andPredicateWithSubpredicates: predicateArray)
-    }
-
     func queryCardById(cardId: String) -> Card? {
         let cardFetch = NSFetchRequest(entityName: "Card")
         cardFetch.predicate = NSPredicate(format: "cardId = %@", cardId)
@@ -137,7 +79,61 @@ class DataController: NSObject {
             fatalError("Failed to fetch cards: \(error)")
         }
     }
-
+    
+    func getPredicateByFilter(filterDictionary: NSMutableDictionary) -> NSPredicate {
+        var predicateArray = [NSPredicate]()
+        
+        if filterDictionary["稀有度"] as! String != "稀有度" {
+            let predicate = NSPredicate(format: "rarity = %@", filterDictionary["稀有度"] as! String)
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["角色"] as! String != "角色" {
+            let predicate = NSPredicate(format: "japaneseName = %@", filterDictionary["角色"] as! String)
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["属性"] as! String != "属性" {
+            let predicate = NSPredicate(format: "attribute = %@", filterDictionary["属性"] as! String)
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["年级"] as! String != "年级" {
+            let nameArray = getGradeNameArray(filterDictionary["年级"] as! String)
+            let predicate = NSPredicate(format: "japaneseName = %@ OR japaneseName = %@ OR japaneseName = %@", nameArray[0], nameArray[1], nameArray[2])
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["小组"] as! String != "小组" {
+            let nameArray = getSubUnitNameArray(filterDictionary["小组"] as! String)
+            let predicate = NSPredicate(format: "japaneseName = %@ OR japaneseName = %@ OR japaneseName = %@", nameArray[0], nameArray[1], nameArray[2])
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["技能类型"] as! String != "技能类型" {
+            let skillTypeArray = getSkillTypeArray(filterDictionary["技能类型"] as! String)
+            let predicate = NSPredicate(format: "skill IN %@", skillTypeArray)
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["活动卡"] as! String != "活动卡" {
+            let predicate = NSPredicate(format: getEventCardFilterFormat(filterDictionary["活动卡"] as! String))
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["特典卡"] as! String != "特典卡" {
+            let predicate = NSPredicate(format: getPromoCardFilterFormat(filterDictionary["特典卡"] as! String))
+            predicateArray.append(predicate)
+        }
+        
+        if filterDictionary["卡牌主题"] as! String != "卡牌主题" {
+            let predicate = NSPredicate(format: "japaneseCollection = %@", filterDictionary["卡牌主题"] as! String)
+            predicateArray.append(predicate)
+        }
+        
+        return NSCompoundPredicate(andPredicateWithSubpredicates: predicateArray)
+    }
+    
     func cacheAllCards(callback: () -> Void) -> Void {
         cardService.getAllCardIds({
             (cardIdArray: NSArray) -> Void in
@@ -249,5 +245,40 @@ class DataController: NSObject {
         } else {
             return nil
         }
+    }
+    
+    func getGradeNameArray(grade: String) -> [String] {
+        let gradeDictionary = NSMutableDictionary()
+        gradeDictionary.setValue(["小泉 花陽", "西木野 真姫", "星空 凛"], forKey: "一年级")
+        gradeDictionary.setValue(["高坂 穂乃果", "南 ことり", "園田 海未"], forKey: "二年级")
+        gradeDictionary.setValue(["東條 希", "矢澤 にこ", "絢瀬 絵里"], forKey: "三年级")
+        
+        return gradeDictionary[grade] as! [String]
+    }
+    
+    func getSubUnitNameArray(subUnit: String) -> [String] {
+        let subUnitDictionary = NSMutableDictionary()
+        subUnitDictionary.setValue(["小泉 花陽", "高坂 穂乃果", "南 ことり"], forKey: "Printemps")
+        subUnitDictionary.setValue(["矢澤 にこ", "絢瀬 絵里", "西木野 真姫"], forKey: "BiBi")
+        subUnitDictionary.setValue(["東條 希", "星空 凛", "園田 海未"], forKey: "Lily White")
+        
+        return subUnitDictionary[subUnit] as! [String]
+    }
+    
+    func getEventCardFilterFormat(isEventCard: String) -> String {
+        return isEventCard == "是" ? "eventModel != Null" : "eventModel = Null"
+    }
+    
+    func getPromoCardFilterFormat(isPromoCard: String) -> String {
+        return isPromoCard == "是" ? "isPromo = 1" : "isPromo = 0"
+    }
+    
+    func getSkillTypeArray(skillType: String) -> [String] {
+        let skillTypeDictionary = NSMutableDictionary()
+        skillTypeDictionary.setValue(["Score Up", "Total Charm", "Timer Charm", "Rhythmical Charm", "Perfect Charm"], forKey: "加分")
+        skillTypeDictionary.setValue(["Perfect Lock", "Total Trick", "Timer Trick"], forKey: "判定")
+        skillTypeDictionary.setValue(["Healer", "Total Yell", "Timer Yell", "Rhythmical Yell", "Perfect Yell"], forKey: "回复")
+        
+        return skillTypeDictionary[skillType] as! [String]
     }
 }
