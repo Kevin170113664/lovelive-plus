@@ -26,7 +26,7 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     weak var delegate: FilterPopoverDelegate?
 
     let firstLinePickerData = [["稀有度", "UR", "SR", "R", "N"],
-                               ["角色", "高坂穂乃果", "南ことり", "園田海未", "小泉花陽", "西木野真姫", "星空凛", "東條希", "矢澤にこ", "絢瀬絵里"],
+                               ["角色", "高坂 穂乃果", "南 ことり", "園田 海未", "小泉 花陽", "西木野 真姫", "星空 凛", "東條 希", "矢澤 にこ", "絢瀬 絵里"],
                                ["属性", "Smile", "Pure", "Cool"]]
     let secondLinePickerData = [["年级", "一年级", "二年级", "三年级"],
                                 ["小组", "Printemps", "BiBi", "Lily White"],

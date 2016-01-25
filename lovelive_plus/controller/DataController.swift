@@ -51,7 +51,7 @@ class DataController: NSObject {
     
     func queryCardsByFilterDictionary(filterDictionary: NSMutableDictionary) -> [Card] {
         let cardFetch = NSFetchRequest(entityName: "Card")
-        cardFetch.predicate = NSPredicate(format: "rarity = %@", filterDictionary["稀有度"] as! String)
+        cardFetch.predicate = getPredicateByFilter(filterDictionary)
         
         do {
             if let cardList = try self.managedObjectContext.executeFetchRequest(cardFetch) as? [Card] {
@@ -62,6 +62,64 @@ class DataController: NSObject {
         } catch {
             fatalError("Failed to fetch cards: \(error)")
         }
+    }
+    
+    func getPredicateByFilter(filterDictionary: NSMutableDictionary) -> NSPredicate {
+        var predicateArray = [NSPredicate]()
+        
+        if filterDictionary["稀有度"] as! String != "稀有度" {
+            let rarityPredicate = NSPredicate(format: "rarity = %@", filterDictionary["稀有度"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["角色"] as! String != "角色" {
+            let rarityPredicate = NSPredicate(format: "japaneseName = %@", filterDictionary["角色"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["属性"] as! String != "属性" {
+            let rarityPredicate = NSPredicate(format: "attribute = %@", filterDictionary["属性"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["年级"] as! String != "年级" {
+            let gradeDictionary = NSMutableDictionary()
+            gradeDictionary.setValue(["小泉 花陽", "西木野 真姫", "星空 凛"], forKey: "一年级")
+            gradeDictionary.setValue(["高坂 穂乃果", "南 ことり", "園田 海未"], forKey: "二年级")
+            gradeDictionary.setValue(["東條 希", "矢澤 にこ", "絢瀬 絵里"], forKey: "三年级")
+            
+            let nameArray = gradeDictionary[filterDictionary["年级"] as! String] as! [String]
+            
+            let rarityPredicate = NSPredicate(format: "japaneseName = %@ OR japaneseName = %@ OR japaneseName = %@", nameArray[0], nameArray[1], nameArray[2])
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["小组"] as! String != "小组" {
+            let rarityPredicate = NSPredicate(format: "rarity = %@", filterDictionary["小组"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["技能类型"] as! String != "技能类型" {
+            let rarityPredicate = NSPredicate(format: "rarity = %@", filterDictionary["技能类型"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["活动卡"] as! String != "活动卡" {
+            let rarityPredicate = NSPredicate(format: "eventModel != Null")
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["特典卡"] as! String != "特典卡" {
+            let rarityPredicate = NSPredicate(format: "isPromo = %@", filterDictionary["特典卡"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        if filterDictionary["卡牌主题"] as! String != "卡牌主题" {
+            let rarityPredicate = NSPredicate(format: "japaneseCollection = %@", filterDictionary["卡牌主题"] as! String)
+            predicateArray.append(rarityPredicate)
+        }
+        
+        return NSCompoundPredicate(andPredicateWithSubpredicates: predicateArray)
     }
 
     func queryCardById(cardId: String) -> Card? {
