@@ -8,22 +8,22 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet weak var thirdLinePicker: UIPickerView!
 
     @IBAction func okButtonClick(sender: AnyObject) {
-        var pickerArray = [UIPickerView:Array<Array<String>>]()
-        pickerArray[firstLinePicker] = firstLinePickerData
-        pickerArray[secondLinePicker] = secondLinePickerData
-        pickerArray[thirdLinePicker] = thirdLinePickerData
-        
         self.dismissViewControllerAnimated(true) {
             () -> Void in
             let filterDictionary = NSMutableDictionary()
+            
             for var component = 0; component < 3; component++ {
-                for (_, picker) in pickerArray.enumerate() {
+                for (_, picker) in self.getPickerArray().enumerate() {
                     let selectedRow = picker.0.selectedRowInComponent(component)
                     filterDictionary.setValue(picker.1[component][selectedRow], forKey: picker.1[component][0])
                 }
             }
+            
+            self.delegate?.applyFilterDictionary(filterDictionary)
         }
     }
+    
+    weak var delegate: FilterPopoverDelegate?
 
     let firstLinePickerData = [["稀有度", "UR", "SR", "R", "N"],
                                ["角色", "高坂穂乃果", "南ことり", "園田海未", "小泉花陽", "西木野真姫", "星空凛", "東條希", "矢澤にこ", "絢瀬絵里"],
@@ -36,6 +36,15 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
                                 "サイバー編", "職業編Part2", "ホワイトデー編", "バレンタイン編", "七福神編", "雪山編", "星座編",
                                 "ハロウィン編", "カフェメイド編", "チャイナドレス編", "7月編", "6月編", "5月編", "4月編",
                                 "3月編", "2月編", "1月編", "12月編", "11月編", "10月編", "9月編", "8月編", "動物編", "職業編", "初期", ]]
+    
+    func getPickerArray() -> [UIPickerView:Array<Array<String>>] {
+        var pickerArray = [UIPickerView:Array<Array<String>>]()
+        pickerArray[firstLinePicker] = firstLinePickerData
+        pickerArray[secondLinePicker] = secondLinePickerData
+        pickerArray[thirdLinePicker] = thirdLinePickerData
+        
+        return pickerArray
+    }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 3

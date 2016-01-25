@@ -48,6 +48,21 @@ class DataController: NSObject {
             fatalError("Failed to fetch cards: \(error)")
         }
     }
+    
+    func queryCardsByFilterDictionary(filterDictionary: NSMutableDictionary) -> [Card] {
+        let cardFetch = NSFetchRequest(entityName: "Card")
+        cardFetch.predicate = NSPredicate(format: "rarity = %@", filterDictionary["稀有度"] as! String)
+        
+        do {
+            if let cardList = try self.managedObjectContext.executeFetchRequest(cardFetch) as? [Card] {
+                return cardList
+            } else {
+                return []
+            }
+        } catch {
+            fatalError("Failed to fetch cards: \(error)")
+        }
+    }
 
     func queryCardById(cardId: String) -> Card? {
         let cardFetch = NSFetchRequest(entityName: "Card")

@@ -1,6 +1,10 @@
 import UIKit
 
-class CardController: UICollectionViewController, UIPopoverPresentationControllerDelegate {
+@objc protocol FilterPopoverDelegate: UIPopoverPresentationControllerDelegate {
+    func applyFilterDictionary(filterDictionary: NSMutableDictionary)
+}
+
+class CardController: UICollectionViewController, FilterPopoverDelegate {
 
     @IBOutlet var cardCollectionView: UICollectionView?
 
@@ -89,6 +93,19 @@ class CardController: UICollectionViewController, UIPopoverPresentationControlle
 
         return cleanCardArray
     }
+    
+    func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
+        cardArray = DataController().queryCardsByFilterDictionary(filterDictionary)
+        cardArray = removeDuplicateCard()
+        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
+        
+        cardIdArray.removeAll()
+        for card in cardArray {
+            cardIdArray.append(card.cardId!)
+        }
+        
+        cardCollectionView?.reloadData()
+    }
 }
 
 extension CardController {
@@ -152,10 +169,11 @@ extension CardController {
     }
 
     func showFilterView(segue: UIStoryboardSegue) {
-        let filterController = segue.destinationViewController
+        let filterController = segue.destinationViewController as! FilterController
         filterController.modalPresentationStyle = UIModalPresentationStyle.Popover
         filterController.popoverPresentationController!.delegate = self
         filterController.preferredContentSize = CGSizeMake(430, 235)
+        filterController.delegate = self
     }
 
     func shouldShowNonIdolizedImage(card: Card) -> Bool {
