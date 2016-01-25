@@ -8,8 +8,21 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet weak var thirdLinePicker: UIPickerView!
 
     @IBAction func okButtonClick(sender: AnyObject) {
+        var pickerArray = [UIPickerView:Array<Array<String>>]()
+        pickerArray[firstLinePicker] = firstLinePickerData
+        pickerArray[secondLinePicker] = secondLinePickerData
+        pickerArray[thirdLinePicker] = thirdLinePickerData
+        
         self.dismissViewControllerAnimated(true) {
-            () -> Void in }
+            () -> Void in
+            let filterDictionary = NSMutableDictionary()
+            for var component = 0; component < 3; component++ {
+                for (_, picker) in pickerArray.enumerate() {
+                    let selectedRow = picker.0.selectedRowInComponent(component)
+                    filterDictionary.setValue(picker.1[component][selectedRow], forKey: picker.1[component][0])
+                }
+            }
+        }
     }
 
     let firstLinePickerData = [["稀有度", "UR", "SR", "R", "N"],
