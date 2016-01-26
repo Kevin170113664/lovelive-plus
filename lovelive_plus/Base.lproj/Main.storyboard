@@ -929,6 +929,7 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="bEk-OG-RgR"/>
                                                 <exclude reference="F1a-En-XYd"/>
                                                 <exclude reference="Ttf-xw-eAw"/>
                                                 <exclude reference="50D-uA-0Tb"/>

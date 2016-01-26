@@ -78,7 +78,11 @@ class CardDetailController: UIViewController {
         setLabelText(centerSkillName, value: isStringValid(card!.japaneseCenterSkill) ? card!.japaneseCenterSkill : card!.centerSkill)
         setLabelText(centerSkillDetail, value: card!.japaneseCenterSkillDetails)
         setLabelText(skillName, value: card!.japaneseSkill)
-        setLabelText(skillDetail, value: isStringValid(card!.japaneseSkillDetails) ? card!.japaneseSkillDetails : card!.skillDetails)
+        if card!.isPromo == 1 {
+            setLabelText(skillDetail, value: card!.skillDetails)
+        } else {
+            setLabelText(skillDetail, value: isStringValid(card!.japaneseSkillDetails) ? card!.japaneseSkillDetails : card!.skillDetails)
+        }
     }
 
     func setLabelText(label: UILabel, value: String?) {
