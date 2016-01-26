@@ -62,13 +62,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     }
 
     func updateCardArray() {
-        cardArray = removeDuplicateCard()
-        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-        maxCardId = cardArray.count
-        
-        for card in cardArray {
-            cardIdArray.append(card.cardId!)
-        }
+        generateCardIdArray()
 
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
@@ -79,6 +73,17 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         })
     }
 
+    func generateCardIdArray() {
+        cardArray = removeDuplicateCard()
+        cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
+        maxCardId = cardArray.count
+        
+        cardIdArray.removeAll()
+        for card in cardArray {
+            cardIdArray.append(card.cardId!)
+        }
+    }
+    
     func removeDuplicateCard() -> [Card] {
         let cardDictionary = NSMutableDictionary()
         var cleanCardArray = [Card]()
