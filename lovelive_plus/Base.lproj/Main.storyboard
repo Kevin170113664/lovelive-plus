@@ -26,14 +26,13 @@
             </objects>
             <point key="canvasLocation" x="-1180" y="-738"/>
         </scene>
-        <!--Card-->
+        <!--Card Controller-->
         <scene sceneID="V0l-hD-PAJ">
             <objects>
                 <collectionViewController id="awk-gQ-s4R" customClass="CardController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kPr-SG-g6i">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ew3-SO-mlc">
                             <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -97,7 +96,8 @@
                             <outlet property="delegate" destination="awk-gQ-s4R" id="8ad-bg-Pgd"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Card" id="psb-aV-Nue">
+                    <navigationItem key="navigationItem" id="psb-aV-Nue">
+                        <nil key="title"/>
                         <rightBarButtonItems>
                             <barButtonItem image="faceIcon" id="nFF-pq-Vtd" userLabel="Change Face Item">
                                 <connections>

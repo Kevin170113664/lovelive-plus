@@ -36,6 +36,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     }
 
     func fetchCardDataFromInternet() {
+        showNotFinishAlert()
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
             self.maxCardId = cardIdArray.lastObject as! Int
@@ -110,6 +111,12 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         }
         
         cardCollectionView?.reloadData()
+    }
+    
+    func showNotFinishAlert() {
+        let alert = UIAlertController(title: "", message: "第一次下载数据需要30秒左右，请耐心等待噢~", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "嗯，好的", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 
