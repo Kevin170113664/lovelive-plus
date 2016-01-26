@@ -122,6 +122,25 @@
             </objects>
             <point key="canvasLocation" x="-417" y="60"/>
         </scene>
+        <!--Sm Controller-->
+        <scene sceneID="eXj-Y5-pHU">
+            <objects>
+                <viewController id="IeE-Xc-G2f" userLabel="Sm Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="etR-MD-iXL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ksO-hO-GR3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V1G-C5-Zhj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SM Calculator" id="so1-iH-i2o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HnP-lZ-yRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="-1497"/>
+        </scene>
         <!--Filter Controller-->
         <scene sceneID="pVS-db-wmi">
             <objects>
@@ -214,6 +233,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qH5-qg-jqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211" y="-274.5"/>
+        </scene>
+        <!--Normal Controller-->
+        <scene sceneID="lHQ-Ih-7DL">
+            <objects>
+                <viewController id="NEf-Uf-b7G" userLabel="Normal Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s1H-N5-tPI"/>
+                        <viewControllerLayoutGuide type="bottom" id="mHI-8I-FyH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ABX-WW-SAW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Normal Calculator" id="tPQ-Ap-B9T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aP-3F-6Ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="-789"/>
         </scene>
         <!--Card Detail-->
         <scene sceneID="GMu-Rq-8Jk">
@@ -486,6 +524,25 @@
             </objects>
             <point key="canvasLocation" x="296" y="217"/>
         </scene>
+        <!--Mf Controller-->
+        <scene sceneID="gzT-yz-fbY">
+            <objects>
+                <viewController id="Fv0-lZ-7tP" userLabel="Mf Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dPR-jb-Lu4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tdc-gK-Wms"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s2u-Xo-CAi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MF Calculator" id="0eT-r5-0XJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QId-pL-qcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="-2207"/>
+        </scene>
         <!--Lovelive+-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -558,18 +615,21 @@
                                         <rect key="frame" x="240" y="184" width="360" height="203"/>
                                         <connections>
                                             <action selector="clickMfNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbA-Ex-47j"/>
+                                            <segue destination="Fv0-lZ-7tP" kind="show" id="M4p-Dy-4vQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7V-po-SDT" userLabel="Normal Navigator">
                                         <rect key="frame" x="240" y="493" width="360" height="236"/>
                                         <connections>
                                             <action selector="clickNormalNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zNW-LT-JNZ"/>
+                                            <segue destination="NEf-Uf-b7G" kind="show" id="AMs-iC-2ug"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-gR-ZMw" userLabel="Sm Navigator">
                                         <rect key="frame" x="240" y="317" width="360" height="176"/>
                                         <connections>
                                             <action selector="clickSmNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jrc-zQ-zRn"/>
+                                            <segue destination="IeE-Xc-G2f" kind="show" id="Eyw-3q-wsP"/>
                                         </connections>
                                     </button>
                                 </subviews>

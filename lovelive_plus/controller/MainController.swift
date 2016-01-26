@@ -10,13 +10,10 @@ class MainController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func clickMfNavigator(sender: AnyObject) {
-        showNotFinishAlert()
     }
     @IBAction func clickNormalNavigator(sender: AnyObject) {
-        showNotFinishAlert()
     }
     @IBAction func clickSmNavigator(sender: AnyObject) {
-        showNotFinishAlert()
     }
 
     override func viewDidLoad() {
