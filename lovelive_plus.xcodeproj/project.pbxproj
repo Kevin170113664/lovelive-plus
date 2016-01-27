@@ -29,6 +29,7 @@
 		C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3304BED1C4F308A00F96999 /* FilterController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
 		C3EEC2F61C561A6C00815404 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F51C561A6C00815404 /* ModelMapper.swift */; };
+		C3EEC2F81C58A87500815404 /* NormalCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */; };
 		C3F0D4F41C22C9C2008EF6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3EEC2F51C561A6C00815404 /* ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
+		C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalCalculatorController.swift; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F0D4F11C22C9C2008EF6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */,
 				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
 				C3304BED1C4F308A00F96999 /* FilterController.swift */,
+				C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				32ABF9307034F5583660F2ED /* Event.swift in Sources */,
 				32ABFB71436DB98AD907474E /* CardService.swift in Sources */,
 				32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */,
+				C3EEC2F81C58A87500815404 /* NormalCalculatorController.swift in Sources */,
 				C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */,
 				32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */,
 			);
