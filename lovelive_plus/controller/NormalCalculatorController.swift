@@ -29,5 +29,14 @@ class NormalCalculatorController: UIViewController {
         scrollView.backgroundColor = Color.Blue50()
         advancedOptionsView.hidden = true
         eventTimeView.hidden = true
+        setShadowForView(calculatorCardView)
+    }
+    
+    func setShadowForView(view: UIView) {
+        view.backgroundColor = Color.Blue100()
+        view.layer.shadowOffset = CGSizeMake(1, 1)
+        view.layer.shadowRadius = 5.0
+        view.layer.shadowOpacity = 0.8
+        view.layer.masksToBounds = false
     }
 }
