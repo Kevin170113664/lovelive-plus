@@ -52,4 +52,10 @@ class NormalCalculatorController: UIViewController {
         view.layer.shadowOpacity = 0.8
         view.layer.masksToBounds = false
     }
+    
+    @IBAction func calculate(sender: AnyObject) {
+        let calculateReportController = storyboard?.instantiateViewControllerWithIdentifier("CalculateReport") as! CalculateReportController
+        calculateReportController.title = "This is a popup view"
+        calculateReportController.showInView(self.view, withMessage: "You just triggered a great popup window", animated: true)
+    }
 }

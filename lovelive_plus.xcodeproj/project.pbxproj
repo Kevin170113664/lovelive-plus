@@ -30,6 +30,7 @@
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
 		C3EEC2F61C561A6C00815404 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F51C561A6C00815404 /* ModelMapper.swift */; };
 		C3EEC2F81C58A87500815404 /* NormalCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */; };
+		C3EEC2FA1C59FC2000815404 /* CalculateReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */; };
 		C3F0D4ED1C22C9C2008EF6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */; };
 		C3F0D4F21C22C9C2008EF6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F01C22C9C2008EF6F6 /* Main.storyboard */; };
 		C3F0D4F41C22C9C2008EF6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F31C22C9C2008EF6F6 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3EEC2F51C561A6C00815404 /* ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
 		C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalCalculatorController.swift; sourceTree = "<group>"; };
+		C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateReportController.swift; sourceTree = "<group>"; };
 		C3F0D4E91C22C9C2008EF6F6 /* lovelive_plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovelive_plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0D4EC1C22C9C2008EF6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F0D4F11C22C9C2008EF6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
 				C3304BED1C4F308A00F96999 /* FilterController.swift */,
 				C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */,
+				C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */,
 				C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */,
 				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,
+				C3EEC2FA1C59FC2000815404 /* CalculateReportController.swift in Sources */,
 				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
 				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
 				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,

@@ -610,6 +610,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculate:" destination="NEf-Uf-b7G" eventType="touchUpInside" id="NnA-N1-cv5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -641,6 +644,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aP-3F-6Ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="296" y="-789"/>
+        </scene>
+        <!--Calculate Report Controller-->
+        <scene sceneID="qiy-43-AjX">
+            <objects>
+                <viewController storyboardIdentifier="CalculateReport" id="GhZ-h5-Ipc" customClass="CalculateReportController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NLv-g2-Vo4"/>
+                        <viewControllerLayoutGuide type="bottom" id="OE6-Ne-Lzr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5Z-Kz-E8k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py2-la-6Wa">
+                                <rect key="frame" x="150" y="100" width="300" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计算结果" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS2-42-GWC">
+                                        <rect key="frame" x="116.5" y="25" width="68" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eih-xQ-sBp">
+                                        <rect key="frame" x="39" y="58" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3my-1o-bmL">
+                                        <rect key="frame" x="0.0" y="370" width="300" height="30"/>
+                                        <state key="normal" title="关闭"/>
+                                        <connections>
+                                            <action selector="closeReport:" destination="GhZ-h5-Ipc" eventType="touchUpInside" id="5iZ-xa-VCX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QS2-42-GWC" firstAttribute="top" secondItem="py2-la-6Wa" secondAttribute="top" constant="25" id="F9r-s6-BY5"/>
+                                    <constraint firstItem="QS2-42-GWC" firstAttribute="centerX" secondItem="py2-la-6Wa" secondAttribute="centerX" id="Q45-cB-w9p"/>
+                                    <constraint firstAttribute="height" constant="400" id="gvn-cK-BsK"/>
+                                    <constraint firstAttribute="width" constant="300" id="p9R-cb-9LW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="py2-la-6Wa" firstAttribute="centerY" secondItem="f5Z-Kz-E8k" secondAttribute="centerY" id="5kr-zu-Sro"/>
+                            <constraint firstItem="py2-la-6Wa" firstAttribute="centerX" secondItem="f5Z-Kz-E8k" secondAttribute="centerX" id="QQV-ta-DSD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calculateReportView" destination="py2-la-6Wa" id="YbA-BT-GHJ"/>
+                        <outlet property="closeButton" destination="3my-1o-bmL" id="LXs-mx-ZTW"/>
+                        <outlet property="totalLoveCardLabel" destination="eih-xQ-sBp" id="nIE-h0-Jr9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwn-Nb-y0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="-789"/>
         </scene>
         <!--Card Detail-->
         <scene sceneID="GMu-Rq-8Jk">
