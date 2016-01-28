@@ -5,6 +5,7 @@ class NormalCalculatorController: UIViewController {
     let advancedOptionsViewHeight: CGFloat = 120
     let eventTimeViewHeight: CGFloat = 90
     
+    @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var calculatorCardView: UIView!
     @IBOutlet weak var advancedOptionsView: UIView!
@@ -37,9 +38,11 @@ class NormalCalculatorController: UIViewController {
     
     override func viewDidLoad() {
         scrollView.backgroundColor = Color.Blue50()
+        calculateButton.backgroundColor = Color.Blue100()
         advancedOptionsView.hidden = true
         eventTimeView.hidden = true
         setShadowForView(calculatorCardView)
+        setShadowForView(calculateButton)
     }
     
     func setShadowForView(view: UIView) {
