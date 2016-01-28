@@ -2,28 +2,38 @@ import UIKit
 
 class NormalCalculatorController: UIViewController {
     
-    @IBAction func advancedOptionsButton(sender: UIButton) {
-        eventTimeView.hidden = true
-        if advancedOptionsView.hidden == true {
-            advancedOptionsView.hidden = false
-        } else {
-            advancedOptionsView.hidden = true
-        }
-    }
-    
-    @IBAction func EventTimeButton(sender: UIButton) {
-        advancedOptionsView.hidden = true
-        if eventTimeView.hidden == true {
-            eventTimeView.hidden = false
-        } else {
-            eventTimeView.hidden = true
-        }
-    }
+    let advancedOptionsViewHeight: CGFloat = 120
+    let eventTimeViewHeight: CGFloat = 90
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var calculatorCardView: UIView!
     @IBOutlet weak var advancedOptionsView: UIView!
     @IBOutlet weak var eventTimeView: UIView!
+    @IBOutlet weak var cardViewHeight: NSLayoutConstraint!
+    
+    @IBAction func advancedOptionsButton(sender: UIButton) {
+        cardViewHeight.constant -= eventTimeView.hidden ? 0 : eventTimeViewHeight
+        eventTimeView.hidden = true
+        if advancedOptionsView.hidden == true {
+            cardViewHeight.constant += advancedOptionsViewHeight
+            advancedOptionsView.hidden = false
+        } else {
+            cardViewHeight.constant -= advancedOptionsViewHeight
+            advancedOptionsView.hidden = true
+        }
+    }
+    
+    @IBAction func EventTimeButton(sender: UIButton) {
+        cardViewHeight.constant -= advancedOptionsView.hidden ? 0 : advancedOptionsViewHeight
+        advancedOptionsView.hidden = true
+        if eventTimeView.hidden == true {
+            cardViewHeight.constant += eventTimeViewHeight
+            eventTimeView.hidden = false
+        } else {
+            cardViewHeight.constant -= eventTimeViewHeight
+            eventTimeView.hidden = true
+        }
+    }
     
     override func viewDidLoad() {
         scrollView.backgroundColor = Color.Blue50()
