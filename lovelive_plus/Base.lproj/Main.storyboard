@@ -376,7 +376,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-oy-GY4">
-                                                <rect key="frame" x="497" y="4" width="51" height="31"/>
+                                                <rect key="frame" x="497" y="10" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前LP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esW-8J-T1K">
                                                 <rect key="frame" x="0.0" y="50" width="54" height="20.5"/>
@@ -461,7 +461,7 @@
                                             <constraint firstItem="fkg-bq-K0O" firstAttribute="height" secondItem="QuT-zz-m45" secondAttribute="height" constant="2" id="IYW-Ai-LyB"/>
                                             <constraint firstAttribute="trailing" secondItem="2yF-Mx-5LK" secondAttribute="trailing" id="L3M-KG-ZfF"/>
                                             <constraint firstItem="TCk-GA-CY3" firstAttribute="leading" secondItem="5PB-3i-Ekb" secondAttribute="trailing" constant="15" id="NEU-m9-GiV"/>
-                                            <constraint firstItem="5Tf-oy-GY4" firstAttribute="bottom" secondItem="5PB-3i-Ekb" secondAttribute="bottom" id="Nbq-iT-drr"/>
+                                            <constraint firstItem="5Tf-oy-GY4" firstAttribute="centerY" secondItem="5PB-3i-Ekb" secondAttribute="centerY" id="Nbq-iT-drr"/>
                                             <constraint firstItem="gmd-U5-Crw" firstAttribute="baseline" secondItem="h3a-Uf-AYK" secondAttribute="baseline" id="Oy4-p3-WHZ"/>
                                             <constraint firstItem="TCk-GA-CY3" firstAttribute="baseline" secondItem="5PB-3i-Ekb" secondAttribute="baseline" id="SnZ-6W-Qie"/>
                                             <constraint firstItem="QuT-zz-m45" firstAttribute="leading" secondItem="5PB-3i-Ekb" secondAttribute="leading" id="Ssm-bq-JP8"/>
