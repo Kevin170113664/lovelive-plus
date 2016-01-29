@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnP-lZ-yRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="-1497"/>
+            <point key="canvasLocation" x="363" y="-1395"/>
         </scene>
         <!--Filter Controller-->
         <scene sceneID="pVS-db-wmi">
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qH5-qg-jqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211" y="-274.5"/>
+            <point key="canvasLocation" x="211" y="-122.5"/>
         </scene>
         <!--Normal Controller-->
         <scene sceneID="lHQ-Ih-7DL">
@@ -448,7 +448,6 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="fkg-bq-K0O" firstAttribute="leading" secondItem="QuT-zz-m45" secondAttribute="trailing" constant="15" id="0J5-o1-NZJ"/>
                                             <constraint firstAttribute="trailing" secondItem="5Tf-oy-GY4" secondAttribute="trailing" id="1kM-Ad-hHi"/>
                                             <constraint firstItem="esW-8J-T1K" firstAttribute="top" secondItem="5PB-3i-Ekb" secondAttribute="bottom" constant="15" id="1l5-7B-BqO"/>
                                             <constraint firstAttribute="height" constant="120" id="6Gv-Ti-Fl3"/>
@@ -458,7 +457,6 @@
                                             <constraint firstItem="esW-8J-T1K" firstAttribute="leading" secondItem="5PB-3i-Ekb" secondAttribute="leading" id="FL7-7U-mei"/>
                                             <constraint firstItem="QuT-zz-m45" firstAttribute="top" secondItem="esW-8J-T1K" secondAttribute="bottom" constant="15" id="FjQ-WX-IxW"/>
                                             <constraint firstItem="fkg-bq-K0O" firstAttribute="centerY" secondItem="QuT-zz-m45" secondAttribute="centerY" id="GKh-Ey-LLh"/>
-                                            <constraint firstItem="fkg-bq-K0O" firstAttribute="height" secondItem="QuT-zz-m45" secondAttribute="height" constant="2" id="IYW-Ai-LyB"/>
                                             <constraint firstAttribute="trailing" secondItem="2yF-Mx-5LK" secondAttribute="trailing" id="L3M-KG-ZfF"/>
                                             <constraint firstItem="TCk-GA-CY3" firstAttribute="leading" secondItem="5PB-3i-Ekb" secondAttribute="trailing" constant="15" id="NEU-m9-GiV"/>
                                             <constraint firstItem="5Tf-oy-GY4" firstAttribute="centerY" secondItem="5PB-3i-Ekb" secondAttribute="centerY" id="Nbq-iT-drr"/>
@@ -471,29 +469,15 @@
                                             <constraint firstItem="dpV-BX-Lnf" firstAttribute="trailing" secondItem="5Tf-oy-GY4" secondAttribute="trailing" id="WX4-8q-wFU"/>
                                             <constraint firstItem="HVx-M3-RrT" firstAttribute="leading" secondItem="TCk-GA-CY3" secondAttribute="trailing" constant="20" id="aWf-hf-WE0"/>
                                             <constraint firstItem="5Tf-oy-GY4" firstAttribute="leading" secondItem="HVx-M3-RrT" secondAttribute="trailing" constant="15" id="aaQ-ga-Yey"/>
-                                            <constraint firstItem="2yF-Mx-5LK" firstAttribute="trailing" secondItem="5Tf-oy-GY4" secondAttribute="trailing" id="aqh-Q6-voc"/>
                                             <constraint firstItem="J7h-OS-Ktg" firstAttribute="leading" secondItem="fkg-bq-K0O" secondAttribute="trailing" constant="20" id="c9g-Rj-r55"/>
-                                            <constraint firstItem="J7h-OS-Ktg" firstAttribute="leading" secondItem="fkg-bq-K0O" secondAttribute="trailing" constant="20" id="cJs-6g-tkN"/>
                                             <constraint firstItem="h3a-Uf-AYK" firstAttribute="baseline" secondItem="esW-8J-T1K" secondAttribute="baseline" id="ffH-yK-dXK"/>
                                             <constraint firstItem="5PB-3i-Ekb" firstAttribute="top" secondItem="ipc-Bz-rtg" secondAttribute="top" constant="15" id="gPG-m1-8Kg"/>
-                                            <constraint firstItem="2yF-Mx-5LK" firstAttribute="baseline" secondItem="J7h-OS-Ktg" secondAttribute="baseline" id="gnN-0q-C1n"/>
                                             <constraint firstItem="2yF-Mx-5LK" firstAttribute="leading" secondItem="J7h-OS-Ktg" secondAttribute="trailing" constant="15" id="hN3-v8-hdn"/>
                                             <constraint firstItem="h3a-Uf-AYK" firstAttribute="width" secondItem="dpV-BX-Lnf" secondAttribute="width" id="l41-Xg-e6g"/>
                                             <constraint firstItem="dpV-BX-Lnf" firstAttribute="leading" secondItem="gmd-U5-Crw" secondAttribute="trailing" constant="15" id="lDR-ox-TXI"/>
                                             <constraint firstItem="HVx-M3-RrT" firstAttribute="baseline" secondItem="5PB-3i-Ekb" secondAttribute="baseline" id="tOO-4s-IRm"/>
                                             <constraint firstItem="h3a-Uf-AYK" firstAttribute="leading" secondItem="esW-8J-T1K" secondAttribute="trailing" constant="15" id="wpe-sg-e3a"/>
-                                            <constraint firstItem="J7h-OS-Ktg" firstAttribute="top" secondItem="2yF-Mx-5LK" secondAttribute="bottom" constant="15" id="xRa-My-Cg1"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="0J5-o1-NZJ"/>
-                                                <exclude reference="IYW-Ai-LyB"/>
-                                                <exclude reference="cJs-6g-tkN"/>
-                                                <exclude reference="xRa-My-Cg1"/>
-                                                <exclude reference="aqh-Q6-voc"/>
-                                                <exclude reference="gnN-0q-C1n"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-8S-NT7" userLabel="Event Time">
                                         <rect key="frame" x="15" y="222" width="546" height="100"/>
@@ -624,15 +608,15 @@
                                     <constraint firstItem="dkM-3p-mf6" firstAttribute="leading" secondItem="ifd-IF-ryU" secondAttribute="leading" id="zjY-sN-aV3"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-5z-0Le">
-                                <rect key="frame" x="17" y="14" width="566" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-5z-0Le">
+                                <rect key="frame" x="17" y="552" width="566" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6jQ-Ws-WPP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
-                                    <action selector="calculate:" destination="NEf-Uf-b7G" eventType="touchUpInside" id="NnA-N1-cv5"/>
+                                    <segue destination="GhZ-h5-Ipc" kind="presentation" modalTransitionStyle="crossDissolve" id="anN-9E-3UR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -641,16 +625,13 @@
                             <constraint firstItem="0wD-P1-3pb" firstAttribute="centerX" secondItem="pny-QN-GXD" secondAttribute="centerX" id="IHD-Bg-818"/>
                             <constraint firstItem="jAY-5z-0Le" firstAttribute="centerX" secondItem="0wD-P1-3pb" secondAttribute="centerX" id="JKh-aj-Vq5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0wD-P1-3pb" secondAttribute="trailing" constant="-8" id="JbX-ZO-ZUT"/>
-                            <constraint firstItem="jAY-5z-0Le" firstAttribute="top" secondItem="pny-QN-GXD" secondAttribute="top" constant="616" id="Knr-y8-PiU"/>
                             <constraint firstItem="mHI-8I-FyH" firstAttribute="top" secondItem="jAY-5z-0Le" secondAttribute="bottom" constant="10" id="USS-aM-Ph9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jAY-5z-0Le" secondAttribute="leading" constant="3" id="fp5-nw-wp2"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0wD-P1-3pb" secondAttribute="leading" constant="8" id="wRU-mN-8po"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Knr-y8-PiU"/>
-                            </mask>
-                        </variation>
+                        <connections>
+                            <outlet property="delegate" destination="NEf-Uf-b7G" id="eGw-fi-LnU"/>
+                        </connections>
                     </scrollView>
                     <navigationItem key="navigationItem" title="Normal Calculator" id="tPQ-Ap-B9T"/>
                     <connections>
@@ -681,7 +662,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aP-3F-6Ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="-789"/>
+            <point key="canvasLocation" x="363" y="-738"/>
         </scene>
         <!--Calculate Report Controller-->
         <scene sceneID="qiy-43-AjX">
@@ -695,52 +676,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py2-la-6Wa">
-                                <rect key="frame" x="150" y="28" width="300" height="400"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py2-la-6Wa">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计算结果" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS2-42-GWC">
-                                        <rect key="frame" x="116.5" y="25" width="68" height="20.5"/>
+                                        <rect key="frame" x="266" y="80" width="68" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eih-xQ-sBp">
-                                        <rect key="frame" x="39" y="58" width="228" height="98"/>
+                                        <rect key="frame" x="39" y="108.5" width="236" height="47.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3my-1o-bmL">
-                                        <rect key="frame" x="0.0" y="370" width="300" height="30"/>
-                                        <state key="normal" title="关闭"/>
-                                        <connections>
-                                            <action selector="closeReport:" destination="GhZ-h5-Ipc" eventType="touchUpInside" id="L6f-R5-iqD"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="QS2-42-GWC" firstAttribute="top" secondItem="py2-la-6Wa" secondAttribute="top" constant="25" id="F9r-s6-BY5"/>
                                     <constraint firstItem="QS2-42-GWC" firstAttribute="centerX" secondItem="py2-la-6Wa" secondAttribute="centerX" id="Q45-cB-w9p"/>
                                     <constraint firstAttribute="height" constant="400" id="gvn-cK-BsK"/>
+                                    <constraint firstItem="QS2-42-GWC" firstAttribute="top" secondItem="py2-la-6Wa" secondAttribute="top" constant="80" id="ijE-HR-Snd"/>
                                     <constraint firstAttribute="width" constant="300" id="p9R-cb-9LW"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gvn-cK-BsK"/>
+                                        <exclude reference="p9R-cb-9LW"/>
+                                        <exclude reference="F9r-s6-BY5"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="py2-la-6Wa" firstAttribute="centerY" secondItem="f5Z-Kz-E8k" secondAttribute="centerY" constant="-72" id="5kr-zu-Sro"/>
+                            <constraint firstItem="py2-la-6Wa" firstAttribute="centerY" secondItem="f5Z-Kz-E8k" secondAttribute="centerY" id="5kr-zu-Sro"/>
+                            <constraint firstItem="py2-la-6Wa" firstAttribute="width" secondItem="f5Z-Kz-E8k" secondAttribute="width" id="PhD-Oa-OEn"/>
                             <constraint firstItem="py2-la-6Wa" firstAttribute="centerX" secondItem="f5Z-Kz-E8k" secondAttribute="centerX" id="QQV-ta-DSD"/>
+                            <constraint firstItem="py2-la-6Wa" firstAttribute="height" secondItem="f5Z-Kz-E8k" secondAttribute="height" id="kts-sM-jgD"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="S7B-vV-rSr" appends="YES" id="nF4-Gv-snD"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="calculateReportView" destination="py2-la-6Wa" id="B24-xR-ePj"/>
-                        <outlet property="closeButton" destination="3my-1o-bmL" id="qcK-9m-XYo"/>
+                        <outlet property="calculateReportView" destination="py2-la-6Wa" id="fFZ-XY-1FZ"/>
                         <outlet property="totalLoveCardLabel" destination="eih-xQ-sBp" id="qP0-Et-k6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwn-Nb-y0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="S7B-vV-rSr">
+                    <connections>
+                        <action selector="closeReport:" destination="GhZ-h5-Ipc" id="9Nj-Q4-k6K"/>
+                        <outlet property="delegate" destination="GhZ-h5-Ipc" id="UxN-gB-T2J"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1010" y="-789"/>
+            <point key="canvasLocation" x="1164" y="-738"/>
         </scene>
         <!--Card Detail-->
         <scene sceneID="GMu-Rq-8Jk">
@@ -1011,7 +1004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-Fp-nup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="217"/>
+            <point key="canvasLocation" x="296" y="363"/>
         </scene>
         <!--Mf Controller-->
         <scene sceneID="gzT-yz-fbY">
@@ -1030,7 +1023,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QId-pL-qcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="-2207"/>
+            <point key="canvasLocation" x="363" y="-2057"/>
         </scene>
         <!--Lovelive+-->
         <scene sceneID="tne-QT-ifu">

@@ -175,7 +175,7 @@ extension CardController {
     }
 
     func showCardDetailView(segue: UIStoryboardSegue) {
-        let cardDetailController = segue.destinationViewController as! CardDetailController;
+        let cardDetailController = segue.destinationViewController as! CardDetailController
         cardDetailController.cardId = cardIdArray[(selectedIndexPath?.row)!]
         selectedIndexPath = nil
     }
