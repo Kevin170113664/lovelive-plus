@@ -71,15 +71,18 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Color.Blue50()
-
+        setPicker()
+    }
+    
+    func setPicker() {
         firstLinePicker.delegate = self
         firstLinePicker.dataSource = self
         firstLinePicker.showsSelectionIndicator = false
-
+        
         secondLinePicker.delegate = self
         secondLinePicker.dataSource = self
         secondLinePicker.showsSelectionIndicator = false
-
+        
         thirdLinePicker.delegate = self
         thirdLinePicker.dataSource = self
         thirdLinePicker.showsSelectionIndicator = false

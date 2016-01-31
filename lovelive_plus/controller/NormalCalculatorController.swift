@@ -1,6 +1,6 @@
 import UIKit
 
-class NormalCalculatorController: UIViewController {
+class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let advancedOptionsViewHeight: CGFloat = 120
     let eventTimeViewHeight: CGFloat = 90
@@ -31,6 +31,11 @@ class NormalCalculatorController: UIViewController {
     @IBOutlet weak var eventEndHour: UITextField!
     @IBOutlet weak var eventLastHour: UITextField!
     
+    let eventDifficultyData = ["Expert", "Hard", "Normal", "Easy", "4xExpert", "4xHard", "4xNormal", "4xEasy"]
+    let eventRankData = ["S", "A", "B", "C", "-"]
+    let eventComboData = ["S", "A", "B", "C", "-"]
+    let normalDifficultyData = ["Expert", "Hard", "Normal", "Easy"];
+    
     @IBAction func advancedOptionsButton(sender: UIButton) {
         cardViewHeight.constant -= eventTimeView.hidden ? 0 : eventTimeViewHeight
         eventTimeView.hidden = true
@@ -59,8 +64,27 @@ class NormalCalculatorController: UIViewController {
         setBackground()
         advancedOptionsView.hidden = true
         eventTimeView.hidden = true
+        setPicker()
         setShadowForView(calculatorCardView)
         setShadowForView(calculateButton)
+    }
+    
+    func setPicker() {
+        eventDifficulty.delegate = self
+        eventDifficulty.dataSource = self
+        eventDifficulty.showsSelectionIndicator = false
+        
+        eventRank.delegate = self
+        eventRank.dataSource = self
+        eventRank.showsSelectionIndicator = false
+        
+        eventCombo.delegate = self
+        eventCombo.dataSource = self
+        eventCombo.showsSelectionIndicator = false
+        
+        normalDifficulty.delegate = self
+        normalDifficulty.dataSource = self
+        normalDifficulty.showsSelectionIndicator = false
     }
     
     func setBackground() {
@@ -70,13 +94,9 @@ class NormalCalculatorController: UIViewController {
         currentPoints.backgroundColor = Color.Blue50()
         currentRank.backgroundColor = Color.Blue50()
         currentItems.backgroundColor = Color.Blue50()
-        eventDifficulty.backgroundColor = Color.Blue50()
-        eventRank.backgroundColor = Color.Blue50()
-        eventCombo.backgroundColor = Color.Blue50()
         wastedLpEveryDay.backgroundColor = Color.Blue50()
         currentLp.backgroundColor = Color.Blue50()
         currentExp.backgroundColor = Color.Blue50()
-        normalDifficulty.backgroundColor = Color.Blue50()
         eventEndDay.backgroundColor = Color.Blue50()
         eventEndHour.backgroundColor = Color.Blue50()
         eventLastHour.backgroundColor = Color.Blue50()
@@ -88,5 +108,29 @@ class NormalCalculatorController: UIViewController {
         view.layer.shadowRadius = 5.0
         view.layer.shadowOpacity = 0.8
         view.layer.masksToBounds = false
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch (pickerView) {
+        case eventDifficulty: return eventDifficultyData.count
+        case eventRank: return eventRankData.count
+        case eventCombo: return eventComboData.count
+        case normalDifficulty: return normalDifficultyData.count
+        default: return 0
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch (pickerView) {
+        case eventDifficulty: return eventDifficultyData[row]
+        case eventRank: return eventRankData[row]
+        case eventCombo: return eventComboData[row]
+        case normalDifficulty: return normalDifficultyData[row]
+        default: return ""
+        }
     }
 }

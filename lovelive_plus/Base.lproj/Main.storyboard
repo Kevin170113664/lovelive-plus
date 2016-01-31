@@ -312,9 +312,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-ei-JYI">
-                                        <rect key="frame" x="98" y="121" width="323.5" height="21"/>
+                                        <rect key="frame" x="98" y="106.5" width="323.5" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="83I-VZ-E5W"/>
+                                            <constraint firstAttribute="height" constant="50" id="83I-VZ-E5W"/>
                                         </constraints>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动等级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMl-cN-76k">
@@ -324,9 +324,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYY-LT-Tlp">
-                                        <rect key="frame" x="98" y="156" width="180" height="21"/>
+                                        <rect key="frame" x="98" y="141.5" width="180" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Rhc-xP-YKw"/>
+                                            <constraint firstAttribute="height" constant="50" id="Rhc-xP-YKw"/>
                                         </constraints>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动连击" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP8-53-FNw">
@@ -336,9 +336,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="33E-i1-cpk">
-                                        <rect key="frame" x="381" y="156.5" width="180" height="21"/>
+                                        <rect key="frame" x="381" y="142" width="180" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="6X5-IY-mkc"/>
+                                            <constraint firstAttribute="height" constant="50" id="6X5-IY-mkc"/>
                                         </constraints>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkM-3p-mf6">
@@ -375,7 +375,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-oy-GY4">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-oy-GY4">
                                                 <rect key="frame" x="497" y="10" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前LP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esW-8J-T1K">
@@ -415,9 +415,9 @@
                                                 </variation>
                                             </label>
                                             <pickerView contentMode="scaleToFill" horizontalHuggingPriority="233" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-bq-K0O">
-                                                <rect key="frame" x="83" y="85" width="354" height="23"/>
+                                                <rect key="frame" x="83" y="71.5" width="354" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="23" id="7VM-4N-6Uz"/>
+                                                    <constraint firstAttribute="height" constant="50" id="7VM-4N-6Uz"/>
                                                     <constraint firstAttribute="height" constant="23" id="NSr-2o-k4b"/>
                                                 </constraints>
                                                 <variation key="default">
