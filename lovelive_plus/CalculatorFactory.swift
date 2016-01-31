@@ -28,7 +28,7 @@ class CalculatorFactory {
     var eventRank: String?
     var eventCombo: String?
     var oncePoints: CLong?
-    var consumeLP: CLong?
+    var consumeLp: CLong?
     var expRatio: Int?
 
     var playRank: String?
@@ -45,34 +45,34 @@ class CalculatorFactory {
     var finalItem: CLong?
     var eventTimesNeedToPlay: CLong?
 
-    func calculatorFactory(objectivePoints: String, currentPoints: String, currentRank: String,
-                           wastedLpEveryDay: String, currentLp: String, currentExperience: String,
-                           eventEndDay: String, eventLastTime: String, currentItem: String,
-                           eventDifficulty: String, eventRank: String, eventCombo: String,
-                           oncePoints: String, consumeLP: String, isChineseExp: Bool) {
-        self.objectivePoints = parseLongField(objectivePoints);
-        self.currentPoints = parseLongField(currentPoints);
-        self.currentRank = parseLongField(currentRank);
-        self.wastedLpEveryDay = parseLongField(wastedLpEveryDay);
-        self.currentLp = parseLongField(currentLp);
-        self.currentExperience = parseLongField(currentExperience);
-        self.eventEndDay = parseLongField(eventEndDay);
-        self.eventLastTime = parseDoubleField(eventLastTime);
-        self.currentItem = parseLongField(currentItem);
-        self.eventDifficulty = eventDifficulty;
-        self.eventRank = eventRank;
-        self.eventCombo = eventCombo;
-        self.oncePoints = parseLongField(oncePoints);
-        self.consumeLP = parseLongField(consumeLP);
-        self.expRatio = isChineseExp ? 1 : 2;
+    init(objectivePoints: String!, currentPoints: String!, currentRank: String!,
+         wastedLpEveryDay: String!, currentLp: String!, currentExperience: String!,
+         eventEndDay: String!, eventLastTime: String!, currentItem: String!,
+         eventDifficulty: String!, eventRank: String!, eventCombo: String!,
+         oncePoints: String!, consumeLp: String!, isChineseExp: Bool) {
+        self.objectivePoints = parseLongField(objectivePoints)
+        self.currentPoints = parseLongField(currentPoints)
+        self.currentRank = parseLongField(currentRank)
+        self.wastedLpEveryDay = parseLongField(wastedLpEveryDay)
+        self.currentLp = parseLongField(currentLp)
+        self.currentExperience = parseLongField(currentExperience)
+        self.eventEndDay = parseLongField(eventEndDay)
+        self.eventLastTime = parseDoubleField(eventLastTime)
+        self.currentItem = parseLongField(currentItem)
+        self.eventDifficulty = eventDifficulty
+        self.eventRank = eventRank
+        self.eventCombo = eventCombo
+        self.oncePoints = parseLongField(oncePoints)
+        self.consumeLp = parseLongField(consumeLp)
+        self.expRatio = isChineseExp ? 1 : 2
     }
 
     func parseDoubleField(value: String?) -> Double {
-        return isStringValid(value) ? Double(value!)! : 0.0;
+        return isStringValid(value) ? Double(value!)! : 0.0
     }
 
     func parseLongField(value: String?) -> CLong {
-        return isStringValid(value) ? CLong(value!)! : 0;
+        return isStringValid(value) ? CLong(value!)! : 0
     }
 
     func isStringValid(value: String!) -> Bool {
@@ -81,24 +81,24 @@ class CalculatorFactory {
 
     func calculateNormalProcess() {
         if (getBiggestLp() == 0) {
-            return;
+            return
         }
-        initialisePredictFields();
-        normalPlayWithFreeLp();
-        normalPlayWithLoveca();
-        calculateNormalResultAfterPlay();
+        initialisePredictFields()
+        normalPlayWithFreeLp()
+        normalPlayWithLoveca()
+        calculateNormalResultAfterPlay()
     }
 
-    private func getBiggestLp() -> CLong {
+    func getBiggestLp() -> CLong {
         if (currentRank < 1) {
-            return 0;
+            return 0
         }
         return currentRank! >= 300 ?
                 lround(175.0 + (Double(currentRank!) - 300) / 3) :
-                lround(25.0 + Double(currentRank!) / 2.0);
+                lround(25.0 + Double(currentRank!) / 2.0)
     }
 
-    private func initialisePredictFields() {
+    func initialisePredictFields() {
         lovecaAmount = 0
         finalPoints = currentPoints
         finalExperience = currentExperience
@@ -108,88 +108,88 @@ class CalculatorFactory {
         eventTimesNeedToPlay = 0
     }
 
-    private func getRecoveryLp() -> Double {
+    func getRecoveryLp() -> Double {
         return eventLastTime! * 10 - Double(getTotalWastedLp())
     }
 
-    private func getTotalWastedLp() -> CLong {
-        return wastedLpEveryDay! * (eventEndDay! - getDayOfMonth(dateTimeNow));
+    func getTotalWastedLp() -> CLong {
+        return wastedLpEveryDay! * (eventEndDay! - getDayOfMonth(dateTimeNow))
     }
 
-    private func getDayOfMonth(date: NSDate) -> Int {
+    func getDayOfMonth(date: NSDate) -> Int {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Day, .Month, .Year], fromDate: date)
 
         return components.day
     }
 
-    private func normalPlayWithFreeLp() {
-        while (finalLp >= consumeLP) {
-            normalPlayOnceWithEnoughLp();
+    func normalPlayWithFreeLp() {
+        while (finalLp >= consumeLp) {
+            normalPlayOnceWithEnoughLp()
             while (finalItem >= getConsumeItemWithinOncePlay()) {
-                normalPlayOnceWithEnoughItem();
+                normalPlayOnceWithEnoughItem()
             }
         }
     }
 
-    private func normalPlayWithLoveca() {
+    func normalPlayWithLoveca() {
         while (finalPoints < objectivePoints) {
-            consumeOneLoveca();
-            while (finalLp >= consumeLP) {
-                normalPlayOnceWithEnoughLp();
+            consumeOneLoveca()
+            while (finalLp >= consumeLp) {
+                normalPlayOnceWithEnoughLp()
                 while (finalItem >= getConsumeItemWithinOncePlay()) {
-                    normalPlayOnceWithEnoughItem();
+                    normalPlayOnceWithEnoughItem()
                 }
             }
         }
     }
 
-    private func calculateNormalResultAfterPlay() {
-        finalRank! = currentRank!;
-        totalPlayTime! = (eventTimesNeedToPlay! + timesNeedToPlay!) * MINUTES_FOR_ONE_SONG;
-        playTimeRatio! = Double(totalPlayTime!) / (eventLastTime! * 60.0);
+    func calculateNormalResultAfterPlay() {
+        finalRank = currentRank!
+        totalPlayTime = (eventTimesNeedToPlay! + timesNeedToPlay!) * MINUTES_FOR_ONE_SONG
+        playTimeRatio = Double(totalPlayTime!) / (eventLastTime! * 60.0)
     }
 
-    private func consumeOneLoveca() {
-        lovecaAmount! += 1;
-        finalLp! += getBiggestLp();
+    func consumeOneLoveca() {
+        lovecaAmount! += 1
+        finalLp! += getBiggestLp()
     }
 
-    private func normalPlayOnceWithEnoughLp() {
-        finalLp! -= consumeLP!
-        timesNeedToPlay! += 1;
-        finalItem! += getNormalBasicPointsWithinOncePlay();
-        finalPoints! += getNormalBasicPointsWithinOncePlay();
-        finalExperience! += getNormalExpWithinOncePlay(consumeLP!);
+    func normalPlayOnceWithEnoughLp() {
+        finalLp! -= consumeLp!
+        timesNeedToPlay! += 1
+        finalItem! += getNormalBasicPointsWithinOncePlay()
+        finalPoints! += getNormalBasicPointsWithinOncePlay()
+        finalExperience! += getNormalExpWithinOncePlay(consumeLp!)
         while (finalExperience >= getCurrentRankUpExp()) {
-            upgradeOneRankWithEnoughExp();
+            upgradeOneRankWithEnoughExp()
         }
     }
 
-    private func getConsumeItemWithinOncePlay() -> CLong {
-        var isFourMultiply = false;
-        var difficulty = eventDifficulty!;
+    func getConsumeItemWithinOncePlay() -> CLong {
+        var isFourMultiply = false
+        var difficulty = eventDifficulty!
         if (difficulty.substringToIndex(difficulty.startIndex) == "4") {
             isFourMultiply = true
             difficulty = difficulty.substringFromIndex(difficulty.startIndex.advancedBy(2))
         }
         let consumeItemArray = ["Expert": 75, "Hard": 45, "Normal": 30, "Easy": 15]
 
-        return isFourMultiply ? consumeItemArray[difficulty]! * 4 : consumeItemArray[difficulty]!;
+        return isFourMultiply ? consumeItemArray[difficulty]! * 4 : consumeItemArray[difficulty]!
     }
 
-    private func normalPlayOnceWithEnoughItem() {
-        finalItem! -= getConsumeItemWithinOncePlay();
-        eventTimesNeedToPlay! += 1;
-        finalPoints! += oncePoints!;
-        finalExperience! += getNormalExpWithinOncePlay(eventDifficulty!);
+    func normalPlayOnceWithEnoughItem() {
+        finalItem! -= getConsumeItemWithinOncePlay()
+        eventTimesNeedToPlay! += 1
+        finalPoints! += oncePoints!
+        finalExperience! += getNormalExpWithinOncePlay(eventDifficulty!)
         while (finalExperience >= getCurrentRankUpExp()) {
-            upgradeOneRankWithEnoughExp();
+            upgradeOneRankWithEnoughExp()
         }
     }
 
-    private func getNormalExpWithinOncePlay(eventDifficulty: String) -> CLong {
-        var difficulty = eventDifficulty;
+    func getNormalExpWithinOncePlay(eventDifficulty: String) -> CLong {
+        var difficulty = eventDifficulty
         if (difficulty.substringToIndex(difficulty.startIndex) == "4") {
             difficulty = difficulty.substringFromIndex(difficulty.startIndex.advancedBy(2))
         }
@@ -199,13 +199,13 @@ class CalculatorFactory {
         return normalExpArray[difficulty]!
     }
 
-    private func getCurrentRankUpExp() -> CLong {
-        return getRankUpExpByRank(currentRank);
+    func getCurrentRankUpExp() -> CLong {
+        return getRankUpExpByRank(currentRank)
     }
 
-    private func getRankUpExpByRank(rank: CLong!) -> CLong {
+    func getRankUpExpByRank(rank: CLong!) -> CLong {
         if rank < 1 {
-            return 0;
+            return 0
         }
         if rank < 34 {
             return lround(Double(rank) * Double(rank) * 0.56 / Double(expRatio!))
@@ -214,26 +214,70 @@ class CalculatorFactory {
             return lround((34.45 * Double(rank) - 551) / Double(expRatio!))
         }
         if rank >= 100 {
-            return lround(34.45 * Double(rank) - 551);
+            return lround(34.45 * Double(rank) - 551)
         }
-        return 0;
+        return 0
     }
 
-    private func upgradeOneRankWithEnoughExp() {
-        finalExperience! -= getCurrentRankUpExp();
-        currentRank! += 1;
-        finalLp! += getBiggestLp();
+    func upgradeOneRankWithEnoughExp() {
+        finalExperience! -= getCurrentRankUpExp()
+        currentRank! += 1
+        finalLp! += getBiggestLp()
     }
 
-    private func getNormalBasicPointsWithinOncePlay() -> CLong {
+    func getFinalRankUpExp() -> CLong {
+        return getRankUpExpByRank(CLong(getFinalRank()))
+    }
+
+    func getNormalBasicPointsWithinOncePlay() -> CLong {
         let normalBasicPointsArray = [25: 27, 15: 16, 10: 10, 5: 5]
 
-        return normalBasicPointsArray[consumeLP!]!
+        return normalBasicPointsArray[consumeLp!]!
     }
 
-    private func getNormalExpWithinOncePlay(consumeLP: CLong) -> CLong {
+    func getNormalExpWithinOncePlay(consumeLP: CLong) -> CLong {
         let normalExpArray = [25: 83, 15: 46, 10: 26, 5: 12]
 
         return normalExpArray[consumeLP]!
+    }
+
+    func getLovecaAmount() -> String {
+        return lovecaAmount! < 0 ? "0" : String(lovecaAmount!)
+    }
+
+    func getFinalPoints() -> String {
+        return String(finalPoints!)
+    }
+
+    func getFinalRank() -> String {
+        return String(finalRank!)
+    }
+
+    func getFinalExp() -> String {
+        return String(finalExperience!)
+    }
+
+    func getFinalLp() -> String {
+        return String(finalLp!)
+    }
+
+    func getFinalItem() -> String {
+        return String(finalItem!)
+    }
+
+    func getTimesNeedToPlay() -> String {
+        return String(timesNeedToPlay!)
+    }
+
+    func getEventTimesNeedToPlay() -> String {
+        return String(eventTimesNeedToPlay!)
+    }
+
+    func getTotalPlayTime() -> String {
+        return String(format: "\(totalPlayTime! / 60)时\(totalPlayTime! % 60)分")
+    }
+
+    func getPlayTimeRatio() -> String {
+        return String(format: "\(playTimeRatio! * 100)%%", playTimeRatio! * 100)
     }
 }

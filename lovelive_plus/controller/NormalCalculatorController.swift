@@ -1,17 +1,17 @@
 import UIKit
 
 class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
     let advancedOptionsViewHeight: CGFloat = 120
     let eventTimeViewHeight: CGFloat = 90
-    
+
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var calculatorCardView: UIView!
     @IBOutlet weak var advancedOptionsView: UIView!
     @IBOutlet weak var eventTimeView: UIView!
     @IBOutlet weak var cardViewHeight: NSLayoutConstraint!
-    
+
     @IBOutlet weak var objectivePoints: UITextField!
     @IBOutlet weak var currentPoints: UITextField!
     @IBOutlet weak var currentRank: UITextField!
@@ -20,9 +20,9 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var oncePoints: UILabel!
     @IBOutlet weak var eventRank: UIPickerView!
     @IBOutlet weak var eventCombo: UIPickerView!
-    
+
     @IBOutlet weak var wastedLpEveryDay: UITextField!
-    @IBOutlet weak var isChina: UISwitch!
+    @IBOutlet weak var isChineseExp: UISwitch!
     @IBOutlet weak var currentLp: UITextField!
     @IBOutlet weak var currentExp: UITextField!
     @IBOutlet weak var normalDifficulty: UIPickerView!
@@ -30,12 +30,12 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var eventEndDay: UITextField!
     @IBOutlet weak var eventEndHour: UITextField!
     @IBOutlet weak var eventLastHour: UITextField!
-    
+
     let eventDifficultyData = ["Expert", "Hard", "Normal", "Easy", "4xExpert", "4xHard", "4xNormal", "4xEasy"]
     let eventRankData = ["S", "A", "B", "C", "-"]
     let eventComboData = ["S", "A", "B", "C", "-"]
     let normalDifficultyData = ["Expert", "Hard", "Normal", "Easy"];
-    
+
     @IBAction func advancedOptionsButton(sender: UIButton) {
         cardViewHeight.constant -= eventTimeView.hidden ? 0 : eventTimeViewHeight
         eventTimeView.hidden = true
@@ -47,7 +47,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
             advancedOptionsView.hidden = true
         }
     }
-    
+
     @IBAction func EventTimeButton(sender: UIButton) {
         cardViewHeight.constant -= advancedOptionsView.hidden ? 0 : advancedOptionsViewHeight
         advancedOptionsView.hidden = true
@@ -59,7 +59,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
             eventTimeView.hidden = true
         }
     }
-    
+
     override func viewDidLoad() {
         setBackground()
         advancedOptionsView.hidden = true
@@ -68,25 +68,25 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         setShadowForView(calculatorCardView)
         setShadowForView(calculateButton)
     }
-    
+
     func setPicker() {
         eventDifficulty.delegate = self
         eventDifficulty.dataSource = self
         eventDifficulty.showsSelectionIndicator = false
-        
+
         eventRank.delegate = self
         eventRank.dataSource = self
         eventRank.showsSelectionIndicator = false
-        
+
         eventCombo.delegate = self
         eventCombo.dataSource = self
         eventCombo.showsSelectionIndicator = false
-        
+
         normalDifficulty.delegate = self
         normalDifficulty.dataSource = self
         normalDifficulty.showsSelectionIndicator = false
     }
-    
+
     func setBackground() {
         scrollView.backgroundColor = Color.Blue50()
         calculateButton.backgroundColor = Color.Blue100()
@@ -101,7 +101,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         eventEndHour.backgroundColor = Color.Blue50()
         eventLastHour.backgroundColor = Color.Blue50()
     }
-    
+
     func setShadowForView(view: UIView) {
         view.backgroundColor = Color.Blue100()
         view.layer.shadowOffset = CGSizeMake(1, 1)
@@ -109,11 +109,11 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         view.layer.shadowOpacity = 0.8
         view.layer.masksToBounds = false
     }
-    
+
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch (pickerView) {
         case eventDifficulty: return eventDifficultyData.count
@@ -123,7 +123,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         default: return 0
         }
     }
-    
+
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch (pickerView) {
         case eventDifficulty: return eventDifficultyData[row]
@@ -132,5 +132,35 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         case normalDifficulty: return normalDifficultyData[row]
         default: return ""
         }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CalculateReport" {
+            let calculateReportController = segue.destinationViewController as! CalculateReportController
+
+            let calculatorFactory = CalculatorFactory(objectivePoints: objectivePoints.text, currentPoints: currentPoints.text,
+                    currentRank: currentRank.text, wastedLpEveryDay: wastedLpEveryDay.text, currentLp: currentLp.text,
+                    currentExperience: currentExp.text, eventEndDay: eventEndDay.text, eventLastTime: eventLastHour.text,
+                    currentItem: currentItems.text, eventDifficulty: eventDifficultyData[eventDifficulty.selectedRowInComponent(0)],
+                    eventRank: eventRankData[eventRank.selectedRowInComponent(0)],
+                    eventCombo: eventComboData[eventCombo.selectedRowInComponent(0)],
+                    oncePoints: oncePoints.text, consumeLp: consumeLp.text, isChineseExp: isChineseExp.on)
+            calculatorFactory.calculateNormalProcess()
+
+            setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
+        }
+    }
+
+    func setReportFields(calculateReportController: CalculateReportController, calculatorFactory: CalculatorFactory) {
+        calculateReportController.totalLoveCard = calculatorFactory.getLovecaAmount()
+        calculateReportController.finalPoints = calculatorFactory.getFinalPoints()
+        calculateReportController.finalRank = calculatorFactory.getFinalRank()
+        calculateReportController.finalExp = String(format: "\(calculatorFactory.getFinalExp())/\(calculatorFactory.getCurrentRankUpExp())")
+        calculateReportController.finalLp = calculatorFactory.getFinalLp()
+        calculateReportController.finalItems = calculatorFactory.getFinalItem()
+        calculateReportController.playFrequency = calculatorFactory.getTimesNeedToPlay()
+        calculateReportController.eventFrequency = calculatorFactory.getEventTimesNeedToPlay()
+        calculateReportController.totalTime = calculatorFactory.getTotalPlayTime()
+        calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
     }
 }
