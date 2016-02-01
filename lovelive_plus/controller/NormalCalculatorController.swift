@@ -69,6 +69,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         setShadowForView(calculatorCardView)
         setShadowForView(calculateButton)
         eventCombo.selectRow(1, inComponent: 0, animated: false)
+        fillEventEndTime()
     }
 
     func setPicker() {
@@ -165,9 +166,9 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         calculateReportController.totalTime = calculatorFactory.getTotalPlayTime()
         calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
     }
-    
+
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch(pickerView) {
+        switch (pickerView) {
         case normalDifficulty:
             updateConsumeLp(normalDifficultyData[row])
             break
@@ -176,19 +177,19 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
             break
         }
     }
-    
+
     func updateConsumeLp(difficulty: String) {
         let normalDifficultyArray = ["Expert": "25", "Hard": "15", "Normal": "10", "Easy": "5"]
         consumeLp.text = normalDifficultyArray[difficulty]
     }
-    
+
     func updateOncePoints() {
         let eventPoint = readNormalEventPointsFile()
         var pointMultiply = 1
         var difficulty = eventDifficultyData[eventDifficulty.selectedRowInComponent(0)]
         var rank = eventRankData[eventRank.selectedRowInComponent(0)]
         var combo = eventComboData[eventCombo.selectedRowInComponent(0)]
-        
+
         if difficulty.substringToIndex(difficulty.startIndex.advancedBy(1)) == "4" {
             pointMultiply = 4
             difficulty = difficulty.substringFromIndex(difficulty.startIndex.advancedBy(2))
@@ -199,13 +200,52 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         if combo == "-" {
             combo = "D"
         }
-        
+
         oncePoints.text = String(pointMultiply * (eventPoint[difficulty]![rank]!![combo] as! Int))
     }
-    
+
     func readNormalEventPointsFile() -> NSDictionary {
         let asset = NSDataAsset(name: "normalEvent", bundle: NSBundle.mainBundle())
         let json = JSON(data: (asset?.data)!)
         return json.dictionaryObject!
+    }
+
+    func fillEventEndTime() {
+        EventService().getLatestEvent {
+            (latestEvent: NSArray) -> Void in
+            let eventEndDate = NSDate(dateString: latestEvent[0]["end"] as! String)
+            let eventEndCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+            self.eventEndDay.text = String(eventEndCalendar.components(.Day, fromDate: eventEndDate).day)
+            self.eventEndHour.text = String(eventEndCalendar.components(.Hour, fromDate: eventEndDate).hour)
+            self.eventLastHour.text = self.getEventLastHour(eventEndDate)
+        }
+    }
+
+    func getEventLastHour(eventEndDate: NSDate) -> String {
+        let eventDateFormat = NSDateComponentsFormatter()
+        eventDateFormat.allowedUnits = .Minute
+        eventDateFormat.unitsStyle = .Full
+        let lastTimeFormat = NSNumberFormatter()
+        lastTimeFormat.maximumFractionDigits = 1
+        lastTimeFormat.minimumFractionDigits = 0
+
+        var eventLastMinute = eventDateFormat.stringFromTimeInterval(eventEndDate.timeIntervalSinceNow)
+
+        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(" minutes", withString: "",
+                options: NSStringCompareOptions.LiteralSearch, range: nil)
+        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(",", withString: "",
+                options: NSStringCompareOptions.LiteralSearch, range: nil)
+
+        return lastTimeFormat.stringFromNumber(Double(eventLastMinute!)! / 60 + Double(Int(eventLastMinute!)! % 60) / 60.0)!
+    }
+}
+
+extension NSDate {
+    convenience
+    init(dateString: String) {
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
+        let date = dateStringFormatter.dateFromString(dateString)!
+        self.init(timeInterval: 0, sinceDate: date)
     }
 }

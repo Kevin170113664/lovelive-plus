@@ -616,7 +616,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6jQ-Ws-WPP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="开始计算"/>
                                 <connections>
                                     <segue destination="GhZ-h5-Ipc" kind="presentation" identifier="CalculateReport" modalTransitionStyle="crossDissolve" id="anN-9E-3UR"/>

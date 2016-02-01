@@ -190,7 +190,7 @@ class CalculatorFactory {
 
     func getNormalExpWithinOncePlay(eventDifficulty: String) -> CLong {
         var difficulty = eventDifficulty
-        if (difficulty.substringToIndex(difficulty.startIndex) == "4") {
+        if (difficulty.substringToIndex(difficulty.startIndex.advancedBy(1)) == "4") {
             difficulty = difficulty.substringFromIndex(difficulty.startIndex.advancedBy(2))
         }
 
@@ -278,6 +278,12 @@ class CalculatorFactory {
     }
 
     func getPlayTimeRatio() -> String {
-        return String(format: "\(playTimeRatio! * 100)%%", playTimeRatio! * 100)
+        let playTimeRatioFormat = NSNumberFormatter()
+        playTimeRatioFormat.maximumIntegerDigits = 5
+        playTimeRatioFormat.minimumIntegerDigits = 1
+        playTimeRatioFormat.maximumFractionDigits = 2
+        playTimeRatioFormat.minimumFractionDigits = 0
+
+        return "\(playTimeRatioFormat.stringFromNumber(playTimeRatio! * 100)!)%"
     }
 }
