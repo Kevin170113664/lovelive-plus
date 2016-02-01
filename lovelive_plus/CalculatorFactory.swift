@@ -289,4 +289,22 @@ class CalculatorFactory {
 
         return "\(playTimeRatioFormat.stringFromNumber(playTimeRatio! * 100)!)%"
     }
+    
+    static func getEventLastHour(eventEndDate: NSDate) -> String {
+        let eventDateFormat = NSDateComponentsFormatter()
+        eventDateFormat.allowedUnits = .Minute
+        eventDateFormat.unitsStyle = .Full
+        let lastTimeFormat = NSNumberFormatter()
+        lastTimeFormat.maximumFractionDigits = 1
+        lastTimeFormat.minimumFractionDigits = 0
+        
+        var eventLastMinute = eventDateFormat.stringFromTimeInterval(eventEndDate.timeIntervalSinceNow)
+        
+        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(" minutes", withString: "",
+            options: NSStringCompareOptions.LiteralSearch, range: nil)
+        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(",", withString: "",
+            options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        return lastTimeFormat.stringFromNumber(Double(eventLastMinute!)! / 60 + Double(Int(eventLastMinute!)! % 60) / 60.0)!
+    }
 }

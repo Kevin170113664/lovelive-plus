@@ -1,7 +1,7 @@
 import UIKit
 import SwiftyJSON
 
-class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     let advancedOptionsViewHeight: CGFloat = 120
     let eventTimeViewHeight: CGFloat = 90
@@ -63,13 +63,25 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
 
     override func viewDidLoad() {
         setBackground()
+        initCalculatorCardView()
+        initEventTimePanel()
+    }
+    
+    func initCalculatorCardView() {
         advancedOptionsView.hidden = true
         eventTimeView.hidden = true
         setPicker()
         setShadowForView(calculatorCardView)
         setShadowForView(calculateButton)
         eventCombo.selectRow(1, inComponent: 0, animated: false)
+    }
+    
+    func initEventTimePanel() {
         fillEventEndTime()
+        eventEndDay.delegate = self
+        eventEndDay.addTarget(self, action: "eventEndDayDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        eventEndHour.delegate = self
+        eventEndHour.addTarget(self, action: "eventEndHourDidChange:", forControlEvents: UIControlEvents.EditingChanged)
     }
 
     func setPicker() {
@@ -217,26 +229,20 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
             let eventEndCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
             self.eventEndDay.text = String(eventEndCalendar.components(.Day, fromDate: eventEndDate).day)
             self.eventEndHour.text = String(eventEndCalendar.components(.Hour, fromDate: eventEndDate).hour)
-            self.eventLastHour.text = self.getEventLastHour(eventEndDate)
+            self.eventLastHour.text = CalculatorFactory.getEventLastHour(eventEndDate)
         }
     }
 
-    func getEventLastHour(eventEndDate: NSDate) -> String {
-        let eventDateFormat = NSDateComponentsFormatter()
-        eventDateFormat.allowedUnits = .Minute
-        eventDateFormat.unitsStyle = .Full
-        let lastTimeFormat = NSNumberFormatter()
-        lastTimeFormat.maximumFractionDigits = 1
-        lastTimeFormat.minimumFractionDigits = 0
-
-        var eventLastMinute = eventDateFormat.stringFromTimeInterval(eventEndDate.timeIntervalSinceNow)
-
-        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(" minutes", withString: "",
-                options: NSStringCompareOptions.LiteralSearch, range: nil)
-        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(",", withString: "",
-                options: NSStringCompareOptions.LiteralSearch, range: nil)
-
-        return lastTimeFormat.stringFromNumber(Double(eventLastMinute!)! / 60 + Double(Int(eventLastMinute!)! % 60) / 60.0)!
+    func eventEndDayDidChange(textField: UITextField) {
+        let calendar = CalculatorCalendar()
+        let eventEndDate = NSDate(eventDateString: "\(calendar.getYear())-\(calendar.getMonth())-\(textField.text!) \(eventEndHour.text!)")
+        eventLastHour.text = CalculatorFactory.getEventLastHour(eventEndDate)
+    }
+    
+    func eventEndHourDidChange(textField: UITextField) {
+        let calendar = CalculatorCalendar()
+        let eventEndDate = NSDate(eventDateString: "\(calendar.getYear())-\(calendar.getMonth())-\(eventEndDay.text!) \(textField.text!)")
+        eventLastHour.text = CalculatorFactory.getEventLastHour(eventEndDate)
     }
 }
 
@@ -247,5 +253,16 @@ extension NSDate {
         dateStringFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
         let date = dateStringFormatter.dateFromString(dateString)!
         self.init(timeInterval: 0, sinceDate: date)
+    }
+    
+    convenience
+    init(eventDateString: String) {
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "yyyy-MM-dd HH"
+        if let date = dateStringFormatter.dateFromString(eventDateString) {
+            self.init(timeInterval: 0, sinceDate: date)
+        } else {
+            self.init(timeInterval: 0, sinceDate: NSDate())
+        }
     }
 }
