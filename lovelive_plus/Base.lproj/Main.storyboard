@@ -435,6 +435,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yF-Mx-5LK">
                                                 <rect key="frame" x="526" y="86.5" width="20.5" height="20.5"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="20.5" id="Qzn-4r-lGs"/>
                                                     <constraint firstAttribute="height" constant="20.5" id="wml-j7-6RH"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -614,7 +615,7 @@
                                     <constraint firstAttribute="height" constant="40" id="6jQ-Ws-WPP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Calculate"/>
+                                <state key="normal" title="开始计算"/>
                                 <connections>
                                     <segue destination="GhZ-h5-Ipc" kind="presentation" identifier="CalculateReport" modalTransitionStyle="crossDissolve" id="anN-9E-3UR"/>
                                 </connections>

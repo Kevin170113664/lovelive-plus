@@ -163,4 +163,25 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         calculateReportController.totalTime = calculatorFactory.getTotalPlayTime()
         calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch(pickerView) {
+        case normalDifficulty:
+            showConsumeLp(normalDifficultyData[row])
+            break
+        case eventDifficulty:
+            break
+        case eventRank:
+            break
+        case eventCombo:
+            break
+        default:
+            break
+        }
+    }
+    
+    func showConsumeLp(difficulty: String) {
+        let normalDifficultyArray = ["Expert": "25", "Hard": "15", "Normal": "10", "Easy": "5"]
+        consumeLp.text = normalDifficultyArray[difficulty]
+    }
 }
