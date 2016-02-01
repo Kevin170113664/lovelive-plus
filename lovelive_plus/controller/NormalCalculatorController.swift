@@ -1,4 +1,5 @@
 import UIKit
+import SwiftyJSON
 
 class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -67,6 +68,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         setPicker()
         setShadowForView(calculatorCardView)
         setShadowForView(calculateButton)
+        eventCombo.selectRow(1, inComponent: 0, animated: false)
     }
 
     func setPicker() {
@@ -167,21 +169,43 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch(pickerView) {
         case normalDifficulty:
-            showConsumeLp(normalDifficultyData[row])
-            break
-        case eventDifficulty:
-            break
-        case eventRank:
-            break
-        case eventCombo:
+            updateConsumeLp(normalDifficultyData[row])
             break
         default:
+            updateOncePoints()
             break
         }
     }
     
-    func showConsumeLp(difficulty: String) {
+    func updateConsumeLp(difficulty: String) {
         let normalDifficultyArray = ["Expert": "25", "Hard": "15", "Normal": "10", "Easy": "5"]
         consumeLp.text = normalDifficultyArray[difficulty]
+    }
+    
+    func updateOncePoints() {
+        let eventPoint = readNormalEventPointsFile()
+        var pointMultiply = 1
+        var difficulty = eventDifficultyData[eventDifficulty.selectedRowInComponent(0)]
+        var rank = eventRankData[eventRank.selectedRowInComponent(0)]
+        var combo = eventComboData[eventCombo.selectedRowInComponent(0)]
+        
+        if difficulty.substringToIndex(difficulty.startIndex.advancedBy(1)) == "4" {
+            pointMultiply = 4
+            difficulty = difficulty.substringFromIndex(difficulty.startIndex.advancedBy(2))
+        }
+        if rank == "-" {
+            rank = "D"
+        }
+        if combo == "-" {
+            combo = "D"
+        }
+        
+        oncePoints.text = String(pointMultiply * (eventPoint[difficulty]![rank]!![combo] as! Int))
+    }
+    
+    func readNormalEventPointsFile() -> NSDictionary {
+        let asset = NSDataAsset(name: "normalEvent", bundle: NSBundle.mainBundle())
+        let json = JSON(data: (asset?.data)!)
+        return json.dictionaryObject!
     }
 }

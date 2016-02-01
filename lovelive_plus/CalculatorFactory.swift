@@ -169,7 +169,7 @@ class CalculatorFactory {
     func getConsumeItemWithinOncePlay() -> CLong {
         var isFourMultiply = false
         var difficulty = eventDifficulty!
-        if (difficulty.substringToIndex(difficulty.startIndex) == "4") {
+        if (difficulty.substringToIndex(difficulty.startIndex.advancedBy(1)) == "4") {
             isFourMultiply = true
             difficulty = difficulty.substringFromIndex(difficulty.startIndex.advancedBy(2))
         }
