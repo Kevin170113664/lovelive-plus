@@ -80,10 +80,10 @@ class CalculatorFactory {
     }
 
     func calculateNormalProcess() {
+        initialisePredictFields()
         if (getBiggestLp() == 0) {
             return
         }
-        initialisePredictFields()
         normalPlayWithFreeLp()
         normalPlayWithLoveca()
         calculateNormalResultAfterPlay()
@@ -101,11 +101,14 @@ class CalculatorFactory {
     func initialisePredictFields() {
         lovecaAmount = 0
         finalPoints = currentPoints
+        finalRank = 0
         finalExperience = currentExperience
         finalLp = currentLp! + lround(getRecoveryLp())
         finalItem = currentItem
         timesNeedToPlay = 0
         eventTimesNeedToPlay = 0
+        totalPlayTime = 0
+        playTimeRatio = 0
     }
 
     func getRecoveryLp() -> Double {
