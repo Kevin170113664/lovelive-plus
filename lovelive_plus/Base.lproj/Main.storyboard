@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1180" y="-738"/>
         </scene>
-        <!--Card Controller-->
+        <!--卡牌-->
         <scene sceneID="V0l-hD-PAJ">
             <objects>
                 <collectionViewController id="awk-gQ-s4R" customClass="CardController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,8 +96,7 @@
                             <outlet property="delegate" destination="awk-gQ-s4R" id="8ad-bg-Pgd"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="psb-aV-Nue">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="卡牌" id="psb-aV-Nue">
                         <rightBarButtonItems>
                             <barButtonItem image="faceIcon" id="nFF-pq-Vtd" userLabel="Change Face Item">
                                 <connections>
@@ -247,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wD-P1-3pb" userLabel="Calculator Card View">
-                                <rect key="frame" x="12" y="128" width="576" height="225"/>
+                                <rect key="frame" x="12" y="78" width="576" height="225"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目标点数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-IF-ryU">
                                         <rect key="frame" x="15" y="15" width="68" height="20.5"/>
@@ -612,8 +611,8 @@
                                     <constraint firstItem="dkM-3p-mf6" firstAttribute="leading" secondItem="ifd-IF-ryU" secondAttribute="leading" id="zjY-sN-aV3"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-5z-0Le">
-                                <rect key="frame" x="17" y="552" width="566" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-5z-0Le">
+                                <rect key="frame" x="17" y="323" width="566" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6jQ-Ws-WPP"/>
                                 </constraints>
@@ -625,19 +624,19 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="0wD-P1-3pb" firstAttribute="top" secondItem="s1H-N5-tPI" secondAttribute="bottom" id="17V-i6-VMZ"/>
+                            <constraint firstItem="0wD-P1-3pb" firstAttribute="top" secondItem="s1H-N5-tPI" secondAttribute="bottom" constant="-50" id="17V-i6-VMZ"/>
                             <constraint firstItem="0wD-P1-3pb" firstAttribute="centerX" secondItem="pny-QN-GXD" secondAttribute="centerX" id="IHD-Bg-818"/>
                             <constraint firstItem="jAY-5z-0Le" firstAttribute="centerX" secondItem="0wD-P1-3pb" secondAttribute="centerX" id="JKh-aj-Vq5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0wD-P1-3pb" secondAttribute="trailing" constant="-8" id="JbX-ZO-ZUT"/>
-                            <constraint firstItem="mHI-8I-FyH" firstAttribute="top" secondItem="jAY-5z-0Le" secondAttribute="bottom" constant="10" id="USS-aM-Ph9"/>
+                            <constraint firstItem="jAY-5z-0Le" firstAttribute="top" secondItem="0wD-P1-3pb" secondAttribute="bottom" constant="20" id="T10-qb-hbn"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jAY-5z-0Le" secondAttribute="leading" constant="3" id="fp5-nw-wp2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jAY-5z-0Le" secondAttribute="trailing" constant="3" id="khK-kp-f1a"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0wD-P1-3pb" secondAttribute="leading" constant="8" id="wRU-mN-8po"/>
                         </constraints>
                         <connections>
                             <outlet property="delegate" destination="NEf-Uf-b7G" id="eGw-fi-LnU"/>
                         </connections>
                     </scrollView>
-                    <navigationItem key="navigationItem" title="Normal Calculator" id="tPQ-Ap-B9T"/>
+                    <navigationItem key="navigationItem" title="传统计算器" id="tPQ-Ap-B9T"/>
                     <connections>
                         <outlet property="advancedOptionsView" destination="ipc-Bz-rtg" id="cGN-0Z-PTH"/>
                         <outlet property="calculateButton" destination="jAY-5z-0Le" id="gU1-i4-2xy"/>
@@ -925,7 +924,7 @@
             </objects>
             <point key="canvasLocation" x="1164" y="-738"/>
         </scene>
-        <!--Card Detail-->
+        <!--卡牌详情-->
         <scene sceneID="GMu-Rq-8Jk">
             <objects>
                 <viewController id="8Pr-yP-gZ1" customClass="CardDetailController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -1165,7 +1164,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="tMd-LP-Y9I" secondAttribute="bottom" constant="10" id="TfA-od-UDu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Card Detail" id="ERy-Jb-iW1"/>
+                    <navigationItem key="navigationItem" title="卡牌详情" id="ERy-Jb-iW1"/>
                     <connections>
                         <outlet property="cardDetailScrollView" destination="tMd-LP-Y9I" id="oTL-dR-Duo"/>
                         <outlet property="cardDetailView" destination="kqc-Vk-grW" id="pYB-7H-NFv"/>
@@ -1425,7 +1424,7 @@
             </objects>
             <point key="canvasLocation" x="-417" y="-738"/>
         </scene>
-        <!--Card Detail-->
+        <!--卡牌详情-->
         <scene sceneID="AFb-RY-qYT">
             <objects>
                 <viewController storyboardIdentifier="PromoCardDetail" id="1kL-qg-mop" customClass="CardDetailController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -1689,7 +1688,7 @@
                             <constraint firstItem="mbz-4T-FZZ" firstAttribute="top" secondItem="2lu-DU-KEw" secondAttribute="topMargin" constant="15" id="guW-8q-iph"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Card Detail" id="qe8-SG-8SK"/>
+                    <navigationItem key="navigationItem" title="卡牌详情" id="qe8-SG-8SK"/>
                     <connections>
                         <outlet property="cardDetailScrollView" destination="mbz-4T-FZZ" id="jkj-uS-kqS"/>
                         <outlet property="cardDetailView" destination="2lu-DU-KEw" id="xu2-Sz-sNW"/>
