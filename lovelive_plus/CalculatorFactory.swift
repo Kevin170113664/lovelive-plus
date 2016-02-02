@@ -299,12 +299,13 @@ class CalculatorFactory {
         lastTimeFormat.minimumFractionDigits = 0
         
         var eventLastMinute = eventDateFormat.stringFromTimeInterval(eventEndDate.timeIntervalSinceNow)
-        
-        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(" minutes", withString: "",
-            options: NSStringCompareOptions.LiteralSearch, range: nil)
-        eventLastMinute = eventLastMinute!.stringByReplacingOccurrencesOfString(",", withString: "",
-            options: NSStringCompareOptions.LiteralSearch, range: nil)
+        eventLastMinute = removeNonDigitButRetainMinus(eventLastMinute!)
         
         return lastTimeFormat.stringFromNumber(Double(eventLastMinute!)! / 60 + Double(Int(eventLastMinute!)! % 60) / 60.0)!
+    }
+    
+    static func removeNonDigitButRetainMinus(value: String) -> String {
+        let stringArray = value.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "-1234567890").invertedSet)
+        return stringArray.joinWithSeparator("")
     }
 }
