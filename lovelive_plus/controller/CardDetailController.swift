@@ -3,6 +3,8 @@ import UIKit
 class CardDetailController: UIViewController {
     internal var cardId: String?
     internal var card: Card?
+    internal var cardNonIdolizedImage: String?
+    internal var cardIdolizedImage: String?
 
     @IBOutlet var cardDetailView: UIView!
     @IBOutlet weak var cardDetailScrollView: UIScrollView!
@@ -54,8 +56,10 @@ class CardDetailController: UIViewController {
     func setCardImage() {
         if (nonIdolizedImageExist()) {
             cardNonIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card!.cardImage!), forState: UIControlState.Normal)
+            cardNonIdolizedImage = card!.cardImage
         }
         cardIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card!.cardIdolizedImage!), forState: UIControlState.Normal)
+        cardIdolizedImage = card!.cardIdolizedImage
     }
 
     func setBasicInfo() {
@@ -103,5 +107,40 @@ class CardDetailController: UIViewController {
         view.layer.shadowRadius = 5.0
         view.layer.shadowOpacity = 0.8
         view.layer.masksToBounds = false
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
+        if error == nil {
+            showAlertAfterSaving("保存成功", message: "卡牌图片已经保存到您的相册中")
+        } else {
+            showAlertAfterSaving("保存错误", message: "保存到相册失败了哟>.<")
+        }
+    }
+    
+    func showAlertAfterSaving(title: String, message: String) {
+        let delay = 0.8 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+        dispatch_after(time, dispatch_get_main_queue(), {
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        })
+    }
+    
+    @IBAction func saveToAlbum(sender: AnyObject) {
+        if sender as! UIButton == cardIdolizedImageButton {
+            saveImageToAlbumWithUrl(cardIdolizedImage!)
+        } else {
+            saveImageToAlbumWithUrl(cardNonIdolizedImage!)
+        }
+    }
+    
+    func saveImageToAlbumWithUrl(imageUrl: String) {
+        let imageView = UIImageView()
+        imageView.sd_setImageWithURL(NSURL(string: imageUrl))
+        if let image = imageView.image {
+            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        }
     }
 }
