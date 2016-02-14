@@ -181,13 +181,26 @@ class DataController: NSObject {
     func deleteCardById(cardId: String) {
         let cardFetch = NSFetchRequest(entityName: "Card")
         cardFetch.predicate = NSPredicate(format: "cardId = %@", cardId)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: cardFetch)
-        
-        do {
-            try managedObjectContext.executeRequest(deleteRequest)
-        } catch let error as NSError {
-            print("Failed to delete card by id: \(cardId)")
-            fatalError("Failed to delete card: \(error)")
+        if #available(iOS 9.0, *) {
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: cardFetch)
+            do {
+                try managedObjectContext.executeRequest(deleteRequest)
+            } catch let error as NSError {
+                print("Failed to delete card by id: \(cardId)")
+                print(error)
+            }
+        } else {
+            do {
+                let results = try managedObjectContext.executeFetchRequest(cardFetch)
+                if let managedObjects = results as? [NSManagedObject] {
+                    for object in managedObjects {
+                        managedObjectContext.deleteObject(object)
+                    }
+                }
+            } catch let error as NSError {
+                print("Failed to delete card by id: \(cardId)")
+                print(error)
+            }
         }
     }
 

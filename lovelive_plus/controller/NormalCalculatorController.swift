@@ -217,9 +217,13 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     }
 
     func readNormalEventPointsFile() -> NSDictionary {
-        let asset = NSDataAsset(name: "normalEvent", bundle: NSBundle.mainBundle())
-        let json = JSON(data: (asset?.data)!)
-        return json.dictionaryObject!
+        if let path = NSBundle.mainBundle().pathForResource("normalEvent", ofType: "json") {
+            if let data = try? NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe) {
+                let json = JSON(data: data)
+                return json.dictionaryObject!
+            }
+        }
+        return NSDictionary()
     }
 
     func fillEventEndTime() {
