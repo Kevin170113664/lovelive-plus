@@ -17,7 +17,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     private let segueIdentifier = "CardDetail"
     private let promoSegueIdentifier = "PromoCardDetail"
     private var cardArray = [Card]()
-    private var cardIdArray = [String]()
+    private var simpleCardArray = [SimpleCard]()
     private var maxCardId = 10
     private var selectedIndexPath: NSIndexPath?
     private var isIdolized = true
@@ -79,10 +79,21 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
         maxCardId = cardArray.count
         
-        cardIdArray.removeAll()
+        simpleCardArray.removeAll()
         for card in cardArray {
-            cardIdArray.append(card.cardId!)
+            simpleCardArray.append(generateSimpleCard(card))
         }
+    }
+    
+    func generateSimpleCard(card: Card) -> SimpleCard {
+        let simpleCard = SimpleCard()
+        simpleCard.cardId = card.cardId!
+        simpleCard.isPromo = card.isPromo
+        simpleCard.isSpecial = card.isSpecial
+        simpleCard.roundCardIdolizedImage = card.roundCardIdolizedImage
+        simpleCard.roundCardImage = card.roundCardImage
+        
+        return simpleCard
     }
     
     func removeDuplicateCard() -> [Card] {
@@ -105,9 +116,9 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         cardArray = removeDuplicateCard()
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
         
-        cardIdArray.removeAll()
+        simpleCardArray.removeAll()
         for card in cardArray {
-            cardIdArray.append(card.cardId!)
+            simpleCardArray.append(generateSimpleCard(card))
         }
         
         cardCollectionView?.reloadData()
@@ -134,27 +145,25 @@ extension CardController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
         cell.backgroundColor = Color.Blue50()
 
-        if let card = DataController().queryCardById(cardIdArray[indexPath.row]) {
-            if (shouldShowNonIdolizedImage(card)) {
-                if let url = card.roundCardImage {
-                    cell.imageView!.sd_setImageWithURL(NSURL(string: url))
-                }
-            } else {
-                if let url = card.roundCardIdolizedImage {
-                    cell.imageView!.sd_setImageWithURL(NSURL(string: url))
-                }
+        let simpleCard = simpleCardArray[indexPath.row]
+        if (shouldShowNonIdolizedImage(simpleCard)) {
+            if let url = simpleCard.roundCardImage {
+                cell.imageView!.sd_setImageWithURL(NSURL(string: url))
+            }
+        } else {
+            if let url = simpleCard.roundCardIdolizedImage {
+                cell.imageView!.sd_setImageWithURL(NSURL(string: url))
             }
         }
-
+    
         return cell
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let card = DataController().queryCardById(cardIdArray[indexPath.row])
-
+        let simpleCard = simpleCardArray[indexPath.row]
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             selectedIndexPath = indexPath
-            if (isPromoCard(card!)) {
+            if (isPromoCard(simpleCard)) {
                 performSegueWithIdentifier(promoSegueIdentifier, sender: cell)
             } else {
                 performSegueWithIdentifier(segueIdentifier, sender: cell)
@@ -176,7 +185,7 @@ extension CardController {
 
     func showCardDetailView(segue: UIStoryboardSegue) {
         let cardDetailController = segue.destinationViewController as! CardDetailController
-        cardDetailController.cardId = cardIdArray[(selectedIndexPath?.row)!]
+        cardDetailController.cardId = simpleCardArray[(selectedIndexPath?.row)!].cardId
         selectedIndexPath = nil
     }
 
@@ -188,12 +197,12 @@ extension CardController {
         filterController.delegate = self
     }
 
-    func shouldShowNonIdolizedImage(card: Card) -> Bool {
-        return !isIdolized && card.isSpecial == 0 && card.isPromo == 0
+    func shouldShowNonIdolizedImage(simpleCard: SimpleCard) -> Bool {
+        return !isIdolized && simpleCard.isSpecial == 0 && simpleCard.isPromo == 0
     }
     
-    func isPromoCard(card: Card) -> Bool {
-        return card.isSpecial == 1 || card.isPromo == 1
+    func isPromoCard(simpleCard: SimpleCard) -> Bool {
+        return simpleCard.isSpecial == 1 || simpleCard.isPromo == 1
     }
 
     func isCardDetailSegue(identifier: String) -> Bool {

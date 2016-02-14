@@ -28,6 +28,7 @@
 		C3269F061C4647CB00919A95 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3269F051C4647CB00919A95 /* Color.swift */; };
 		C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3304BED1C4F308A00F96999 /* FilterController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
+		C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAE91C705B5B00842003 /* SimpleCard.swift */; };
 		C3C7B5D31C5DC0FF001A2BCE /* CalculatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */; };
 		C3C7B5D81C5F6264001A2BCE /* CalculatorCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */; };
 		C3EEC2F61C561A6C00815404 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F51C561A6C00815404 /* ModelMapper.swift */; };
@@ -82,6 +83,7 @@
 		C3269F051C4647CB00919A95 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C3304BED1C4F308A00F96999 /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
+		C39BAAE91C705B5B00842003 /* SimpleCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCard.swift; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorFactory.swift; sourceTree = "<group>"; };
 		C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorCalendar.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				32ABFA04173E3C52EEE5B458 /* Cv.swift */,
 				32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */,
 				32ABF8CD8859DF3FF88132A7 /* Event.swift */,
+				C39BAAE91C705B5B00842003 /* SimpleCard.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
 				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
 				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,
+				C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */,
 				32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */,
 				C3269F061C4647CB00919A95 /* Color.swift in Sources */,
 				32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */,
