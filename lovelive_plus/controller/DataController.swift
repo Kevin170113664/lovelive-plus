@@ -143,7 +143,7 @@ class DataController: NSObject {
                 self.cardService.getCardList(index, callback: {
                     (onePageOfCards: NSArray) -> Void in
                     self.cacheOnePageOfCards(onePageOfCards)
-                    if index == self.maxPage {
+                    if index >= self.maxPage - 1 {
                         callback()
                     }
                 })

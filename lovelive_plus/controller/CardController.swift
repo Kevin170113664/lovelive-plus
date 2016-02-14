@@ -24,15 +24,18 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRoundImageArray()
-
+        loadCardArray()
         cardCollectionView?.backgroundColor = Color.Blue50()
     }
 
-    func loadRoundImageArray() {
+    func loadCardArray() {
         cardArray = DataController().queryAllCards()
-        cardArray.count < maxCardId ? fetchCardDataFromInternet() : updateCardArray()
-        updateLatestCards()
+        if cardArray.count < maxCardId {
+            fetchCardDataFromInternet()
+        } else {
+            updateCardArray()
+            updateLatestCards()
+        }
     }
 
     func fetchCardDataFromInternet() {
@@ -63,7 +66,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     }
 
     func updateCardArray() {
-        generateCardIdArray()
+        generateSimpleCardArray()
 
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
@@ -74,7 +77,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         })
     }
 
-    func generateCardIdArray() {
+    func generateSimpleCardArray() {
         cardArray = removeDuplicateCard()
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
         maxCardId = cardArray.count
