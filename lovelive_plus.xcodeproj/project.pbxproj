@@ -29,6 +29,7 @@
 		C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3304BED1C4F308A00F96999 /* FilterController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
 		C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAE91C705B5B00842003 /* SimpleCard.swift */; };
+		C39BAAEC1C70720D00842003 /* SmCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */; };
 		C3C7B5D31C5DC0FF001A2BCE /* CalculatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */; };
 		C3C7B5D81C5F6264001A2BCE /* CalculatorCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */; };
 		C3EEC2F61C561A6C00815404 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F51C561A6C00815404 /* ModelMapper.swift */; };
@@ -84,6 +85,7 @@
 		C3304BED1C4F308A00F96999 /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
 		C39BAAE91C705B5B00842003 /* SimpleCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCard.swift; sourceTree = "<group>"; };
+		C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmCalculatorController.swift; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorFactory.swift; sourceTree = "<group>"; };
 		C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorCalendar.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				C3304BED1C4F308A00F96999 /* FilterController.swift */,
 				C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */,
 				C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */,
+				C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				32ABF3D65B4446F8E17594CB /* DataController.swift in Sources */,
 				32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */,
 				C3EEC2F61C561A6C00815404 /* ModelMapper.swift in Sources */,
+				C39BAAEC1C70720D00842003 /* SmCalculatorController.swift in Sources */,
 				32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */,
 				C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */,
 				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,

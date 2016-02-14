@@ -12,10 +12,6 @@ class MainController: UIViewController {
     @IBAction func clickMfNavigator(sender: AnyObject) {
         showNotFinishAlert()
     }
-    
-    @IBAction func clickSmNavigator(sender: AnyObject) {
-        showNotFinishAlert()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
