@@ -22,7 +22,9 @@ class CardService {
                 return
             }
             if let value: AnyObject = response.result.value {
-                callback(JSON(value)["results"].arrayObject!)
+                if JSON(value)["results"] != nil {
+                    callback(JSON(value)["results"].arrayObject!)
+                }
             }
         }
     }
