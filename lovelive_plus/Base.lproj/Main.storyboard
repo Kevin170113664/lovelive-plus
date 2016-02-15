@@ -130,12 +130,12 @@
                         <viewControllerLayoutGuide type="top" id="Dav-jx-H0W"/>
                         <viewControllerLayoutGuide type="bottom" id="BtS-ay-kC4"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="T4I-EU-nLz">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="T4I-EU-nLz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUy-jL-e72">
-                                <rect key="frame" x="23" y="343" width="554" height="40"/>
+                                <rect key="frame" x="23" y="358" width="554" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mph-K4-F9z"/>
                                 </constraints>
@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-4p-Rmh" userLabel="Calculator Card View">
-                                <rect key="frame" x="12" y="128" width="576" height="195"/>
+                                <rect key="frame" x="12" y="143" width="576" height="195"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目标点数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN0-ss-Upz">
                                         <rect key="frame" x="15" y="15" width="68" height="20"/>
@@ -497,10 +497,15 @@
                             <constraint firstItem="MUy-jL-e72" firstAttribute="leading" secondItem="T4I-EU-nLz" secondAttribute="leadingMargin" constant="3" id="l6n-94-T9P"/>
                             <constraint firstItem="MUy-jL-e72" firstAttribute="top" secondItem="KBd-4p-Rmh" secondAttribute="bottom" constant="20" id="ooD-Gc-UvO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MUy-jL-e72" secondAttribute="trailing" constant="3" id="q7r-ok-V3Z"/>
-                            <constraint firstItem="KBd-4p-Rmh" firstAttribute="top" secondItem="Dav-jx-H0W" secondAttribute="bottom" id="vMc-Gp-p42"/>
+                            <constraint firstItem="KBd-4p-Rmh" firstAttribute="top" secondItem="Dav-jx-H0W" secondAttribute="bottom" constant="15" id="vMc-Gp-p42"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bmY-rb-AnW"/>
+                            </mask>
+                        </variation>
                     </scrollView>
-                    <navigationItem key="navigationItem" title="SM Calculator" id="so1-iH-i2o"/>
+                    <navigationItem key="navigationItem" title="SM计算器" id="so1-iH-i2o"/>
                     <connections>
                         <outlet property="advancedOptionsView" destination="50z-iK-gSV" id="Qmh-8E-kJx"/>
                         <outlet property="calculateButton" destination="MUy-jL-e72" id="Txp-yQ-kbz"/>
@@ -1691,8 +1696,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-gR-ZMw" userLabel="Sm Navigator">
                                         <rect key="frame" x="240" y="317" width="360" height="176"/>
                                         <connections>
-                                            <action selector="clickSmNavigator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jrc-zQ-zRn"/>
-                                            <segue destination="IeE-Xc-G2f" kind="show" id="y7y-Ra-6pQ"/>
+                                            <segue destination="IeE-Xc-G2f" kind="show" id="joX-HE-Mqi"/>
                                         </connections>
                                     </button>
                                 </subviews>
