@@ -144,30 +144,33 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if segue.identifier == "CalculateReport" {
             let calculateReportController = segue.destinationViewController as! CalculateReportController
             
-//            let calculatorFactory = CalculatorFactory(objectivePoints: objectivePoints.text, currentPoints: currentPoints.text,
-//                currentRank: currentRank.text, wastedLpEveryDay: wastedLpEveryDay.text, currentLp: currentLp.text,
-//                currentExperience: currentExp.text, eventEndDay: eventEndDay.text, eventLastTime: eventLastHour.text,
-//                currentItem: currentItems.text, eventDifficulty: eventDifficultyData[eventDifficulty.selectedRowInComponent(0)],
-//                eventRank: eventRankData[eventRank.selectedRowInComponent(0)],
-//                eventCombo: eventComboData[eventCombo.selectedRowInComponent(0)],
-//                oncePoints: oncePoints.text, consumeLp: consumeLp.text, isChineseExp: isChineseExp.on)
-//            calculatorFactory.calculateNormalProcess()
+            let calculatorFactory = CalculatorFactory(objectivePoints: objectivePoints.text,
+                currentPoints: currentPoints.text,
+                currentRank: currentRank.text,
+                wastedLpEveryDay: wastedLpEveryDay.text,
+                currentLp: currentLp.text,
+                currentExperience: currentExp.text,
+                eventEndDay: eventEndDay.text,
+                eventLastTime: eventLastHour.text,
+                difficulty: difficultyData[songDifficulty.selectedRowInComponent(0)],
+                oncePoints: oncePoints.text,
+                isChineseExp: isChineseExp.on)
+            calculatorFactory.calculateSmProcess()
             
-//            setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
+            setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
         }
     }
     
     func setReportFields(calculateReportController: CalculateReportController, calculatorFactory: CalculatorFactory) {
-        calculateReportController.totalLoveCard = calculatorFactory.getLovecaAmount()
+        calculateReportController.totalLoveca = calculatorFactory.getLovecaAmount()
         calculateReportController.finalPoints = calculatorFactory.getFinalPoints()
         calculateReportController.finalRank = calculatorFactory.getFinalRank()
         calculateReportController.finalExp = String(format: "\(calculatorFactory.getFinalExp())/\(calculatorFactory.getCurrentRankUpExp())")
         calculateReportController.finalLp = calculatorFactory.getFinalLp()
-        calculateReportController.finalItems = calculatorFactory.getFinalItem()
         calculateReportController.playFrequency = calculatorFactory.getTimesNeedToPlay()
-        calculateReportController.eventFrequency = calculatorFactory.getEventTimesNeedToPlay()
         calculateReportController.totalTime = calculatorFactory.getTotalPlayTime()
         calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
+        calculateReportController.eventType = "sm"
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

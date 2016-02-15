@@ -174,8 +174,10 @@ class DataController: NSObject {
     }
     
     func updateCard(card: NSDictionary) {
-        deleteCardById(String(card["id"] as! Int))
-        cacheCard(card)
+        if let cardId = card["id"] {
+            deleteCardById(String(cardId as! Int))
+            cacheCard(card)
+        }
     }
     
     func deleteCardById(cardId: String) {

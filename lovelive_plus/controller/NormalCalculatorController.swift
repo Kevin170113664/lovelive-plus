@@ -167,7 +167,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     }
 
     func setReportFields(calculateReportController: CalculateReportController, calculatorFactory: CalculatorFactory) {
-        calculateReportController.totalLoveCard = calculatorFactory.getLovecaAmount()
+        calculateReportController.totalLoveca = calculatorFactory.getLovecaAmount()
         calculateReportController.finalPoints = calculatorFactory.getFinalPoints()
         calculateReportController.finalRank = calculatorFactory.getFinalRank()
         calculateReportController.finalExp = String(format: "\(calculatorFactory.getFinalExp())/\(calculatorFactory.getCurrentRankUpExp())")
@@ -177,6 +177,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         calculateReportController.eventFrequency = calculatorFactory.getEventTimesNeedToPlay()
         calculateReportController.totalTime = calculatorFactory.getTotalPlayTime()
         calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
+        calculateReportController.eventType = "normal"
     }
 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -66,6 +66,23 @@ class CalculatorFactory {
         self.consumeLp = parseLongField(consumeLp)
         self.expRatio = isChineseExp ? 1 : 2
     }
+    
+    init(objectivePoints: String!, currentPoints: String!, currentRank: String!,
+        wastedLpEveryDay: String!, currentLp: String!, currentExperience: String!,
+        eventEndDay: String!, eventLastTime: String!, difficulty: String!,
+        oncePoints: String!, isChineseExp: Bool) {
+            self.objectivePoints = parseLongField(objectivePoints)
+            self.currentPoints = parseLongField(currentPoints)
+            self.currentRank = parseLongField(currentRank)
+            self.wastedLpEveryDay = parseLongField(wastedLpEveryDay)
+            self.currentLp = parseLongField(currentLp)
+            self.currentExperience = parseLongField(currentExperience)
+            self.eventEndDay = parseLongField(eventEndDay)
+            self.eventLastTime = parseDoubleField(eventLastTime)
+            self.difficulty = difficulty
+            self.oncePoints = parseLongField(oncePoints)
+            self.expRatio = isChineseExp ? 1 : 2
+    }
 
     func parseDoubleField(value: String?) -> Double {
         return isStringValid(value) ? Double(value!)! : 0.0
@@ -87,6 +104,16 @@ class CalculatorFactory {
         normalPlayWithFreeLp()
         normalPlayWithLoveca()
         calculateNormalResultAfterPlay()
+    }
+    
+    func calculateSmProcess() {
+        initialisePredictFields()
+        if (getBiggestLp() == 0) {
+            return
+        }
+        smPlayWithFreeLp()
+        smPlayWithLoveca()
+        calculateSmResultAfterPlay()
     }
 
     func getBiggestLp() -> CLong {
@@ -152,6 +179,34 @@ class CalculatorFactory {
         totalPlayTime = (eventTimesNeedToPlay! + timesNeedToPlay!) * MINUTES_FOR_ONE_SONG
         playTimeRatio = Double(totalPlayTime!) / (eventLastTime! * 60.0)
     }
+    
+    func smPlayWithFreeLp() {
+        while (finalLp >= getSmLpWithinOncePlay()) {
+            smPlayOnceWithEnoughLp()
+            while (finalExperience >= getCurrentRankUpExp()) {
+                upgradeOneRankWithEnoughExp()
+            }
+        }
+    }
+    
+    func smPlayWithLoveca() {
+        while (true) {
+            while (finalLp >= getSmLpWithinOncePlay()) {
+                smPlayOnceWithEnoughLp()
+            }
+            if (finalPoints < objectivePoints) {
+                consumeOneLoveca()
+            } else {
+                break
+            }
+        }
+    }
+    
+    func calculateSmResultAfterPlay() {
+        finalRank = currentRank
+        totalPlayTime = timesNeedToPlay! * MINUTES_FOR_ONE_SONG
+        playTimeRatio = Double(totalPlayTime!) / (eventLastTime! * 60.0)
+    }
 
     func consumeOneLoveca() {
         lovecaAmount! += 1
@@ -164,6 +219,16 @@ class CalculatorFactory {
         finalItem! += getNormalBasicPointsWithinOncePlay()
         finalPoints! += getNormalBasicPointsWithinOncePlay()
         finalExperience! += getNormalExpWithinOncePlay(consumeLp!)
+        while (finalExperience >= getCurrentRankUpExp()) {
+            upgradeOneRankWithEnoughExp()
+        }
+    }
+    
+    func smPlayOnceWithEnoughLp() {
+        finalLp! -= getSmLpWithinOncePlay()
+        timesNeedToPlay! += 1
+        finalPoints! += oncePoints!
+        finalExperience! += getNormalExpWithinOncePlay(difficulty!)
         while (finalExperience >= getCurrentRankUpExp()) {
             upgradeOneRankWithEnoughExp()
         }
@@ -242,6 +307,12 @@ class CalculatorFactory {
         let normalExpArray = [25: 83, 15: 46, 10: 26, 5: 12]
 
         return normalExpArray[consumeLP]!
+    }
+    
+    func getSmLpWithinOncePlay() -> CLong {
+        let consumeLpArray = ["Expert": 25, "Hard": 15, "Normal": 10, "Easy": 5]
+        
+        return consumeLpArray[difficulty!]!
     }
 
     func getLovecaAmount() -> String {
