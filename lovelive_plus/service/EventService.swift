@@ -8,11 +8,13 @@ class EventService {
     let cards = "events/"
 
     init() {
-
+        Alamofire.Manager().session.configuration.timeoutIntervalForRequest = 30
+        Alamofire.Manager().session.configuration.timeoutIntervalForResource = 30
     }
 
     func getLatestEvent(callback: (NSArray) -> Void) -> Void {
         let url = baseUrl + cards
+        
         Alamofire.request(.GET, url, parameters: ["ordering": "-beginning", "page_size": 1])
         .responseJSON {
             response in

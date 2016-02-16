@@ -9,11 +9,13 @@ class CardService {
     let cardIds = "cardids/"
 
     init() {
-
+        Alamofire.Manager().session.configuration.timeoutIntervalForRequest = 30
+        Alamofire.Manager().session.configuration.timeoutIntervalForResource = 30
     }
 
     func getCardList(page: Int, callback: (NSArray) -> Void) -> Void {
         let url = baseUrl + cards
+        
         Alamofire.request(.GET, url, parameters: ["page": page])
         .responseJSON {
             response in
@@ -46,6 +48,7 @@ class CardService {
 
     func getAllCardIds(callback: (NSArray) -> Void) -> Void {
         let url = baseUrl + cardIds
+        
         Alamofire.request(.GET, url)
         .responseJSON {
             response in
