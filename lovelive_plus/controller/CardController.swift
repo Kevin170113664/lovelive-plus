@@ -104,7 +104,9 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         var cleanCardArray = [Card]()
 
         for card in cardArray {
-            cardDictionary.setValue(card, forKey: card.cardId!)
+            if let cardId = card.cardId {
+                cardDictionary.setValue(card, forKey: cardId)
+            }
         }
 
         for d in cardDictionary {
