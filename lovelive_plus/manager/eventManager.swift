@@ -1,4 +1,6 @@
 import Foundation
+import UIKit
+import CoreData
 
-class EventManager {
+class EventManager: NSObject {
 }

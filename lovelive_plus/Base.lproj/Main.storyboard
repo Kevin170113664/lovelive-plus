@@ -626,6 +626,34 @@
             </objects>
             <point key="canvasLocation" x="211" y="-122.5"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="HqW-TP-cwa">
+            <objects>
+                <tableViewController id="8t7-EG-930" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jvg-F8-A5J">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yvd-jW-q2f">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yvd-jW-q2f" id="2L5-yq-QWY">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8t7-EG-930" id="RPN-t1-Rqx"/>
+                            <outlet property="delegate" destination="8t7-EG-930" id="jh6-8r-0ee"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6R-hd-787" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="45"/>
+        </scene>
         <!--Normal Controller-->
         <scene sceneID="lHQ-Ih-7DL">
             <objects>
@@ -1669,6 +1697,12 @@
                                             </constraint>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIH-E3-dxW">
+                                        <rect key="frame" x="0.0" y="-21" width="600" height="141"/>
+                                        <connections>
+                                            <segue destination="8t7-EG-930" kind="show" id="tGI-Zx-v5P"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKI-Mz-TIT" userLabel="Card Navigator">
                                         <rect key="frame" x="0.0" y="184" width="240" height="609"/>
                                         <connections>
@@ -1703,6 +1737,7 @@
                                     <constraint firstItem="g7V-po-SDT" firstAttribute="width" secondItem="zF1-Oy-D7o" secondAttribute="width" id="57X-zM-dTQ">
                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstItem="zIH-E3-dxW" firstAttribute="height" secondItem="ifq-vK-H1M" secondAttribute="height" id="57r-TY-7N4"/>
                                     <constraint firstItem="zF1-Oy-D7o" firstAttribute="leading" secondItem="tBt-AA-ybL" secondAttribute="trailing" id="5RN-dL-IhF">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-6"/>
                                     </constraint>
@@ -1722,7 +1757,9 @@
                                     </constraint>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" id="AHE-1S-SCk"/>
                                     <constraint firstItem="ifq-vK-H1M" firstAttribute="leading" secondItem="xdw-SV-yze" secondAttribute="leading" id="EH6-ao-jvH"/>
+                                    <constraint firstAttribute="trailing" secondItem="zIH-E3-dxW" secondAttribute="trailing" id="F9X-FS-sDk"/>
                                     <constraint firstItem="tBt-AA-ybL" firstAttribute="top" secondItem="XcU-vN-SRC" secondAttribute="top" id="GfM-s6-N9F"/>
+                                    <constraint firstItem="zIH-E3-dxW" firstAttribute="top" secondItem="xdw-SV-yze" secondAttribute="top" constant="-21" id="H4U-gX-YT9"/>
                                     <constraint firstItem="XcU-vN-SRC" firstAttribute="leading" secondItem="NSD-eq-haw" secondAttribute="leading" id="HUo-wR-IuE">
                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
@@ -1745,6 +1782,8 @@
                                     <constraint firstItem="g7V-po-SDT" firstAttribute="leading" secondItem="KKI-Mz-TIT" secondAttribute="trailing" id="Vvg-MK-Jl5">
                                         <variation key="heightClass=regular-widthClass=regular" constant="1"/>
                                     </constraint>
+                                    <constraint firstItem="zIH-E3-dxW" firstAttribute="leading" secondItem="xdw-SV-yze" secondAttribute="leading" id="WYn-CB-Q7q"/>
+                                    <constraint firstItem="zIH-E3-dxW" firstAttribute="width" secondItem="xdw-SV-yze" secondAttribute="width" id="ZNo-1e-vFa"/>
                                     <constraint firstItem="fc5-gR-ZMw" firstAttribute="top" secondItem="MRd-7L-CAe" secondAttribute="bottom" constant="-70" id="ZcU-2r-CRw">
                                         <variation key="widthClass=regular" constant="0.0"/>
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -1804,6 +1843,7 @@
                     <connections>
                         <outlet property="cardNavigator" destination="KKI-Mz-TIT" id="tzu-d9-cCq"/>
                         <outlet property="eventImage" destination="ifq-vK-H1M" id="UJ1-jn-SOc"/>
+                        <outlet property="eventNavigator" destination="zIH-E3-dxW" id="3P0-7D-8nR"/>
                         <outlet property="mfNavigator" destination="MRd-7L-CAe" id="Fyh-pF-B1f"/>
                         <outlet property="normalNavigator" destination="g7V-po-SDT" id="d87-3W-T8O"/>
                         <outlet property="scrollView" destination="xdw-SV-yze" id="91d-LP-Kvq"/>

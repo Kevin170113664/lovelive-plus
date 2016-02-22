@@ -29,7 +29,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     }
 
     func loadCardArray() {
-        cardArray = DataController().queryAllCards()
+        cardArray = CardManager().queryAllCards()
         if cardArray.count < maxCardId {
             fetchCardDataFromInternet()
         } else {
@@ -50,15 +50,15 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     func updateLatestCards() {
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
-            DataController().updateLatest20Cards(cardIdArray.lastObject as! Int)
+            CardManager().updateLatest20Cards(cardIdArray.lastObject as! Int)
         })
     }
 
     func fetchCardAccordingToMaxCardId() {
         if cardArray.count < maxCardId {
-            DataController().cacheAllCards({
+            CardManager().cacheAllCards({
                 () -> Void in
-                self.cardArray = DataController().queryAllCards()
+                self.cardArray = CardManager().queryAllCards()
                 self.updateCardArray()
                 self.cardCollectionView?.reloadData()
             })
@@ -117,7 +117,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
     }
     
     func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
-        cardArray = DataController().queryCardsByFilterDictionary(filterDictionary)
+        cardArray = CardManager().queryCardsByFilterDictionary(filterDictionary)
         cardArray = removeDuplicateCard()
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
         

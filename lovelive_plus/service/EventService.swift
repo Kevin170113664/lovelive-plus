@@ -5,7 +5,7 @@ import SwiftyJSON
 class EventService {
 
     let baseUrl = "http://schoolido.lu/api/"
-    let cards = "events/"
+    let events = "events/"
 
     init() {
         Alamofire.Manager().session.configuration.timeoutIntervalForRequest = 30
@@ -13,7 +13,7 @@ class EventService {
     }
 
     func getLatestEvent(callback: (NSArray) -> Void) -> Void {
-        let url = baseUrl + cards
+        let url = baseUrl + events
         
         Alamofire.request(.GET, url, parameters: ["ordering": "-beginning", "page_size": 1])
         .responseJSON {

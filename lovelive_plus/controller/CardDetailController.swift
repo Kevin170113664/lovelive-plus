@@ -42,7 +42,7 @@ class CardDetailController: UIViewController {
     }
 
     func setCardDetail() {
-        card = DataController().queryCardById(cardId!)
+        card = CardManager().queryCardById(cardId!)
 
         setCardImage()
         setBasicInfo()

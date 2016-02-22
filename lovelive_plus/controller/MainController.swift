@@ -3,6 +3,7 @@ import UIKit
 class MainController: UIViewController {
 
     @IBOutlet var eventImage: UIImageView?
+    @IBOutlet var eventNavigator: UIButton?
     @IBOutlet var cardNavigator: UIButton?
     @IBOutlet var mfNavigator: UIButton?
     @IBOutlet var smNavigator: UIButton?
