@@ -626,7 +626,7 @@
             </objects>
             <point key="canvasLocation" x="211" y="-122.5"/>
         </scene>
-        <!--Event Controller-->
+        <!--活动列表-->
         <scene sceneID="HqW-TP-cwa">
             <objects>
                 <tableViewController id="8t7-EG-930" customClass="EventController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -696,6 +696,7 @@
                             <outlet property="delegate" destination="8t7-EG-930" id="jh6-8r-0ee"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="活动列表" id="0z2-cn-Kcq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6R-hd-787" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
