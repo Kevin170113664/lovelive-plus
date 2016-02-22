@@ -13,7 +13,7 @@
 		32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */; };
 		32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF6034229FDEBB17818BD /* MainController.swift */; };
 		32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA04173E3C52EEE5B458 /* Cv.swift */; };
-		32ABF549D80E95BAC4D745F2 /* cardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8E9CF3E09673908DD59 /* cardManager.swift */; };
+		32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8E9CF3E09673908DD59 /* CardManager.swift */; };
 		32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */; };
 		32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */; };
 		32ABF9307034F5583660F2ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8CD8859DF3FF88132A7 /* Event.swift */; };
@@ -21,12 +21,15 @@
 		32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */; };
 		32ABFB71436DB98AD907474E /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFCB1D60FD120E75D35DC /* CardService.swift */; };
 		32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF34F85DC2251C6011330 /* Idol.swift */; };
-		32ABFD18FBD8145F5F52CC83 /* eventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF2E6DA76F6B7EF9B9604 /* eventManager.swift */; };
+		32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */; };
 		32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFFE34AEA18144D1559B5 /* CardController.swift */; };
 		C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */; };
 		C3269F061C4647CB00919A95 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3269F051C4647CB00919A95 /* Color.swift */; };
 		C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3304BED1C4F308A00F96999 /* FilterController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
+		C36DCB211C7AECB2004C5E27 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB201C7AECB2004C5E27 /* EventController.swift */; };
+		C36DCB231C7AEE87004C5E27 /* SimpleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB221C7AEE87004C5E27 /* SimpleEvent.swift */; };
+		C36DCB261C7AF85E004C5E27 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */; };
 		C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAE91C705B5B00842003 /* SimpleCard.swift */; };
 		C39BAAEC1C70720D00842003 /* SmCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */; };
 		C3C7B5D31C5DC0FF001A2BCE /* CalculatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */; };
@@ -60,7 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		32ABF2E6DA76F6B7EF9B9604 /* eventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventManager.swift; sourceTree = "<group>"; };
+		32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		32ABF34F85DC2251C6011330 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idol.swift; sourceTree = "<group>"; };
 		32ABF6034229FDEBB17818BD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idol+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -68,7 +71,7 @@
 		32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailController.swift; sourceTree = "<group>"; };
 		32ABF8CD8859DF3FF88132A7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		32ABF8DBFFACA0C5E70AFBBA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		32ABF8E9CF3E09673908DD59 /* cardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardManager.swift; sourceTree = "<group>"; };
+		32ABF8E9CF3E09673908DD59 /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF974A3C80D09F52238F0 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		32ABFA04173E3C52EEE5B458 /* Cv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cv.swift; sourceTree = "<group>"; };
@@ -78,10 +81,13 @@
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810BA84A8856D9DE592EF842 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A977597BCA03742C293574A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardCollectionViewCell.swift; path = ../CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3269F051C4647CB00919A95 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C3304BED1C4F308A00F96999 /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
+		C36DCB201C7AECB2004C5E27 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		C36DCB221C7AEE87004C5E27 /* SimpleEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleEvent.swift; sourceTree = "<group>"; };
+		C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		C39BAAE91C705B5B00842003 /* SimpleCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCard.swift; sourceTree = "<group>"; };
 		C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmCalculatorController.swift; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -154,12 +160,12 @@
 			children = (
 				32ABFFE34AEA18144D1559B5 /* CardController.swift */,
 				32ABF6034229FDEBB17818BD /* MainController.swift */,
-				C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */,
 				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
 				C3304BED1C4F308A00F96999 /* FilterController.swift */,
 				C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */,
 				C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */,
 				C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */,
+				C36DCB201C7AECB2004C5E27 /* EventController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 				32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */,
 				32ABF8CD8859DF3FF88132A7 /* Event.swift */,
 				C39BAAE91C705B5B00842003 /* SimpleCard.swift */,
+				C36DCB221C7AEE87004C5E27 /* SimpleEvent.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -183,8 +190,8 @@
 		32ABFDF33A7DBA0B72A51D7A /* manager */ = {
 			isa = PBXGroup;
 			children = (
-				32ABF2E6DA76F6B7EF9B9604 /* eventManager.swift */,
-				32ABF8E9CF3E09673908DD59 /* cardManager.swift */,
+				32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */,
+				32ABF8E9CF3E09673908DD59 /* CardManager.swift */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -204,6 +211,15 @@
 				C3269F051C4647CB00919A95 /* Color.swift */,
 			);
 			name = res;
+			sourceTree = "<group>";
+		};
+		C36DCB241C7AF844004C5E27 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */,
+				C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		C3EEC2F41C561A5400815404 /* factory */ = {
@@ -239,6 +255,7 @@
 		C3F0D4EB1C22C9C2008EF6F6 /* lovelive_plus */ = {
 			isa = PBXGroup;
 			children = (
+				C36DCB241C7AF844004C5E27 /* cell */,
 				C3EEC2F41C561A5400815404 /* factory */,
 				C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */,
 				C3F0D4F81C22C9C2008EF6F6 /* Info.plist */,
@@ -466,9 +483,9 @@
 				C39BAAEC1C70720D00842003 /* SmCalculatorController.swift in Sources */,
 				32ABF497E1C17B2D18CCEEB0 /* MainController.swift in Sources */,
 				C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */,
-				32ABFD18FBD8145F5F52CC83 /* eventManager.swift in Sources */,
+				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,
 				C3EEC2FA1C59FC2000815404 /* CalculateReportController.swift in Sources */,
-				32ABF549D80E95BAC4D745F2 /* cardManager.swift in Sources */,
+				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
 				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
 				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,
 				C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */,
@@ -477,6 +494,7 @@
 				32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */,
 				32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */,
 				32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */,
+				C36DCB261C7AF85E004C5E27 /* EventTableViewCell.swift in Sources */,
 				32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */,
 				32ABF9307034F5583660F2ED /* Event.swift in Sources */,
 				32ABFB71436DB98AD907474E /* CardService.swift in Sources */,
@@ -485,6 +503,8 @@
 				C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */,
 				32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */,
 				C3C7B5D31C5DC0FF001A2BCE /* CalculatorFactory.swift in Sources */,
+				C36DCB231C7AEE87004C5E27 /* SimpleEvent.swift in Sources */,
+				C36DCB211C7AECB2004C5E27 /* EventController.swift in Sources */,
 				C3C7B5D81C5F6264001A2BCE /* CalculatorCalendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
