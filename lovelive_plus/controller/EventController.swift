@@ -10,6 +10,7 @@ class EventController: UITableViewController {
         for event in eventArray {
             simpleEventArray.append(generateSimpleEvent(event))
         }
+        removeDuplicateEvent()
     }
     
     func generateSimpleEvent(event: Event) -> SimpleEvent {
@@ -19,6 +20,21 @@ class EventController: UITableViewController {
         simpleEvent.end = event.end
         
         return simpleEvent
+    }
+    
+    func removeDuplicateEvent() {
+        let eventDictionary = NSMutableDictionary()
+        
+        for simpleEvent in simpleEventArray {
+            eventDictionary.setValue(simpleEvent, forKey: simpleEvent.name!)
+        }
+        
+        simpleEventArray.removeAll()
+        for simpleEvent in eventDictionary {
+            simpleEventArray.append(simpleEvent.value as! SimpleEvent)
+        }
+        
+        simpleEventArray = simpleEventArray.sort({ $0.end! > $1.end! })
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -34,7 +50,8 @@ class EventController: UITableViewController {
         cell.backgroundColor = Color.Blue50()
         
         if let eventImageUrl = simpleEventArray[indexPath.row].image {
-            cell.eventImageButton.sd_setBackgroundImageWithURL(NSURL(string: eventImageUrl), forState: UIControlState.Normal)
+            cell.eventImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            cell.eventImageView.sd_setImageWithURL(NSURL(string: eventImageUrl))
         }
         if let eventName = simpleEventArray[indexPath.row].name {
             cell.eventNameLabel.text = eventName

@@ -630,26 +630,32 @@
         <scene sceneID="HqW-TP-cwa">
             <objects>
                 <tableViewController id="8t7-EG-930" customClass="EventController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="jvg-F8-A5J">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" id="jvg-F8-A5J">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="150" id="Yvd-jW-q2f" customClass="EventTableViewCell" customModule="lovelive_plus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="160" id="Yvd-jW-q2f" customClass="EventTableViewCell" customModule="lovelive_plus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yvd-jW-q2f" id="2L5-yq-QWY">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG0-Ei-Aly">
-                                            <rect key="frame" x="-2" y="-2" width="604" height="120"/>
+                                            <rect key="frame" x="-2" y="-2" width="604" height="135"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="120" id="kzP-T2-pt5"/>
+                                                <constraint firstAttribute="height" constant="135" id="kzP-T2-pt5"/>
                                             </constraints>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhv-vi-4pI">
+                                            <rect key="frame" x="0.0" y="-2" width="602" height="135"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="135" id="12H-KT-4OX"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPL-YC-XvS">
-                                            <rect key="frame" x="8" y="116.5" width="584" height="25"/>
+                                            <rect key="frame" x="8" y="126.5" width="584" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="nhD-OC-gOg"/>
                                             </constraints>
@@ -659,16 +665,26 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="vhv-vi-4pI" secondAttribute="leading" constant="8" id="2vy-nI-8lR"/>
                                         <constraint firstItem="zG0-Ei-Aly" firstAttribute="top" secondItem="2L5-yq-QWY" secondAttribute="topMargin" constant="-10" id="8e0-VQ-gc9"/>
                                         <constraint firstItem="zG0-Ei-Aly" firstAttribute="leading" secondItem="2L5-yq-QWY" secondAttribute="leadingMargin" constant="-10" id="AM1-0O-iHi"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vhv-vi-4pI" secondAttribute="trailing" constant="-10" id="Hrb-uH-6wv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sPL-YC-XvS" secondAttribute="bottom" id="Jed-NM-sR6"/>
+                                        <constraint firstItem="vhv-vi-4pI" firstAttribute="top" secondItem="2L5-yq-QWY" secondAttribute="topMargin" constant="-10" id="P7U-4M-ORr"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="zG0-Ei-Aly" secondAttribute="trailing" constant="-10" id="WJs-SS-5mR"/>
                                         <constraint firstItem="sPL-YC-XvS" firstAttribute="leading" secondItem="2L5-yq-QWY" secondAttribute="leadingMargin" id="Y6C-vN-RhW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sPL-YC-XvS" secondAttribute="trailing" id="ZB8-uv-KUN"/>
+                                        <constraint firstItem="vhv-vi-4pI" firstAttribute="width" secondItem="2L5-yq-QWY" secondAttribute="width" id="x5a-WO-h7v"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="x5a-WO-h7v"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventImageButton" destination="zG0-Ei-Aly" id="Fca-ET-kQ6"/>
+                                    <outlet property="eventImageView" destination="vhv-vi-4pI" id="yAB-n8-1qH"/>
                                     <outlet property="eventNameLabel" destination="sPL-YC-XvS" id="LZ6-Td-LGd"/>
                                 </connections>
                             </tableViewCell>
