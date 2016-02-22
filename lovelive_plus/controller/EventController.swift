@@ -6,6 +6,10 @@ class EventController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSimpleEventArray()
+    }
+    
+    func loadSimpleEventArray() {
         eventArray = EventManager().queryAllEvents()
         for event in eventArray {
             simpleEventArray.append(generateSimpleEvent(event))
@@ -50,9 +54,11 @@ class EventController: UITableViewController {
         cell.backgroundColor = Color.Blue50()
         
         if let eventImageUrl = simpleEventArray[indexPath.row].image {
+            let encodedUrl = eventImageUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
             cell.eventImageView.contentMode = UIViewContentMode.ScaleAspectFit
-            cell.eventImageView.sd_setImageWithURL(NSURL(string: eventImageUrl))
+            cell.eventImageView.sd_setImageWithURL(NSURL(string: encodedUrl!))
         }
+        
         if let eventName = simpleEventArray[indexPath.row].name {
             cell.eventNameLabel.text = eventName
         }
