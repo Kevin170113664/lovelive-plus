@@ -147,24 +147,28 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "CalculateReport" {
-//            let calculateReportController = segue.destinationViewController as! CalculateReportController
-//            
-//            let calculatorFactory = CalculatorFactory(objectivePoints: objectivePoints.text,
-//                currentPoints: currentPoints.text,
-//                currentRank: currentRank.text,
-//                wastedLpEveryDay: wastedLpEveryDay.text,
-//                currentLp: currentLp.text,
-//                currentExperience: currentExp.text,
-//                eventEndDay: eventEndDay.text,
-//                eventLastTime: eventLastHour.text,
-//                difficulty: difficultyData[songDifficulty.selectedRowInComponent(0)],
-//                oncePoints: oncePoints.text,
-//                isChineseExp: isChineseExp.on)
-//            calculatorFactory.calculateSmProcess()
-//            
-//            setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
-//        }
+        if segue.identifier == "CalculateReport" {
+            let calculateReportController = segue.destinationViewController as! CalculateReportController
+            
+            let calculatorFactory = CalculatorFactory(objectivePoints: objectivePoints.text,
+                currentPoints: currentPoints.text,
+                currentRank: currentRank.text,
+                songAmount: songAmountData[songAmount.selectedRowInComponent(0)],
+                difficulty: difficultyData[difficulty.selectedRowInComponent(0)],
+                wastedLpEveryDay: wastedLpEveryDay.text,
+                eventPointsAddition: eventPointAddition.on,
+                expAddition: expAddition.on,
+                songRankRatio: songRankRatio.text,
+                comboRankRatio: comboRankRatio.text,
+                currentLp: currentLp.text,
+                currentExperience: currentExp.text,
+                eventEndDay: eventEndDay.text,
+                eventLastTime: eventLastHour.text,
+                isChineseExp: isChineseExp.on)
+            calculatorFactory.calculateMfProcess()
+            
+            setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
+        }
     }
     
     func setReportFields(calculateReportController: CalculateReportController, calculatorFactory: CalculatorFactory) {
@@ -176,7 +180,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         calculateReportController.playFrequency = calculatorFactory.getTimesNeedToPlay()
         calculateReportController.totalTime = calculatorFactory.getTotalPlayTime()
         calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
-        calculateReportController.eventType = "sm"
+        calculateReportController.eventType = "mf"
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -187,14 +191,6 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
             break
             default: break
         }
-    }
-    
-    func updateOncePoints() {
-//        let difficulty = difficultyData[songDifficulty.selectedRowInComponent(0)]
-//        let rank = songRankData[songRank.selectedRowInComponent(0)]
-//        let playedRank = playRankData[playRank.selectedRowInComponent(0)]
-//        
-//        oncePoints.text = String(lround(difficultyBasicPointArray[difficulty]! * songRankArray[rank]! * playRankArray[playedRank]!))
     }
     
     func fillEventEndTime() {

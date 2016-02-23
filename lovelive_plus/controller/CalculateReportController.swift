@@ -47,7 +47,7 @@ class CalculateReportController: UIViewController {
                 break
             case "sm": showSmReportData()
                 break
-            case "mf":
+            case "mf": showSmReportData()
                 break
             default:
                 break

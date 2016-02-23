@@ -2140,7 +2140,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="开始计算"/>
                                 <connections>
-                                    <segue destination="GhZ-h5-Ipc" kind="presentation" modalTransitionStyle="crossDissolve" id="dze-RK-34d"/>
+                                    <segue destination="GhZ-h5-Ipc" kind="presentation" identifier="CalculateReport" modalTransitionStyle="crossDissolve" id="dze-RK-34d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2720,6 +2720,6 @@
         <image name="smNavigator" width="1000" height="280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cL4-4i-Tn2"/>
+        <segue reference="dze-RK-34d"/>
     </inferredMetricsTieBreakers>
 </document>

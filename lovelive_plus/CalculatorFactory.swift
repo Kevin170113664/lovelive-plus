@@ -12,8 +12,8 @@ class CalculatorFactory {
     var songAmount: CLong?
     var difficulty: String?
     var wastedLpEveryDay: CLong?
-    var pointAddition: Bool?
-    var experienceAddition: Bool?
+    var eventPointsAddition: Bool?
+    var expAddition: Bool?
     var songRankRatio: Double?
     var comboRankRatio: Double?
     var currentLp: CLong?
@@ -83,7 +83,29 @@ class CalculatorFactory {
             self.oncePoints = parseLongField(oncePoints)
             self.expRatio = isChineseExp ? 1 : 2
     }
-
+    
+    init(objectivePoints: String!, currentPoints: String!, currentRank: String!,
+        songAmount: String!, difficulty: String!, wastedLpEveryDay: String!,
+        eventPointsAddition: Bool, expAddition: Bool, songRankRatio: String!,
+        comboRankRatio: String!, currentLp: String!, currentExperience: String!,
+        eventEndDay: String!, eventLastTime: String!, isChineseExp: Bool) {
+            self.objectivePoints = parseLongField(objectivePoints)
+            self.currentPoints = parseLongField(currentPoints)
+            self.currentRank = parseLongField(currentRank)
+            self.songAmount = parseLongField(songAmount)
+            self.difficulty = difficulty
+            self.wastedLpEveryDay = parseLongField(wastedLpEveryDay)
+            self.eventPointsAddition = eventPointsAddition
+            self.expAddition = expAddition
+            self.songRankRatio = parseDoubleField(songRankRatio)
+            self.comboRankRatio = parseDoubleField(comboRankRatio)
+            self.currentLp = parseLongField(currentLp)
+            self.currentExperience = parseLongField(currentExperience)
+            self.eventEndDay = parseLongField(eventEndDay)
+            self.eventLastTime = parseDoubleField(eventLastTime)
+            self.expRatio = isChineseExp ? 1 : 2
+    }
+    
     func parseDoubleField(value: String?) -> Double {
         return isStringValid(value) ? Double(value!)! : 0.0
     }
@@ -114,6 +136,16 @@ class CalculatorFactory {
         smPlayWithFreeLp()
         smPlayWithLoveca()
         calculateSmResultAfterPlay()
+    }
+    
+    func calculateMfProcess() {
+        initialisePredictFields()
+        if (getBiggestLp() == 0) {
+            return
+        }
+        mfPlayWithFreeLp()
+        mfPlayWithLoveca()
+        calculateMfResultAfterPlay()
     }
 
     func getBiggestLp() -> CLong {
@@ -207,6 +239,34 @@ class CalculatorFactory {
         totalPlayTime = timesNeedToPlay! * MINUTES_FOR_ONE_SONG
         playTimeRatio = Double(totalPlayTime!) / (eventLastTime! * 60.0)
     }
+    
+    func mfPlayWithFreeLp() {
+        while (finalLp >= getMfLpWithinOncePlay()) {
+            mfPlayOnceWithEnoughLp()
+            while (finalExperience >= getCurrentRankUpExp()) {
+                upgradeOneRankWithEnoughExp()
+            }
+        }
+    }
+    
+    func mfPlayWithLoveca() {
+        while (true) {
+            while (finalLp >= getMfLpWithinOncePlay()) {
+                mfPlayOnceWithEnoughLp()
+            }
+            if (finalPoints < objectivePoints) {
+                consumeOneLoveca()
+            } else {
+                break
+            }
+        }
+    }
+    
+    func calculateMfResultAfterPlay() {
+        finalRank = currentRank
+        totalPlayTime = timesNeedToPlay! * getMinutesWithinOncePlay()
+        playTimeRatio = Double(totalPlayTime!) / (eventLastTime! * 60.0)
+    }
 
     func consumeOneLoveca() {
         lovecaAmount! += 1
@@ -229,6 +289,16 @@ class CalculatorFactory {
         timesNeedToPlay! += 1
         finalPoints! += oncePoints!
         finalExperience! += getNormalExpWithinOncePlay(difficulty!)
+        while (finalExperience >= getCurrentRankUpExp()) {
+            upgradeOneRankWithEnoughExp()
+        }
+    }
+    
+    func mfPlayOnceWithEnoughLp() {
+        finalLp! -= getMfLpWithinOncePlay()
+        timesNeedToPlay! += 1
+        finalPoints! += getMfPointsWithinOncePlay()
+        finalExperience! += getMfExperienceWithinOncePlay()
         while (finalExperience >= getCurrentRankUpExp()) {
             upgradeOneRankWithEnoughExp()
         }
@@ -266,6 +336,10 @@ class CalculatorFactory {
 
         return normalExpArray[difficulty]!
     }
+    
+    func getMfLpWithinOncePlay() -> CLong {
+        return songAmount! * getMfConsumeLp()
+    }
 
     func getCurrentRankUpExp() -> CLong {
         return getRankUpExpByRank(currentRank)
@@ -296,6 +370,12 @@ class CalculatorFactory {
     func getFinalRankUpExp() -> CLong {
         return getRankUpExpByRank(CLong(getFinalRank()))
     }
+    
+    func getMfPointsWithinOncePlay() -> CLong {
+        let points = Double(getMfBasicPoints()) * songRankRatio! * comboRankRatio!
+        
+        return eventPointsAddition! ? lround(points * 1.1) : lround(points)
+    }
 
     func getNormalBasicPointsWithinOncePlay() -> CLong {
         let normalBasicPointsArray = [25: 27, 15: 16, 10: 10, 5: 5]
@@ -313,6 +393,36 @@ class CalculatorFactory {
         let consumeLpArray = ["Expert": 25, "Hard": 15, "Normal": 10, "Easy": 5]
         
         return consumeLpArray[difficulty!]!
+    }
+    
+    func getMinutesWithinOncePlay() -> CLong {
+        let mfMinutesArray = [1: 3, 2: 5, 3: 7]
+        
+        return mfMinutesArray[songAmount!]!
+    }
+    
+    func getMfConsumeLp() -> CLong {
+        let mfConsumeLpArray = ["Expert": 20, "Hard": 12, "Normal": 8, "Easy": 4]
+        
+        return mfConsumeLpArray[difficulty!]!
+    }
+    
+    func getMfBasicPoints() -> CLong {
+        let mfBasicPointsArray = ["1Expert": 241, "1Hard": 126, "1Normal": 72, "1Easy": 31,
+                                  "2Expert": 500, "2Hard": 262, "2Normal": 150, "2Easy": 64,
+                                  "3Expert": 777, "3Hard": 408, "3Normal": 234, "3Easy": 99]
+        
+        return mfBasicPointsArray[String(format: "\(songAmount!)\(difficulty!)")]!
+    }
+    
+    func getMfExperienceWithinOncePlay() -> CLong {
+        let expArray = ["Expert": 83, "Hard": 46, "Normal": 26, "Easy": 12]
+        var basicExperience = expArray[difficulty!]! * songAmount!
+        if (songRankRatio == 1.0) {
+            basicExperience /= 2
+        }
+        
+        return expAddition! ? lround(Double(basicExperience) * 1.1) : basicExperience
     }
 
     func getLovecaAmount() -> String {
