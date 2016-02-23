@@ -372,7 +372,7 @@ class CalculatorFactory {
         var eventLastMinute = eventDateFormat.stringFromTimeInterval(eventEndDate.timeIntervalSinceNow)
         eventLastMinute = removeNonDigitButRetainMinus(eventLastMinute!)
         
-        return lastTimeFormat.stringFromNumber(Double(eventLastMinute!)! / 60 + Double(Int(eventLastMinute!)! % 60) / 60.0)!
+        return lastTimeFormat.stringFromNumber(Double(Int(eventLastMinute!)! / 60) + Double(Int(eventLastMinute!)! % 60) / 60.0)!
     }
     
     static func removeNonDigitButRetainMinus(value: String) -> String {
