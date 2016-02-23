@@ -3,8 +3,8 @@ import SwiftyJSON
 
 class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
-    let advancedOptionsViewHeight: CGFloat = 120
-    let eventTimeViewHeight: CGFloat = 90
+    let advancedOptionsViewHeight: CGFloat = 135
+    let eventTimeViewHeight: CGFloat = 100
 
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!

@@ -3,8 +3,8 @@ import SwiftyJSON
 
 class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    let advancedOptionsViewHeight: CGFloat = 190
-    let eventTimeViewHeight: CGFloat = 90
+    let advancedOptionsViewHeight: CGFloat = 215
+    let eventTimeViewHeight: CGFloat = 95
     
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
@@ -76,6 +76,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         setPicker()
         setShadowForView(calculatorCardView)
         setShadowForView(calculateButton)
+        comboRank.selectRow(1, inComponent: 0, animated: false)
     }
     
     func initEventTimePanel() {
@@ -179,7 +180,13 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        updateOncePoints()
+        switch (pickerView) {
+            case songRank: songRankRatio.text = String(songRankRatioArray[songRankData[songRank.selectedRowInComponent(0)]]!)
+            break
+            case comboRank: comboRankRatio.text = String(comboRankRatioArray[comboRankData[comboRank.selectedRowInComponent(0)]]!)
+            break
+            default: break
+        }
     }
     
     func updateOncePoints() {
