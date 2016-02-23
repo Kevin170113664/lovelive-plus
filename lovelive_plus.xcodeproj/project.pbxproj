@@ -27,6 +27,7 @@
 		C3269F061C4647CB00919A95 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3269F051C4647CB00919A95 /* Color.swift */; };
 		C3304BEE1C4F308A00F96999 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3304BED1C4F308A00F96999 /* FilterController.swift */; };
 		C35541351C33AF3C00149A14 /* CardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35541331C33AF3C00149A14 /* CardModel.xcdatamodeld */; };
+		C363FD641C7C025800D99DE1 /* MfCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363FD631C7C025800D99DE1 /* MfCalculatorController.swift */; };
 		C36DCB211C7AECB2004C5E27 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB201C7AECB2004C5E27 /* EventController.swift */; };
 		C36DCB231C7AEE87004C5E27 /* SimpleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB221C7AEE87004C5E27 /* SimpleEvent.swift */; };
 		C36DCB261C7AF85E004C5E27 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */; };
@@ -85,6 +86,7 @@
 		C3269F051C4647CB00919A95 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C3304BED1C4F308A00F96999 /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C35541341C33AF3C00149A14 /* CardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardModel.xcdatamodel; sourceTree = "<group>"; };
+		C363FD631C7C025800D99DE1 /* MfCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MfCalculatorController.swift; sourceTree = "<group>"; };
 		C36DCB201C7AECB2004C5E27 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		C36DCB221C7AEE87004C5E27 /* SimpleEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleEvent.swift; sourceTree = "<group>"; };
 		C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */,
 				C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */,
 				C36DCB201C7AECB2004C5E27 /* EventController.swift */,
+				C363FD631C7C025800D99DE1 /* MfCalculatorController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,
 				C3EEC2FA1C59FC2000815404 /* CalculateReportController.swift in Sources */,
 				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
+				C363FD641C7C025800D99DE1 /* MfCalculatorController.swift in Sources */,
 				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
 				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,
 				C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */,

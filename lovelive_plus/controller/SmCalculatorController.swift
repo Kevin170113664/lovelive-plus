@@ -48,7 +48,7 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
-    @IBAction func EventTimeButton(sender: UIButton) {
+    @IBAction func eventTimeButton(sender: UIButton) {
         cardViewHeight.constant -= advancedOptionsView.hidden ? 0 : advancedOptionsViewHeight
         advancedOptionsView.hidden = true
         if eventTimeView.hidden == true {

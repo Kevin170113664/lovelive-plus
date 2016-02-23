@@ -9,10 +9,6 @@ class MainController: UIViewController {
     @IBOutlet var smNavigator: UIButton?
     @IBOutlet var normalNavigator: UIButton?
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBAction func clickMfNavigator(sender: AnyObject) {
-        showNotFinishAlert()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +46,5 @@ class MainController: UIViewController {
         normalNavigator!.layer.shadowRadius = 5.0
         normalNavigator!.layer.shadowOpacity = 0.8
         normalNavigator!.layer.masksToBounds = false
-    }
-    
-    func showNotFinishAlert() {
-        let alert = UIAlertController(title: "", message: "Coming Soon...", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Back", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
