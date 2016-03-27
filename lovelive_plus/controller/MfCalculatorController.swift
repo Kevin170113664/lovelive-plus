@@ -5,6 +5,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     let advancedOptionsViewHeight: CGFloat = 215
     let eventTimeViewHeight: CGFloat = 95
+    let calculateZoneHeight: CGFloat = 65
 
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
@@ -82,7 +83,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let userInfo: NSDictionary = notification.userInfo!
         let keyboardFrame: NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRectangle = keyboardFrame.CGRectValue()
-        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height - keyboardRectangle.height
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height - calculateZoneHeight - keyboardRectangle.height
     }
 
     func keyboardWillHide(notification: NSNotification) {
