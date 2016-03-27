@@ -691,7 +691,7 @@
             </objects>
             <point key="canvasLocation" x="958" y="45"/>
         </scene>
-        <!--Event Detail Controller-->
+        <!--活动详情-->
         <scene sceneID="y15-xd-li1">
             <objects>
                 <viewController id="dZM-WU-lXv" customClass="EventDetailController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -704,7 +704,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLx-wn-Wdt">
-                                <rect key="frame" x="12" y="84" width="576" height="315"/>
+                                <rect key="frame" x="12" y="74" width="576" height="315"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bm3-Gq-QpK">
                                         <rect key="frame" x="0.0" y="0.0" width="576" height="135"/>
@@ -713,43 +713,43 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chanllenge Festival Round 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nij-LL-Ji1">
-                                        <rect key="frame" x="0.0" y="155" width="576" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="155" width="576" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-03-05T16:00:000+09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g58-ha-C45">
-                                        <rect key="frame" x="0.0" y="199" width="576" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="198" width="576" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-03-15T15:00:000+09:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzb-Xn-wOx">
-                                        <rect key="frame" x="0.0" y="239" width="576" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="238" width="576" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL5-ns-ZYz">
-                                        <rect key="frame" x="0.0" y="279" width="144" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="278" width="144" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIB-u3-tLL">
-                                        <rect key="frame" x="288" y="279" width="144" height="20.5"/>
+                                        <rect key="frame" x="288" y="278" width="144" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="104302" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cr-3K-5Zl">
-                                        <rect key="frame" x="432" y="279" width="144" height="20.5"/>
+                                        <rect key="frame" x="432" y="278" width="144" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="164209" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFS-rs-L0D">
-                                        <rect key="frame" x="144" y="279" width="144" height="20.5"/>
+                                        <rect key="frame" x="144" y="278" width="144" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -787,7 +787,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dLx-wn-Wdt" firstAttribute="top" secondItem="32s-H1-IVL" secondAttribute="bottom" constant="20" id="27p-Cl-nPT"/>
+                            <constraint firstItem="dLx-wn-Wdt" firstAttribute="top" secondItem="32s-H1-IVL" secondAttribute="bottom" constant="10" id="27p-Cl-nPT"/>
                             <constraint firstItem="dLx-wn-Wdt" firstAttribute="centerX" secondItem="r9q-23-7OO" secondAttribute="centerX" id="2oe-zy-Zwq"/>
                             <constraint firstItem="dLx-wn-Wdt" firstAttribute="leading" secondItem="r9q-23-7OO" secondAttribute="leadingMargin" constant="-8" id="3Lo-CO-oxc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dLx-wn-Wdt" secondAttribute="leading" constant="-8" id="Vv1-tT-AEH"/>
@@ -802,8 +802,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="活动详情" id="R42-17-jJX"/>
                     <connections>
                         <outlet property="eventBeginTime" destination="g58-ha-C45" id="iwz-r8-hho"/>
+                        <outlet property="eventDetailView" destination="dLx-wn-Wdt" id="RJR-sD-Qsf"/>
                         <outlet property="eventEndTime" destination="wzb-Xn-wOx" id="5Nf-Ln-WHa"/>
                         <outlet property="eventImage" destination="Bm3-Gq-QpK" id="hjK-OM-rVU"/>
                         <outlet property="eventTitle" destination="nij-LL-Ji1" id="3Cx-cp-lWr"/>
