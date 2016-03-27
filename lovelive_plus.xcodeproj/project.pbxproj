@@ -44,6 +44,7 @@
 		C3F0D4F71C22C9C2008EF6F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0D4F51C22C9C2008EF6F6 /* LaunchScreen.storyboard */; };
 		C3F0D5021C22C9C2008EF6F6 /* lovelive_plusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D5011C22C9C2008EF6F6 /* lovelive_plusTests.swift */; };
 		C3F0D50D1C22C9C2008EF6F6 /* lovelive_plusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0D50C1C22C9C2008EF6F6 /* lovelive_plusUITests.swift */; };
+		C3F416801CA78EDC00BBF344 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F4167F1CA78EDC00BBF344 /* EventDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		C3F0D50E1C22C9C2008EF6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3F0D51A1C22E94D008EF6F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		C3F0D51B1C22E94D008EF6F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C3F4167F1CA78EDC00BBF344 /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,15 +162,16 @@
 		32ABF5F830BE34C439B9FA7D /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				32ABFFE34AEA18144D1559B5 /* CardController.swift */,
-				32ABF6034229FDEBB17818BD /* MainController.swift */,
-				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
-				C3304BED1C4F308A00F96999 /* FilterController.swift */,
-				C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */,
 				C3EEC2F91C59FC2000815404 /* CalculateReportController.swift */,
-				C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */,
+				32ABFFE34AEA18144D1559B5 /* CardController.swift */,
+				32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */,
 				C36DCB201C7AECB2004C5E27 /* EventController.swift */,
+				C3F4167F1CA78EDC00BBF344 /* EventDetailController.swift */,
+				C3304BED1C4F308A00F96999 /* FilterController.swift */,
+				32ABF6034229FDEBB17818BD /* MainController.swift */,
 				C363FD631C7C025800D99DE1 /* MfCalculatorController.swift */,
+				C3EEC2F71C58A87500815404 /* NormalCalculatorController.swift */,
+				C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,
 				C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */,
 				32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */,
+				C3F416801CA78EDC00BBF344 /* EventDetailController.swift in Sources */,
 				C3269F061C4647CB00919A95 /* Color.swift in Sources */,
 				32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */,
 				32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */,
