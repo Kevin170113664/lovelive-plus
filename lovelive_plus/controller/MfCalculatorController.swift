@@ -2,23 +2,24 @@ import UIKit
 import SwiftyJSON
 
 class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    
+
     let advancedOptionsViewHeight: CGFloat = 215
     let eventTimeViewHeight: CGFloat = 95
-    
+
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var calculatorCardView: UIView!
     @IBOutlet weak var advancedOptionsView: UIView!
     @IBOutlet weak var eventTimeView: UIView!
     @IBOutlet weak var cardViewHeight: NSLayoutConstraint!
-    
+    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
+
     @IBOutlet weak var objectivePoints: UITextField!
     @IBOutlet weak var currentPoints: UITextField!
     @IBOutlet weak var currentRank: UITextField!
     @IBOutlet weak var songAmount: UIPickerView!
     @IBOutlet weak var difficulty: UIPickerView!
-    
+
     @IBOutlet weak var wastedLpEveryDay: UITextField!
     @IBOutlet weak var isChineseExp: UISwitch!
     @IBOutlet weak var eventPointAddition: UISwitch!
@@ -32,14 +33,14 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var eventEndDay: UITextField!
     @IBOutlet weak var eventEndHour: UITextField!
     @IBOutlet weak var eventLastHour: UITextField!
-    
+
     let songAmountData = ["3", "2", "1"]
     let difficultyData = ["Expert", "Hard", "Normal", "Easy"]
     let songRankData = ["S", "A", "B", "C", "-"]
     let comboRankData = ["S", "A", "B", "C", "-"]
     let songRankRatioArray = ["S": 1.20, "A": 1.15, "B": 1.10, "C": 1.05, "-": 1.00]
     let comboRankRatioArray = ["S": 1.08, "A": 1.06, "B": 1.04, "C": 1.02, "-": 1.00]
-    
+
     @IBAction func advancedOptionsButton(sender: UIButton) {
         cardViewHeight.constant -= eventTimeView.hidden ? 0 : eventTimeViewHeight
         eventTimeView.hidden = true
@@ -51,7 +52,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
             advancedOptionsView.hidden = true
         }
     }
-    
+
     @IBAction func eventTimeButton(sender: UIButton) {
         cardViewHeight.constant -= advancedOptionsView.hidden ? 0 : advancedOptionsViewHeight
         advancedOptionsView.hidden = true
@@ -63,13 +64,31 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
             eventTimeView.hidden = true
         }
     }
-    
+
     override func viewDidLoad() {
         setBackground()
         initCalculatorCardView()
         initEventTimePanel()
+        addObserverToListenKeyboardEvent()
     }
-    
+
+    func addObserverToListenKeyboardEvent() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height
+    }
+
+    func keyboardWillShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo!
+        let keyboardFrame: NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height - keyboardRectangle.height
+    }
+
+    func keyboardWillHide(notification: NSNotification) {
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height
+    }
+
     func initCalculatorCardView() {
         advancedOptionsView.hidden = true
         eventTimeView.hidden = true
@@ -78,7 +97,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         setShadowForView(calculateButton)
         comboRank.selectRow(1, inComponent: 0, animated: false)
     }
-    
+
     func initEventTimePanel() {
         fillEventEndTime()
         eventEndDay.delegate = self
@@ -86,21 +105,22 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         eventEndHour.delegate = self
         eventEndHour.addTarget(self, action: "eventEndHourDidChange:", forControlEvents: UIControlEvents.EditingChanged)
     }
-    
+
     func setPicker() {
         initPicker(songAmount)
         initPicker(difficulty)
         initPicker(songRank)
         initPicker(comboRank)
     }
-    
+
     func initPicker(picker: UIPickerView) {
         picker.delegate = self
         picker.dataSource = self
         picker.showsSelectionIndicator = false
     }
-    
+
     func setBackground() {
+        self.view.backgroundColor = Color.Blue50()
         scrollView.backgroundColor = Color.Blue50()
         calculateButton.backgroundColor = Color.Blue100()
         objectivePoints.backgroundColor = Color.Blue50()
@@ -113,7 +133,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         eventEndHour.backgroundColor = Color.Blue50()
         eventLastHour.backgroundColor = Color.Blue50()
     }
-    
+
     func setShadowForView(view: UIView) {
         view.backgroundColor = Color.Blue100()
         view.layer.shadowOffset = CGSizeMake(1, 1)
@@ -121,56 +141,56 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         view.layer.shadowOpacity = 0.8
         view.layer.masksToBounds = false
     }
-    
+
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch (pickerView) {
-            case songAmount: return songAmountData.count
-            case difficulty: return difficultyData.count
-            case songRank: return songRankData.count
-            case comboRank: return comboRankData.count
-            default: return 0
+        case songAmount: return songAmountData.count
+        case difficulty: return difficultyData.count
+        case songRank: return songRankData.count
+        case comboRank: return comboRankData.count
+        default: return 0
         }
     }
-    
+
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch (pickerView) {
-            case songAmount: return songAmountData[row]
-            case difficulty: return difficultyData[row]
-            case songRank: return songRankData[row]
-            case comboRank: return comboRankData[row]
-            default: return ""
+        case songAmount: return songAmountData[row]
+        case difficulty: return difficultyData[row]
+        case songRank: return songRankData[row]
+        case comboRank: return comboRankData[row]
+        default: return ""
         }
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CalculateReport" {
             let calculateReportController = segue.destinationViewController as! CalculateReportController
-            
+
             let calculatorFactory = CalculatorFactory(objectivePoints: objectivePoints.text,
-                currentPoints: currentPoints.text,
-                currentRank: currentRank.text,
-                songAmount: songAmountData[songAmount.selectedRowInComponent(0)],
-                difficulty: difficultyData[difficulty.selectedRowInComponent(0)],
-                wastedLpEveryDay: wastedLpEveryDay.text,
-                eventPointsAddition: eventPointAddition.on,
-                expAddition: expAddition.on,
-                songRankRatio: songRankRatio.text,
-                comboRankRatio: comboRankRatio.text,
-                currentLp: currentLp.text,
-                currentExperience: currentExp.text,
-                eventEndDay: eventEndDay.text,
-                eventLastTime: eventLastHour.text,
-                isChineseExp: isChineseExp.on)
+                    currentPoints: currentPoints.text,
+                    currentRank: currentRank.text,
+                    songAmount: songAmountData[songAmount.selectedRowInComponent(0)],
+                    difficulty: difficultyData[difficulty.selectedRowInComponent(0)],
+                    wastedLpEveryDay: wastedLpEveryDay.text,
+                    eventPointsAddition: eventPointAddition.on,
+                    expAddition: expAddition.on,
+                    songRankRatio: songRankRatio.text,
+                    comboRankRatio: comboRankRatio.text,
+                    currentLp: currentLp.text,
+                    currentExperience: currentExp.text,
+                    eventEndDay: eventEndDay.text,
+                    eventLastTime: eventLastHour.text,
+                    isChineseExp: isChineseExp.on)
             calculatorFactory.calculateMfProcess()
-            
+
             setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
         }
     }
-    
+
     func setReportFields(calculateReportController: CalculateReportController, calculatorFactory: CalculatorFactory) {
         calculateReportController.totalLoveca = calculatorFactory.getLovecaAmount()
         calculateReportController.finalPoints = calculatorFactory.getFinalPoints()
@@ -182,17 +202,17 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         calculateReportController.playTimeRatio = calculatorFactory.getPlayTimeRatio()
         calculateReportController.eventType = "mf"
     }
-    
+
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch (pickerView) {
-            case songRank: songRankRatio.text = String(songRankRatioArray[songRankData[songRank.selectedRowInComponent(0)]]!)
+        case songRank: songRankRatio.text = String(songRankRatioArray[songRankData[songRank.selectedRowInComponent(0)]]!)
             break
-            case comboRank: comboRankRatio.text = String(comboRankRatioArray[comboRankData[comboRank.selectedRowInComponent(0)]]!)
+        case comboRank: comboRankRatio.text = String(comboRankRatioArray[comboRankData[comboRank.selectedRowInComponent(0)]]!)
             break
-            default: break
+        default: break
         }
     }
-    
+
     func fillEventEndTime() {
         EventService().getLatestEvent {
             (latestEvent: NSArray) -> Void in
@@ -203,13 +223,13 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
             self.eventLastHour.text = CalculatorFactory.getEventLastHour(eventEndDate)
         }
     }
-    
+
     func eventEndDayDidChange(textField: UITextField) {
         let calendar = CalculatorCalendar()
         let eventEndDate = NSDate(eventDateString: "\(calendar.getYear())-\(calendar.getMonth())-\(textField.text!) \(eventEndHour.text!)")
         eventLastHour.text = CalculatorFactory.getEventLastHour(eventEndDate)
     }
-    
+
     func eventEndHourDidChange(textField: UITextField) {
         let calendar = CalculatorCalendar()
         let eventEndDate = NSDate(eventDateString: "\(calendar.getYear())-\(calendar.getMonth())-\(eventEndDay.text!) \(textField.text!)")
