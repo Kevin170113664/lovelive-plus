@@ -12,7 +12,8 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var advancedOptionsView: UIView!
     @IBOutlet weak var eventTimeView: UIView!
     @IBOutlet weak var cardViewHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var objectivePoints: UITextField!
     @IBOutlet weak var currentPoints: UITextField!
     @IBOutlet weak var currentRank: UITextField!
@@ -65,8 +66,26 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
         setBackground()
         initCalculatorCardView()
         initEventTimePanel()
+        addObserverToListenKeyboardEvent()
     }
     
+    func addObserverToListenKeyboardEvent() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo!
+        let keyboardFrame: NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height - keyboardRectangle.height
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        scrollViewHeight.constant = UIScreen.mainScreen().bounds.height
+    }
+
     func initCalculatorCardView() {
         advancedOptionsView.hidden = true
         eventTimeView.hidden = true
@@ -103,6 +122,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
     }
 
     func setBackground() {
+        self.view.backgroundColor = Color.Blue50()
         scrollView.backgroundColor = Color.Blue50()
         calculateButton.backgroundColor = Color.Blue100()
         objectivePoints.backgroundColor = Color.Blue50()
