@@ -640,15 +640,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG0-Ei-Aly">
-                                            <rect key="frame" x="-2" y="-2" width="604" height="135"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="135" id="kzP-T2-pt5"/>
-                                            </constraints>
-                                            <connections>
-                                                <segue destination="dZM-WU-lXv" kind="show" id="mo0-ax-PBJ"/>
-                                            </connections>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhv-vi-4pI">
                                             <rect key="frame" x="0.0" y="-2" width="602" height="135"/>
                                             <constraints>
@@ -667,12 +658,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="vhv-vi-4pI" secondAttribute="leading" constant="8" id="2vy-nI-8lR"/>
-                                        <constraint firstItem="zG0-Ei-Aly" firstAttribute="top" secondItem="2L5-yq-QWY" secondAttribute="topMargin" constant="-10" id="8e0-VQ-gc9"/>
-                                        <constraint firstItem="zG0-Ei-Aly" firstAttribute="leading" secondItem="2L5-yq-QWY" secondAttribute="leadingMargin" constant="-10" id="AM1-0O-iHi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="vhv-vi-4pI" secondAttribute="trailing" constant="-10" id="Hrb-uH-6wv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sPL-YC-XvS" secondAttribute="bottom" constant="-10" id="Jed-NM-sR6"/>
                                         <constraint firstItem="vhv-vi-4pI" firstAttribute="top" secondItem="2L5-yq-QWY" secondAttribute="topMargin" constant="-10" id="P7U-4M-ORr"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="zG0-Ei-Aly" secondAttribute="trailing" constant="-10" id="WJs-SS-5mR"/>
                                         <constraint firstItem="sPL-YC-XvS" firstAttribute="leading" secondItem="2L5-yq-QWY" secondAttribute="leadingMargin" id="Y6C-vN-RhW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sPL-YC-XvS" secondAttribute="trailing" id="ZB8-uv-KUN"/>
                                         <constraint firstItem="sPL-YC-XvS" firstAttribute="top" secondItem="vhv-vi-4pI" secondAttribute="bottom" constant="2" id="gyQ-aI-fYg"/>
@@ -686,9 +674,9 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="eventImageButton" destination="zG0-Ei-Aly" id="Fca-ET-kQ6"/>
                                     <outlet property="eventImageView" destination="vhv-vi-4pI" id="yAB-n8-1qH"/>
                                     <outlet property="eventNameLabel" destination="sPL-YC-XvS" id="LZ6-Td-LGd"/>
+                                    <segue destination="dZM-WU-lXv" kind="show" identifier="EventDetail" id="Fnh-t4-KJs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

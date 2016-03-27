@@ -10,9 +10,11 @@ class EventDetailController: UIViewController {
     @IBOutlet weak var points1: UILabel!
     @IBOutlet weak var rank2: UILabel!
     @IBOutlet weak var points2: UILabel!
-    
+
+    internal var eventName : String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(eventName)
     }
 }
