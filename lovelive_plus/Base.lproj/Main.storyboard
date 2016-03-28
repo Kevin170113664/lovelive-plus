@@ -2096,8 +2096,8 @@
                                                         <nil key="highlightedColor"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
-                                                                <exclude reference="Y8e-eJ-PEy"/>
                                                                 <exclude reference="Ej3-2j-YKt"/>
+                                                                <exclude reference="Y8e-eJ-PEy"/>
                                                             </mask>
                                                         </variation>
                                                     </label>
@@ -2355,14 +2355,13 @@
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="42A-Zh-5yt"/>
-                                                        <exclude reference="i5p-ki-TT4"/>
                                                         <exclude reference="Vu0-3i-9e4"/>
                                                         <exclude reference="zkb-Lz-0jh"/>
                                                         <exclude reference="oHP-8M-uiy"/>
                                                         <exclude reference="hGs-w3-Rvo"/>
                                                         <exclude reference="K5z-uU-WwV"/>
                                                         <exclude reference="ccv-G4-MwZ"/>
-                                                        <exclude reference="hfk-8Q-rj6"/>
+                                                        <exclude reference="i5p-ki-TT4"/>
                                                         <exclude reference="23R-aS-tPA"/>
                                                         <exclude reference="3g4-dH-Mu6"/>
                                                         <exclude reference="z4f-LE-bIk"/>
@@ -2373,6 +2372,7 @@
                                                         <exclude reference="Gak-P9-Eow"/>
                                                         <exclude reference="JIm-BO-Zwa"/>
                                                         <exclude reference="YEc-BV-GHY"/>
+                                                        <exclude reference="hfk-8Q-rj6"/>
                                                         <exclude reference="TS5-iX-ZCg"/>
                                                     </mask>
                                                 </variation>
