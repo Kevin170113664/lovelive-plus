@@ -38,23 +38,46 @@ class EventManager: NSObject {
                 return []
             }
         } catch {
-            fatalError("Failed to fetch cards: \(error)")
+            print("Failed to fetch cards: \(error)")
         }
+        return []
     }
 
-    func queryEventByName(eventName: String!) -> Event? {
+    func queryEventByName(eventName: String!) -> [Event] {
         let eventFetch = NSFetchRequest(entityName: "Event")
         eventFetch.predicate = NSPredicate(format: "japaneseName = %@", eventName)
         eventFetch.returnsObjectsAsFaults = false
         do {
             if let eventList = try self.managedObjectContext.executeFetchRequest(eventFetch) as? [Event] {
                 if eventList.count != 0 {
-                    return eventList[0]
+                    return eventList
                 }
             }
-            return nil
+            return []
         } catch {
-            fatalError("Failed to fetch cards: \(error)")
+            print("Failed to fetch cards: \(error)")
         }
+        return []
+    }
+
+    func updateLatest3Events() {
+        EventService().getLatestEvent(3, callback: {
+            (latest3Events: NSArray) -> Void in
+            for event in latest3Events {
+                if let eventArray: [Event] = self.queryEventByName(event["japanese_name"] as! String) {
+                    for e in eventArray {
+                        e.setValue(event["japanese_t1_rank"] as? Int, forKey: "japaneseT1Rank")
+                        e.setValue(event["japanese_t1_points"] as? Int, forKey: "japaneseT1Points")
+                        e.setValue(event["japanese_t2_rank"] as? Int, forKey: "japaneseT2Rank")
+                        e.setValue(event["japanese_t2_points"] as? Int, forKey: "japaneseT2Points")
+                        do {
+                            try e.managedObjectContext?.save()
+                        } catch {
+                            print("Failed to update event: \(error)")
+                        }
+                    }
+                }
+            }
+        })
     }
 }

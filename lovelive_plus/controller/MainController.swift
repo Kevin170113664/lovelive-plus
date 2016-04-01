@@ -19,7 +19,7 @@ class MainController: UIViewController {
 
     func showLatestEventImage() {
         let eventService = EventService()
-        eventService.getLatestEvent({
+        eventService.getLatestEvent(1, callback: {
             (latestEvent: NSArray) -> Void in
             let imageUrl = latestEvent[0]["image"] as! String
             let block: SDWebImageCompletionBlock! = {

@@ -24,7 +24,7 @@ class EventDetailController: UIViewController {
     }
     
     func setEventDetail() {
-        if let event = EventManager().queryEventByName(eventName) {
+        if let event: Event = EventManager().queryEventByName(eventName)[0] {
             showEventImage(event)
             eventTitle.text = eventName
             eventBeginTime.text = textForLabel(event.beginning)

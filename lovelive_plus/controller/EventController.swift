@@ -17,6 +17,7 @@ class EventController: UITableViewController {
             simpleEventArray.append(generateSimpleEvent(event))
         }
         removeDuplicateEvent()
+        EventManager().updateLatest3Events()
     }
 
     func generateSimpleEvent(event: Event) -> SimpleEvent {

@@ -215,14 +215,14 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     func fillEventEndTime() {
-        EventService().getLatestEvent {
+        EventService().getLatestEvent(1, callback: {
             (latestEvent: NSArray) -> Void in
             let eventEndDate = NSDate(dateString: latestEvent[0]["end"] as! String)
             let eventEndCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
             self.eventEndDay.text = String(eventEndCalendar.components(.Day, fromDate: eventEndDate).day)
             self.eventEndHour.text = String(eventEndCalendar.components(.Hour, fromDate: eventEndDate).hour)
             self.eventLastHour.text = CalculatorFactory.getEventLastHour(eventEndDate)
-        }
+        })
     }
 
     func eventEndDayDidChange(textField: UITextField) {

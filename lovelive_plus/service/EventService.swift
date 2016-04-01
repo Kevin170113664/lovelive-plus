@@ -12,10 +12,10 @@ class EventService {
         Alamofire.Manager().session.configuration.timeoutIntervalForResource = 30
     }
 
-    func getLatestEvent(callback: (NSArray) -> Void) -> Void {
+    func getLatestEvent(pageSize: Int, callback: (NSArray) -> Void) -> Void {
         let url = baseUrl + events
         
-        Alamofire.request(.GET, url, parameters: ["ordering": "-beginning", "page_size": 1])
+        Alamofire.request(.GET, url, parameters: ["ordering": "-beginning", "page_size": pageSize])
         .responseJSON {
             response in
             guard response.result.error == nil else {
