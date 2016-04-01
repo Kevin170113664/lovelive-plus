@@ -3,114 +3,124 @@ import Foundation
 public class ModelMapper {
 
     func mapCard(card: Card, dictionary: [String:AnyObject]) -> Card {
-        card.attribute = dictionary["attribute"] as? String
-        card.cardId = String(dictionary["id"] as! Int)
-        card.cardIdolizedImage = dictionary["card_idolized_image"] as? String
-        card.cardImage = dictionary["card_image"] as? String
-        card.centerSkill = dictionary["center_skill"] as? String
-        card.hp = String(dictionary["hp"] as! Int)
-        card.idolizedMaximumStatisticsCool = String(dictionary["idolized_maximum_statistics_cool"] as! Int)
-        card.idolizedMaximumStatisticsPure = String(dictionary["idolized_maximum_statistics_pure"] as! Int)
-        card.idolizedMaximumStatisticsSmile = String(dictionary["idolized_maximum_statistics_smile"] as! Int)
-        card.idolizedMaxLevel = String(dictionary["idolized_max_level"] as! Int)
+        card.attribute = toString(dictionary["attribute"])
+        card.cardId = toString(dictionary["id"])
+        card.cardIdolizedImage = toString(dictionary["card_idolized_image"])
+        card.cardImage = toString(dictionary["card_image"])
+        card.centerSkill = toString(dictionary["center_skill"])
+        card.hp = toString(dictionary["hp"])
+        card.idolizedMaximumStatisticsCool = toString(dictionary["idolized_maximum_statistics_cool"])
+        card.idolizedMaximumStatisticsPure = toString(dictionary["idolized_maximum_statistics_pure"])
+        card.idolizedMaximumStatisticsSmile = toString(dictionary["idolized_maximum_statistics_smile"])
+        card.idolizedMaxLevel = toString(dictionary["idolized_max_level"])
         card.isPromo = dictionary["is_promo"] as? Bool
         card.isSpecial = dictionary["is_special"] as? Bool
-        card.japaneseAttribute = dictionary["japanese_attribute"] as? String
-        card.japaneseCenterSkill = dictionary["japanese_center_skill"] as? String
-        card.japaneseCenterSkillDetails = dictionary["japanese_center_skill_details"] as? String
-        card.japaneseCollection = dictionary["japanese_collection"] as? String
-        card.japaneseName = dictionary["japanese_name"] as? String
-        card.japaneseSkill = dictionary["japanese_skill"] as? String
-        card.japaneseSkillDetails = dictionary["japanese_skill_details"] as? String
-        card.japaneseVideoStory = dictionary["japanese_video_story"] as? String
+        card.japaneseAttribute = toString(dictionary["japanese_attribute"])
+        card.japaneseCenterSkill = toString(dictionary["japanese_center_skill"])
+        card.japaneseCenterSkillDetails = toString(dictionary["japanese_center_skill_details"])
+        card.japaneseCollection = toString(dictionary["japanese_collection"])
+        card.japaneseName = toString(dictionary["japanese_name"])
+        card.japaneseSkill = toString(dictionary["japanese_skill"])
+        card.japaneseSkillDetails = toString(dictionary["japanese_skill_details"])
+        card.japaneseVideoStory = toString(dictionary["japanese_video_story"])
         card.japanOnly = dictionary["japan_only"] as? Bool
-        card.minimumStatisticsCool = String(dictionary["minimum_statistics_cool"] as! Int)
-        card.minimumStatisticsPure = String(dictionary["minimum_statistics_pure"] as! Int)
-        card.minimumStatisticsSmile = String(dictionary["minimum_statistics_smile"] as! Int)
-        card.name = dictionary["name"] as? String
-        card.nonIdolizedMaximumStatisticsCool = String(dictionary["non_idolized_maximum_statistics_cool"] as! Int)
-        card.nonIdolizedMaximumStatisticsPure = String(dictionary["non_idolized_maximum_statistics_pure"] as! Int)
-        card.nonIdolizedMaximumStatisticsSmile = String(dictionary["non_idolized_maximum_statistics_smile"] as! Int)
-        card.nonIdolizedMaxLevel = String(dictionary["non_idolized_max_level"] as! Int)
-        card.ownedCards = dictionary["owned_cards"] as? String
-        card.promoItem = dictionary["promo_item"] as? String
-        card.rarity = dictionary["rarity"] as? String
-        card.releaseDate = dictionary["release_date"] as? String
-        card.roundCardIdolizedImage = dictionary["round_card_idolized_image"] as? String
-        card.roundCardImage = dictionary["round_card_image"] as? String
-        card.skill = dictionary["skill"] as? String
-        card.skillDetails = dictionary["skill_details"] as? String
-        card.transparentIdolizedImage = dictionary["transparent_idolized_image"] as? String
-        card.transparentIdolizedUrPair = dictionary["transparent_idolized_ur_pair"] as? String
-        card.transparentImage = dictionary["transparent_image"] as? String
-        card.transparentUrPair = dictionary["transparent_ur_pair"] as? String
-        card.videoStory = dictionary["video_story"] as? String
-        card.websiteUrl = dictionary["website_url"] as? String
-        
+        card.minimumStatisticsCool = toString(dictionary["minimum_statistics_cool"])
+        card.minimumStatisticsPure = toString(dictionary["minimum_statistics_pure"])
+        card.minimumStatisticsSmile = toString(dictionary["minimum_statistics_smile"])
+        card.name = toString(dictionary["name"])
+        card.nonIdolizedMaximumStatisticsCool = toString(dictionary["non_idolized_maximum_statistics_cool"])
+        card.nonIdolizedMaximumStatisticsPure = toString(dictionary["non_idolized_maximum_statistics_pure"])
+        card.nonIdolizedMaximumStatisticsSmile = toString(dictionary["non_idolized_maximum_statistics_smile"])
+        card.nonIdolizedMaxLevel = toString(dictionary["non_idolized_max_level"])
+        card.ownedCards = toString(dictionary["owned_cards"])
+        card.promoItem = toString(dictionary["promo_item"])
+        card.rarity = toString(dictionary["rarity"])
+        card.releaseDate = toString(dictionary["release_date"])
+        card.roundCardIdolizedImage = toString(dictionary["round_card_idolized_image"])
+        card.roundCardImage = toString(dictionary["round_card_image"])
+        card.skill = toString(dictionary["skill"])
+        card.skillDetails = toString(dictionary["skill_details"])
+        card.transparentIdolizedImage = toString(dictionary["transparent_idolized_image"])
+        card.transparentIdolizedUrPair = toString(dictionary["transparent_idolized_ur_pair"])
+        card.transparentImage = toString(dictionary["transparent_image"])
+        card.transparentUrPair = toString(dictionary["transparent_ur_pair"])
+        card.videoStory = toString(dictionary["video_story"])
+        card.websiteUrl = toString(dictionary["website_url"])
+
         return card
     }
-    
+
     func mapIdol(idol: Idol, dictionary: [String:AnyObject]) -> Idol {
         idol.age = dictionary["age"] as? Int
-        idol.astrologicalSign = dictionary["astrological_sign"] as? String
-        idol.attribute = dictionary["attribute"] as? String
-        idol.birthday = dictionary["birthday"] as? String
-        idol.blood = dictionary["blood"] as? String
-        idol.chibi = dictionary["chibi"] as? String
-        idol.chibiSmall = dictionary["chibi_small"] as? String
-        idol.favoriteFood = dictionary["favorite_food"] as? String
+        idol.astrologicalSign = toString(dictionary["astrological_sign"])
+        idol.attribute = toString(dictionary["attribute"])
+        idol.birthday = toString(dictionary["birthday"])
+        idol.blood = toString(dictionary["blood"])
+        idol.chibi = toString(dictionary["chibi"])
+        idol.chibiSmall = toString(dictionary["chibi_small"])
+        idol.favoriteFood = toString(dictionary["favorite_food"])
         idol.height = dictionary["height"] as? Int
-        idol.hobbies = dictionary["hobbies"] as? String
-        idol.japaneseName = dictionary["japanese_name"] as? String
-        idol.leastFavoriteFood = dictionary["least_favorite_food"] as? String
+        idol.hobbies = toString(dictionary["hobbies"])
+        idol.japaneseName = toString(dictionary["japanese_name"])
+        idol.leastFavoriteFood = toString(dictionary["least_favorite_food"])
         idol.main = dictionary["main"] as? Bool
-        idol.measurements = dictionary["measurements"] as? String
-        idol.name = dictionary["name"] as? String
-        idol.officialUrl = dictionary["official_url"] as? String
-        idol.subUnit = dictionary["sub_unit"] as? String
-        idol.summary = dictionary["summary"] as? String
-        idol.websiteUrl = dictionary["website_url"] as? String
-        idol.wikiaUrl = dictionary["wikia_url"] as? String
-        idol.wikiUrl = dictionary["wiki_url"] as? String
-        idol.year = dictionary["year"] as? String
-        
+        idol.measurements = toString(dictionary["measurements"])
+        idol.name = toString(dictionary["name"])
+        idol.officialUrl = toString(dictionary["official_url"])
+        idol.subUnit = toString(dictionary["sub_unit"])
+        idol.summary = toString(dictionary["summary"])
+        idol.websiteUrl = toString(dictionary["website_url"])
+        idol.wikiaUrl = toString(dictionary["wikia_url"])
+        idol.wikiUrl = toString(dictionary["wiki_url"])
+        idol.year = toString(dictionary["year"])
+
         return idol
     }
-    
+
     func mapEvent(event: Event, dictionary: [String:AnyObject]) -> Event {
-        event.beginning = dictionary["beginning"] as? String
-        event.cards = dictionary["cards"] as? String
-        event.end = dictionary["end"] as? String
-        event.englishBeginning = dictionary["english_beginning"] as? String
-        event.englishEnd = dictionary["english_end"] as? String
-        event.englishImage = dictionary["english_image"] as? String
-        event.englishName = dictionary["english_name"] as? String
+        event.beginning = toString(dictionary["beginning"])
+        event.cards = toString(dictionary["cards"])
+        event.end = toString(dictionary["end"])
+        event.englishBeginning = toString(dictionary["english_beginning"])
+        event.englishEnd = toString(dictionary["english_end"])
+        event.englishImage = toString(dictionary["english_image"])
+        event.englishName = toString(dictionary["english_name"])
         event.englishT1Points = dictionary["english_t1_points"] as? Int
         event.englishT1Rank = dictionary["english_t1_rank"] as? Int
         event.englishT2Points = dictionary["english_t2_points"] as? Int
         event.englishT2Rank = dictionary["english_t2_rank"] as? Int
-        event.image = dictionary["image"] as? String
+        event.image = toString(dictionary["image"])
         event.japanCurrent = dictionary["japan_current"] as? Bool
-        event.japaneseName = dictionary["japanese_name"] as? String
+        event.japaneseName = toString(dictionary["japanese_name"])
         event.japaneseT1Points = dictionary["japanese_t1_points"] as? Int
         event.japaneseT1Rank = dictionary["japanese_t1_rank"] as? Int
         event.japaneseT2Points = dictionary["japanese_t2_points"] as? Int
         event.japaneseT2Rank = dictionary["japanese_t2_rank"] as? Int
-        event.note = dictionary["note"] as? String
-        event.romajiName = dictionary["romaji_name"] as? String
-        event.song = dictionary["song"] as? String
+        event.note = toString(dictionary["note"])
+        event.romajiName = toString(dictionary["romaji_name"])
+        event.song = toString(dictionary["song"])
         event.worldCurrent = dictionary["world_current"] as? Bool
-        
+
         return event
     }
-    
+
     func mapCv(cv: Cv, dictionary: [String:AnyObject]) -> Cv {
-        cv.instagram = dictionary["instagram"] as? String
-        cv.name = dictionary["name"] as? String
-        cv.nickname = dictionary["nickname"] as? String
-        cv.twitter = dictionary["twitter"] as? String
-        cv.url = dictionary["url"] as? String
+        cv.instagram = toString(dictionary["instagram"])
+        cv.name = toString(dictionary["name"])
+        cv.nickname = toString(dictionary["nickname"])
+        cv.twitter = toString(dictionary["twitter"])
+        cv.url = toString(dictionary["url"])
         
         return cv
+    }
+    
+    func toString(value: AnyObject?) -> String {
+        if let num: NSNumber = value as? NSNumber {
+            return String(num)
+        } else if let str: String = value as? String {
+            return str
+        } else {
+            return ""
+        }
     }
 }
