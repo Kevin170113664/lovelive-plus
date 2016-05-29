@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTy-gU-7fJ">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1710,18 +1709,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="OW5-G1-Qhl" secondAttribute="height" multiplier="145:204" id="hb2-2A-jyq"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="saveToAlbum:" destination="8Pr-yP-gZ1" eventType="touchUpInside" id="B0B-q3-IOi"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-tA-KR1">
                                                 <rect key="frame" x="285" y="0.0" width="285" height="401"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ill-tA-KR1" secondAttribute="height" multiplier="145:204" id="PIu-PK-B9g"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="saveToAlbum:" destination="8Pr-yP-gZ1" eventType="touchUpInside" id="rIe-XN-0BO"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQQ-v0-vqp">
                                                 <rect key="frame" x="0.0" y="416" width="285" height="20.5"/>
@@ -2849,9 +2842,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dld-Gs-Iup" secondAttribute="height" multiplier="145:204" id="CcI-xO-JUA"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="saveToAlbum:" destination="1kL-qg-mop" eventType="touchUpInside" id="JD9-Ae-ngi"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IZ-CU-gNh">
                                                 <rect key="frame" x="285" y="0.0" width="142.5" height="100.5"/>

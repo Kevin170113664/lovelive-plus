@@ -39,6 +39,16 @@ class CardDetailController: UIViewController {
         setShadowForView(cardPanelView)
         setShadowForView(cardSkillPanelView)
         setCardDetail()
+        setImageButtonGesture()
+    }
+    
+    func setImageButtonGesture() {
+        let idolizedGesture = UILongPressGestureRecognizer(target: self, action: "saveIdolizedImage:")
+        cardIdolizedImageButton.addGestureRecognizer(idolizedGesture)
+        if cardNonIdolizedImageButton != nil {
+            let nonIdolizedGesture = UILongPressGestureRecognizer(target: self, action: "saveNonIdolizedImage:")
+            cardNonIdolizedImageButton.addGestureRecognizer(nonIdolizedGesture)
+        }
     }
 
     func setCardDetail() {
@@ -128,10 +138,14 @@ class CardDetailController: UIViewController {
         })
     }
     
-    @IBAction func saveToAlbum(sender: AnyObject) {
-        if sender as! UIButton == cardIdolizedImageButton {
+    func saveIdolizedImage(sender : UIGestureRecognizer) {
+        if sender.state == .Ended {
             saveImageToAlbumWithUrl(cardIdolizedImage!)
-        } else {
+        }
+    }
+    
+    func saveNonIdolizedImage(sender : UIGestureRecognizer) {
+        if sender.state == .Ended {
             saveImageToAlbumWithUrl(cardNonIdolizedImage!)
         }
     }
