@@ -157,14 +157,25 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
 
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let label = UILabel()
+        label.textColor = UIColor.blackColor()
+        label.font = UIFont(name: "San Francisco", size: 7.0)
+        label.textAlignment = NSTextAlignment.Center
+
         switch (pickerView) {
-        case songAmount: return songAmountData[row]
-        case difficulty: return difficultyData[row]
-        case songRank: return songRankData[row]
-        case comboRank: return comboRankData[row]
-        default: return ""
+        case songAmount: label.text = songAmountData[row]
+            break
+        case difficulty: label.text = difficultyData[row]
+            break
+        case songRank: label.text = songRankData[row]
+            break
+        case comboRank: label.text = comboRankData[row]
+            break
+        default: label.text = ""
         }
+
+        return label
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
