@@ -59,13 +59,23 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         }
     }
 
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let label = UILabel()
+        label.textColor = UIColor.blackColor()
+        label.font = UIFont(name: "San Francisco", size: 7.0)
+        label.textAlignment = NSTextAlignment.Center
+
         switch (pickerView) {
-        case firstLinePicker: return firstLinePickerData[component][row]
-        case secondLinePicker: return secondLinePickerData[component][row]
-        case thirdLinePicker: return thirdLinePickerData[component][row]
-        default: return ""
+        case firstLinePicker: label.text = firstLinePickerData[component][row]
+            break
+        case secondLinePicker: label.text = secondLinePickerData[component][row]
+            break
+        case thirdLinePicker: label.text = thirdLinePickerData[component][row]
+            break
+        default: label.text = ""
         }
+
+        return label
     }
 
     override func viewDidLoad() {
