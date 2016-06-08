@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B1B6D2D96A62EF1F8531CD4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EBD935EAAA33FDDC66019D /* Pods.framework */; };
+		32ABF2008F4463ADBA26677A /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF6648425C9143CD9270B /* Idol.swift */; };
 		32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8DBFFACA0C5E70AFBBA /* Card.swift */; };
 		32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF974A3C80D09F52238F0 /* EventService.swift */; };
 		32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */; };
@@ -15,9 +16,11 @@
 		32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA04173E3C52EEE5B458 /* Cv.swift */; };
 		32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8E9CF3E09673908DD59 /* CardManager.swift */; };
 		32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */; };
+		32ABF6EF33BD0A370A485271 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF61FED645E39EF36E744 /* Event.swift */; };
 		32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */; };
 		32ABF9307034F5583660F2ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8CD8859DF3FF88132A7 /* Event.swift */; };
 		32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */; };
+		32ABFA1101331056028C3476 /* CharactarVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF48A572B10384B9DBE1A /* CharactarVoice.swift */; };
 		32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */; };
 		32ABFB71436DB98AD907474E /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFCB1D60FD120E75D35DC /* CardService.swift */; };
 		32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF34F85DC2251C6011330 /* Idol.swift */; };
@@ -33,6 +36,7 @@
 		C36DCB261C7AF85E004C5E27 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */; };
 		C39BAAEA1C705B5B00842003 /* SimpleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAE91C705B5B00842003 /* SimpleCard.swift */; };
 		C39BAAEC1C70720D00842003 /* SmCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */; };
+		C3AD307B1D08779B00D34B0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AD307A1D08779B00D34B0E /* Card.swift */; };
 		C3C7B5D31C5DC0FF001A2BCE /* CalculatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */; };
 		C3C7B5D81C5F6264001A2BCE /* CalculatorCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */; };
 		C3EEC2F61C561A6C00815404 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEC2F51C561A6C00815404 /* ModelMapper.swift */; };
@@ -67,7 +71,10 @@
 /* Begin PBXFileReference section */
 		32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		32ABF34F85DC2251C6011330 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idol.swift; sourceTree = "<group>"; };
+		32ABF48A572B10384B9DBE1A /* CharactarVoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactarVoice.swift; sourceTree = "<group>"; };
 		32ABF6034229FDEBB17818BD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		32ABF61FED645E39EF36E744 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		32ABF6648425C9143CD9270B /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idol.swift; sourceTree = "<group>"; };
 		32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idol+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cv+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailController.swift; sourceTree = "<group>"; };
@@ -93,6 +100,7 @@
 		C36DCB251C7AF85E004C5E27 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		C39BAAE91C705B5B00842003 /* SimpleCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCard.swift; sourceTree = "<group>"; };
 		C39BAAEB1C70720D00842003 /* SmCalculatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmCalculatorController.swift; sourceTree = "<group>"; };
+		C3AD307A1D08779B00D34B0E /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lovelive_plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorFactory.swift; sourceTree = "<group>"; };
 		C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorCalendar.swift; sourceTree = "<group>"; };
@@ -228,6 +236,17 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		C3AD307C1D08787B00D34B0E /* realmModel */ = {
+			isa = PBXGroup;
+			children = (
+				C3AD307A1D08779B00D34B0E /* Card.swift */,
+				32ABF6648425C9143CD9270B /* Idol.swift */,
+				32ABF61FED645E39EF36E744 /* Event.swift */,
+				32ABF48A572B10384B9DBE1A /* CharactarVoice.swift */,
+			);
+			name = realmModel;
+			sourceTree = "<group>";
+		};
 		C3EEC2F41C561A5400815404 /* factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +280,7 @@
 		C3F0D4EB1C22C9C2008EF6F6 /* lovelive_plus */ = {
 			isa = PBXGroup;
 			children = (
+				C3AD307C1D08787B00D34B0E /* realmModel */,
 				C36DCB241C7AF844004C5E27 /* cell */,
 				C3EEC2F41C561A5400815404 /* factory */,
 				C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */,
@@ -492,6 +512,7 @@
 				32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */,
 				C3EEC2FA1C59FC2000815404 /* CalculateReportController.swift in Sources */,
 				32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */,
+				C3AD307B1D08779B00D34B0E /* Card.swift in Sources */,
 				C363FD641C7C025800D99DE1 /* MfCalculatorController.swift in Sources */,
 				32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */,
 				32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */,
@@ -514,6 +535,9 @@
 				C36DCB231C7AEE87004C5E27 /* SimpleEvent.swift in Sources */,
 				C36DCB211C7AECB2004C5E27 /* EventController.swift in Sources */,
 				C3C7B5D81C5F6264001A2BCE /* CalculatorCalendar.swift in Sources */,
+				32ABF2008F4463ADBA26677A /* Idol.swift in Sources */,
+				32ABF6EF33BD0A370A485271 /* Event.swift in Sources */,
+				32ABFA1101331056028C3476 /* CharactarVoice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
