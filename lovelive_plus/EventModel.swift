@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class Event: Object {
+class EventModel: Object {
 
 	var beginning: String?
 	var cards: String?

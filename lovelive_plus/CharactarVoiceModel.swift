@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class CharactarVoice: Object {
+class CharactarVoiceModel: Object {
 
 	var instagram: String?
 	var name: String?

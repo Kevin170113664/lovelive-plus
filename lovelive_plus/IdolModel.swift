@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class Idol: Object {
+class IdolModel: Object {
 
 	var age: NSNumber?
 	var astrologicalSign: String?
@@ -25,6 +25,6 @@ class Idol: Object {
 	var wikiaUrl: String?
 	var wikiUrl: String?
 	var year: String?
-	var cvModel: CharactarVoice?
+	var cvModel: CharactarVoiceModel?
 
 }
