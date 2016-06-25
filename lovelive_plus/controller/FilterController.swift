@@ -12,7 +12,7 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
 			() -> Void in
 			let filterDictionary = NSMutableDictionary()
 
-			for var component = 0; component < 3; component++ {
+			for component in 0 ..< 3 {
 				for (_, picker) in self.getPickerArray().enumerate() {
 					let selectedRow = picker.0.selectedRowInComponent(component)
 					filterDictionary.setValue(picker.1[component][selectedRow], forKey: picker.1[component][0])

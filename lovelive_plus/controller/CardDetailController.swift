@@ -43,10 +43,10 @@ class CardDetailController: UIViewController {
     }
     
     func setImageButtonGesture() {
-        let idolizedGesture = UILongPressGestureRecognizer(target: self, action: "saveIdolizedImage:")
+        let idolizedGesture = UILongPressGestureRecognizer(target: self, action: #selector(CardDetailController.saveIdolizedImage(_:)))
         cardIdolizedImageButton.addGestureRecognizer(idolizedGesture)
         if cardNonIdolizedImageButton != nil {
-            let nonIdolizedGesture = UILongPressGestureRecognizer(target: self, action: "saveNonIdolizedImage:")
+            let nonIdolizedGesture = UILongPressGestureRecognizer(target: self, action: #selector(CardDetailController.saveNonIdolizedImage(_:)))
             cardNonIdolizedImageButton.addGestureRecognizer(nonIdolizedGesture)
         }
     }
@@ -154,7 +154,7 @@ class CardDetailController: UIViewController {
         let imageView = UIImageView()
         imageView.sd_setImageWithURL(NSURL(string: imageUrl))
         if let image = imageView.image {
-            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(CardDetailController.image(_: didFinishSavingWithError:contextInfo:)), nil)
         }
     }
 }

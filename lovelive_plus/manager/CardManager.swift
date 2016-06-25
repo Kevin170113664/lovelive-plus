@@ -164,7 +164,7 @@ class CardManager: NSObject {
 
     func updateLatest20Cards(maxCardId: Int) {
         if maxCardId > 20 {
-            for var cardId = maxCardId; cardId >= maxCardId - 19; cardId-- {
+            for cardId in maxCardId - 19 ..< maxCardId {
                 self.cardService.getCardById(String(cardId), callback: {
                     (card: NSDictionary) -> Void in
                     self.updateCard(card)

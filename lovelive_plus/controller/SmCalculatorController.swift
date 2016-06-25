@@ -69,8 +69,8 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	}
 
 	func addObserverToListenKeyboardEvent() {
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SmCalculatorController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SmCalculatorController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
 		scrollViewHeight.constant = UIScreen.mainScreen().bounds.height
 	}
 
@@ -96,9 +96,9 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	func initEventTimePanel() {
 		fillEventEndTime()
 		eventEndDay.delegate = self
-		eventEndDay.addTarget(self, action: "eventEndDayDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+		eventEndDay.addTarget(self, action: #selector(SmCalculatorController.eventEndDayDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
 		eventEndHour.delegate = self
-		eventEndHour.addTarget(self, action: "eventEndHourDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+		eventEndHour.addTarget(self, action: #selector(SmCalculatorController.eventEndHourDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
 	}
 
 	func setPicker() {
