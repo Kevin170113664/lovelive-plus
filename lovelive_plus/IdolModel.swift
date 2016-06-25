@@ -1,9 +1,8 @@
-import Foundation
 import RealmSwift
 
 class IdolModel: Object {
 
-	var age: NSNumber?
+	var age: Int8?
 	var astrologicalSign: String?
 	var attribute: String?
 	var birthday: String?
@@ -11,11 +10,11 @@ class IdolModel: Object {
 	var chibi: String?
 	var chibiSmall: String?
 	var favoriteFood: String?
-	var height: NSNumber?
+	var height: Int8?
 	var hobbies: String?
 	var japaneseName: String?
 	var leastFavoriteFood: String?
-	var main: NSNumber?
+	var main: Bool?
 	var measurements: String?
 	var name: String?
 	var officialUrl: String?

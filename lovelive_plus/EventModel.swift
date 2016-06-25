@@ -1,4 +1,3 @@
-import Foundation
 import RealmSwift
 
 class EventModel: Object {
@@ -10,20 +9,20 @@ class EventModel: Object {
 	var englishEnd: String?
 	var englishImage: String?
 	var englishName: String?
-	var englishT1Points: NSNumber?
-	var englishT1Rank: NSNumber?
-	var englishT2Points: NSNumber?
-	var englishT2Rank: NSNumber?
+	var englishT1Points: Int32?
+	var englishT1Rank: Int32?
+	var englishT2Points: Int32?
+	var englishT2Rank: Int32?
 	var image: String?
-	var japanCurrent: NSNumber?
+	var japanCurrent: Bool?
 	var japaneseName: String?
-	var japaneseT1Points: NSNumber?
-	var japaneseT1Rank: NSNumber?
-	var japaneseT2Points: NSNumber?
-	var japaneseT2Rank: NSNumber?
+	var japaneseT1Points: Int32?
+	var japaneseT1Rank: Int32?
+	var japaneseT2Points: Int32?
+	var japaneseT2Rank: Int32?
 	var note: String?
 	var romajiName: String?
 	var song: String?
-	var worldCurrent: NSNumber?
+	var worldCurrent: Bool?
 
 }
