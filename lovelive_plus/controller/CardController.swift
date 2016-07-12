@@ -46,8 +46,8 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
             self.fetchCardAccordingToMaxCardId()
         })
     }
-    
-    func updateLatestCards() {
+
+	func updateLatestCards() {
         CardService().getAllCardIds({
             (cardIdArray: NSArray) -> Void in
             CardManager().updateLatest20Cards(cardIdArray.lastObject as! Int)
@@ -81,25 +81,25 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
         cardArray = removeDuplicateCard()
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
         maxCardId = cardArray.count
-        
-        simpleCardArray.removeAll()
+
+	    simpleCardArray.removeAll()
         for card in cardArray {
             simpleCardArray.append(generateSimpleCard(card))
         }
     }
-    
-    func generateSimpleCard(card: Card) -> SimpleCard {
+
+	func generateSimpleCard(card: Card) -> SimpleCard {
         let simpleCard = SimpleCard()
         simpleCard.cardId = card.cardId!
         simpleCard.isPromo = card.isPromo
         simpleCard.isSpecial = card.isSpecial
         simpleCard.roundCardIdolizedImage = card.roundCardIdolizedImage
         simpleCard.roundCardImage = card.roundCardImage
-        
-        return simpleCard
+
+		return simpleCard
     }
-    
-    func removeDuplicateCard() -> [Card] {
+
+	func removeDuplicateCard() -> [Card] {
         let cardDictionary = NSMutableDictionary()
         var cleanCardArray = [Card]()
 
@@ -115,26 +115,26 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 
         return cleanCardArray
     }
-    
-    func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
+
+	func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
         cardArray = CardManager().queryCardsByFilterDictionary(filterDictionary)
         cardArray = removeDuplicateCard()
         cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-        
-        simpleCardArray.removeAll()
+
+		simpleCardArray.removeAll()
         for card in cardArray {
             simpleCardArray.append(generateSimpleCard(card))
         }
-        
-        cardCollectionView?.reloadData()
+
+		cardCollectionView?.reloadData()
     }
-    
-    func showNotFinishAlert(title: String, message: String) {
+
+	func showNotFinishAlert(title: String, message: String) {
         let delay = 10 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        
-        presentViewController(alertController, animated: true, completion: nil)
+
+		presentViewController(alertController, animated: true, completion: nil)
         dispatch_after(time, dispatch_get_main_queue(), {
             alertController.dismissViewControllerAnimated(true, completion: nil)
         })
@@ -165,8 +165,8 @@ extension CardController {
                 cell.imageView!.sd_setImageWithURL(NSURL(string: url))
             }
         }
-    
-        return cell
+
+	    return cell
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -210,8 +210,8 @@ extension CardController {
     func shouldShowNonIdolizedImage(simpleCard: SimpleCard) -> Bool {
         return !isIdolized && simpleCard.isSpecial == 0 && simpleCard.isPromo == 0
     }
-    
-    func isPromoCard(simpleCard: SimpleCard) -> Bool {
+
+	func isPromoCard(simpleCard: SimpleCard) -> Bool {
         return simpleCard.isSpecial == 1 || simpleCard.isPromo == 1
     }
 
