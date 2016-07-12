@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		2B1B6D2D96A62EF1F8531CD4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EBD935EAAA33FDDC66019D /* Pods.framework */; };
 		2F21F39EEAB909693AD95B60 /* Pods_lovelive_plusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA729E9562627A51602164B /* Pods_lovelive_plusTests.framework */; };
+		32ABF0E5AC9035B27D072C49 /* SkillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFABDC06A6251E1047DE2 /* SkillType.swift */; };
 		32ABF2008F4463ADBA26677A /* IdolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF6648425C9143CD9270B /* IdolModel.swift */; };
+		32ABF24F331E2B2815CD98B5 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF835CFE93C1B244E9553 /* Grade.swift */; };
 		32ABF2732CC84E86CDDB65F3 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD621D1D051269A38970 /* SongModel.swift */; };
 		32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8DBFFACA0C5E70AFBBA /* Card.swift */; };
 		32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF974A3C80D09F52238F0 /* EventService.swift */; };
@@ -19,6 +21,8 @@
 		32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA04173E3C52EEE5B458 /* Cv.swift */; };
 		32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8E9CF3E09673908DD59 /* CardManager.swift */; };
 		32ABF5511CC6FE76230090C0 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFEC834338F753EFBECD8 /* CardModel.swift */; };
+		32ABF628764EE9A032CDA492 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF28775796FBC7D394862 /* Collection.swift */; };
+		32ABF650CF70B2A62BBBF5CF /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF982228318258A3765F7 /* Rarity.swift */; };
 		32ABF6D25B6A3B4C94CEF728 /* CardServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFAD87AF4C19432653168 /* CardServiceTests.swift */; };
 		32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */; };
 		32ABF6EF33BD0A370A485271 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF61FED645E39EF36E744 /* EventModel.swift */; };
@@ -30,8 +34,11 @@
 		32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */; };
 		32ABFB71436DB98AD907474E /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFCB1D60FD120E75D35DC /* CardService.swift */; };
 		32ABFBC48D86588D54F358B6 /* Idol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF34F85DC2251C6011330 /* Idol.swift */; };
+		32ABFBFB12124B12EB182D51 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF0042C52A6A7AC70A79B /* Attribute.swift */; };
 		32ABFD18FBD8145F5F52CC83 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */; };
 		32ABFE0C4010FBAA099EC397 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFFE34AEA18144D1559B5 /* CardController.swift */; };
+		32ABFE594CDE696CF195CB77 /* SubUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF384D7FF3CE6D5CAA8E1 /* SubUnit.swift */; };
+		32ABFF315246C44C422D734B /* IdolName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFDAF9CBC599B7F4A64AB /* IdolName.swift */; };
 		38B74D67ACE4AAAB023BA209 /* Pods_lovelive_plusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EEB4B03BB15294D69DFA8D /* Pods_lovelive_plusUITests.framework */; };
 		C3054C7F1C43AC9C00550432 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3054C7E1C43AC9C00550432 /* CardCollectionViewCell.swift */; };
 		C3269F061C4647CB00919A95 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3269F051C4647CB00919A95 /* Color.swift */; };
@@ -73,8 +80,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32ABF0042C52A6A7AC70A79B /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		32ABF28775796FBC7D394862 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		32ABF34F85DC2251C6011330 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idol.swift; sourceTree = "<group>"; };
+		32ABF384D7FF3CE6D5CAA8E1 /* SubUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubUnit.swift; sourceTree = "<group>"; };
 		32ABF48A572B10384B9DBE1A /* CharactarVoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactarVoiceModel.swift; sourceTree = "<group>"; };
 		32ABF6034229FDEBB17818BD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		32ABF61FED645E39EF36E744 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
@@ -83,16 +93,20 @@
 		32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idol+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cv+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailController.swift; sourceTree = "<group>"; };
+		32ABF835CFE93C1B244E9553 /* Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		32ABF8CD8859DF3FF88132A7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		32ABF8DBFFACA0C5E70AFBBA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		32ABF8E9CF3E09673908DD59 /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF974A3C80D09F52238F0 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		32ABF982228318258A3765F7 /* Rarity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rarity.swift; sourceTree = "<group>"; };
 		32ABFA04173E3C52EEE5B458 /* Cv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cv.swift; sourceTree = "<group>"; };
+		32ABFABDC06A6251E1047DE2 /* SkillType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillType.swift; sourceTree = "<group>"; };
 		32ABFAD87AF4C19432653168 /* CardServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardServiceTests.swift; sourceTree = "<group>"; };
 		32ABFCB1D60FD120E75D35DC /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABFD621D1D051269A38970 /* SongModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		32ABFDAF9CBC599B7F4A64AB /* IdolName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdolName.swift; sourceTree = "<group>"; };
 		32ABFEC834338F753EFBECD8 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		32ABFFE34AEA18144D1559B5 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +185,20 @@
 				B4EEB4B03BB15294D69DFA8D /* Pods_lovelive_plusUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32ABF071D620A42389590031 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				32ABFDAF9CBC599B7F4A64AB /* IdolName.swift */,
+				32ABF835CFE93C1B244E9553 /* Grade.swift */,
+				32ABF384D7FF3CE6D5CAA8E1 /* SubUnit.swift */,
+				32ABF0042C52A6A7AC70A79B /* Attribute.swift */,
+				32ABF982228318258A3765F7 /* Rarity.swift */,
+				32ABFABDC06A6251E1047DE2 /* SkillType.swift */,
+				32ABF28775796FBC7D394862 /* Collection.swift */,
+			);
+			path = enum;
 			sourceTree = "<group>";
 		};
 		32ABF3CBF25199EF24E0C1AD /* service */ = {
@@ -326,6 +354,7 @@
 				C3C7B5D21C5DC0FF001A2BCE /* CalculatorFactory.swift */,
 				C3C7B5D71C5F6264001A2BCE /* CalculatorCalendar.swift */,
 				32ABF6696FA58C382466512C /* API.swift */,
+				32ABF071D620A42389590031 /* enum */,
 			);
 			path = lovelive_plus;
 			sourceTree = "<group>";
@@ -648,6 +677,13 @@
 				32ABF2732CC84E86CDDB65F3 /* SongModel.swift in Sources */,
 				32ABF5511CC6FE76230090C0 /* CardModel.swift in Sources */,
 				32ABFA1B30A147EBE0186999 /* API.swift in Sources */,
+				32ABFF315246C44C422D734B /* IdolName.swift in Sources */,
+				32ABF24F331E2B2815CD98B5 /* Grade.swift in Sources */,
+				32ABFE594CDE696CF195CB77 /* SubUnit.swift in Sources */,
+				32ABFBFB12124B12EB182D51 /* Attribute.swift in Sources */,
+				32ABF650CF70B2A62BBBF5CF /* Rarity.swift in Sources */,
+				32ABF0E5AC9035B27D072C49 /* SkillType.swift in Sources */,
+				32ABF628764EE9A032CDA492 /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
