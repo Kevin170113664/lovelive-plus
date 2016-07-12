@@ -18,8 +18,6 @@ class API {
 		return baseUrl + cards + cardId
 	}
 
-`
-
 	func getCardsByFilters(filters: NSDictionary) -> String {
 		var query = "?"
 		let avaiableFilters = [
