@@ -10,20 +10,25 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
 	@IBAction func okButtonClick(sender: AnyObject) {
 		self.dismissViewControllerAnimated(true) {
 			() -> Void in
-			let filterDictionary = NSMutableDictionary()
+			let filter = NSMutableDictionary()
 
 			for component in 0 ..< 3 {
 				for (_, picker) in self.getPickerArray().enumerate() {
 					let selectedRow = picker.0.selectedRowInComponent(component)
-					filterDictionary.setValue(picker.1[component][selectedRow], forKey: picker.1[component][0])
+					if picker.1[component][selectedRow] != picker.1[component][0] {
+						filter.setValue(picker.1[component][selectedRow], forKey: self.filterMap[picker.1[component][0]]!)
+					}
 				}
 			}
 
-			self.delegate?.applyFilterDictionary(filterDictionary)
+			self.delegate?.applyFilterDictionary(filter)
 		}
 	}
 
 	weak var delegate: FilterPopoverDelegate?
+
+	let filterMap = ["稀有度": "rarity", "角色": "japanese_name", "属性": "attribute", "年级": "idol_year",
+	                 "技能类型": "skill", "活动卡": "is_event", "特典卡": "is_promo", "卡牌主题": "japanese_collection"]
 
 	let firstLinePickerData = [["稀有度", "UR", "SR", "R", "N"],
 	                           ["角色", "高坂 穂乃果", "南 ことり", "園田 海未", "小泉 花陽", "西木野 真姫", "星空 凛", "東條 希", "矢澤 にこ", "絢瀬 絵里"],

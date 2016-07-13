@@ -1,7 +1,7 @@
 import UIKit
 
 @objc protocol FilterPopoverDelegate: UIPopoverPresentationControllerDelegate {
-	func applyFilterDictionary(filterDictionary: NSMutableDictionary)
+	func applyFilterDictionary(filter: NSDictionary)
 }
 
 class CardController: UICollectionViewController, FilterPopoverDelegate {
@@ -116,23 +116,10 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 		return cleanCardArray
 	}
 
-//	func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
-//		cardArray = CardManager().queryCardsByFilterDictionary(filterDictionary)
-//		cardArray = removeDuplicateCard()
-//		cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-//
-//		simpleCardArray.removeAll()
-//		for card in cardArray {
-//			simpleCardArray.append(generateSimpleCard(card))
-//		}
-//
-//		cardCollectionView?.reloadData()
-//	}
-
-	func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
+	func applyFilterDictionary(filter: NSDictionary) {
 		let cardService = CardService()
 
-		cardService.getCardsByFilter(["rarity": "UR"], callback: {
+		cardService.getCardsByFilter(filter, callback: {
 			(filterCards: NSArray) -> Void in
 			self.cardArray = filterCards
 			self.cardCollectionView?.reloadData()

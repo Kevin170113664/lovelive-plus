@@ -49,6 +49,6 @@ class API {
 			}
 		}
 
-		return baseUrl + cards + query + "page_size=48"
+		return (baseUrl + cards + query + "page_size=48").stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
 	}
 }
