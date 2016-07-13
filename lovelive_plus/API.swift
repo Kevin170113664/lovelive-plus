@@ -49,6 +49,6 @@ class API {
 			}
 		}
 
-		return baseUrl + cards + query
+		return baseUrl + cards + query + "page_size=48"
 	}
 }

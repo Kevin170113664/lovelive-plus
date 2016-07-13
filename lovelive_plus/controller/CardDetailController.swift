@@ -2,7 +2,7 @@ import UIKit
 
 class CardDetailController: UIViewController {
     internal var cardId: String?
-    internal var card: Card?
+    internal var card: NSDictionary = [:]
     internal var cardNonIdolizedImage: String?
     internal var cardIdolizedImage: String?
 
@@ -52,50 +52,52 @@ class CardDetailController: UIViewController {
     }
 
     func setCardDetail() {
-        card = CardManager().queryCardById(cardId!)
-
         setCardImage()
         setBasicInfo()
         setSkillInfo()
     }
 
     func nonIdolizedImageExist() -> Bool {
-        return card?.isPromo == 0 && card?.isSpecial == 0 && card!.cardImage != nil && card!.cardImage != ""
+        return card["is_promo"] as! Bool == false && card["is_special"] as! Bool == false
+          && card["card_image"] != nil && card["card_image"] as! String != ""
     }
 
     func setCardImage() {
         if (nonIdolizedImageExist()) {
-            cardNonIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card!.cardImage!), forState: UIControlState.Normal)
-            cardNonIdolizedImage = card!.cardImage
+            cardNonIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["card_image"]! as! String), forState: UIControlState.Normal)
+            cardNonIdolizedImage = card["card_image"] as? String
         }
-        cardIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card!.cardIdolizedImage!), forState: UIControlState.Normal)
-        cardIdolizedImage = card!.cardIdolizedImage
+        cardIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["card_idolized_image"]! as! String), forState: UIControlState.Normal)
+        cardIdolizedImage = card["card_idolized_image"] as? String
     }
 
     func setBasicInfo() {
-        setLabelText(nameLabel, value: card!.japaneseName)
-        setLabelText(idlabel, value: card!.cardId)
-        setLabelText(minSmile, value: card!.minimumStatisticsSmile)
-        setLabelText(minPure, value: card!.minimumStatisticsPure)
-        setLabelText(minCool, value: card!.minimumStatisticsCool)
-        setLabelText(nonIdolizedMaxSmile, value: card!.nonIdolizedMaximumStatisticsSmile)
-        setLabelText(nonIdolizedMaxPure, value: card!.nonIdolizedMaximumStatisticsPure)
-        setLabelText(nonIdolizedMaxCool, value: card!.nonIdolizedMaximumStatisticsCool)
-        setLabelText(idolizedMaxSmile, value: card!.idolizedMaximumStatisticsSmile)
-        setLabelText(idolizedMaxPure, value: card!.idolizedMaximumStatisticsPure)
-        setLabelText(idolizedMaxCool, value: card!.idolizedMaximumStatisticsCool)
+        let idol = card["idol"] as! NSDictionary
+        setLabelText(nameLabel, value: idol["japanese_name"] as? String)
+        setLabelText(idlabel, value: String(card["id"] as! Int))
+        setLabelText(minSmile, value: String(card["minimum_statistics_smile"] as! Int))
+        setLabelText(minPure, value: String(card["minimum_statistics_pure"] as! Int))
+        setLabelText(minCool, value: String(card["minimum_statistics_cool"] as! Int))
+        setLabelText(nonIdolizedMaxSmile, value: String(card["non_idolized_maximum_statistics_smile"] as! Int))
+        setLabelText(nonIdolizedMaxPure, value: String(card["non_idolized_maximum_statistics_pure"] as! Int))
+        setLabelText(nonIdolizedMaxCool, value: String(card["non_idolized_maximum_statistics_cool"] as! Int))
+        setLabelText(idolizedMaxSmile, value: String(card["idolized_maximum_statistics_smile"] as! Int))
+        setLabelText(idolizedMaxPure, value: String(card["idolized_maximum_statistics_pure"] as! Int))
+        setLabelText(idolizedMaxCool, value: String(card["idolized_maximum_statistics_cool"] as! Int))
     }
 
     func setSkillInfo() {
-        setLabelText(skillType, value: card!.skill)
-        setLabelText(releaseDate, value: card!.releaseDate)
-        setLabelText(centerSkillName, value: isStringValid(card!.japaneseCenterSkill) ? card!.japaneseCenterSkill : card!.centerSkill)
-        setLabelText(centerSkillDetail, value: card!.japaneseCenterSkillDetails)
-        setLabelText(skillName, value: card!.japaneseSkill)
-        if card!.isPromo == 1 {
-            setLabelText(skillDetail, value: card!.skillDetails)
+        setLabelText(skillType, value: card["skill"] as? String)
+        setLabelText(releaseDate, value: card["release_date"] as? String)
+        setLabelText(centerSkillName, value: isStringValid(card["japanese_center_skill"] as? String) ?
+          card["japanese_center_skill"] as? String : card["center_skill"] as? String)
+        setLabelText(centerSkillDetail, value: card["japanese_center_skill_details"] as? String)
+        setLabelText(skillName, value: card["japanese_skill"] as? String)
+        if card["is_promo"] as! Bool == true {
+            setLabelText(skillDetail, value: card["skill_details"] as? String)
         } else {
-            setLabelText(skillDetail, value: isStringValid(card!.japaneseSkillDetails) ? card!.japaneseSkillDetails : card!.skillDetails)
+            setLabelText(skillDetail, value: isStringValid(card["japanese_skill_details"] as? String) ?
+              card["japanese_skill_details"] as? String : card["skill_details"] as? String)
         }
     }
 

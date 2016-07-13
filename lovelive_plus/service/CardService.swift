@@ -54,6 +54,20 @@ class CardService {
 			}
 		}
 	}
+
+	func getCardsByFilter(filters: NSDictionary, callback: (NSArray) -> Void) -> Void {
+		Alamofire.request(.GET, api.getCardsByFilters(filters))
+		.responseJSON {
+			response in
+			guard response.result.error == nil else {
+				print(response.result.error!)
+				return
+			}
+			if let value: AnyObject = response.result.value {
+				callback(JSON(value)["results"].arrayObject!)
+			}
+		}
+	}
 }
 
 

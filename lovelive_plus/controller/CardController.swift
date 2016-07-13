@@ -16,7 +16,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 	private let reuseIdentifier = "CardCell"
 	private let segueIdentifier = "CardDetail"
 	private let promoSegueIdentifier = "PromoCardDetail"
-	private var cardArray = [Card]()
+	private var cardArray: NSArray = []
 	private var simpleCardArray = [SimpleCard]()
 	private var maxCardId = 10
 	private var selectedIndexPath: NSIndexPath?
@@ -24,7 +24,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		loadCardArray()
+//		loadCardArray()
 		cardCollectionView?.backgroundColor = Color.Blue50()
 	}
 
@@ -78,14 +78,14 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 	}
 
 	func generateSimpleCardArray() {
-		cardArray = removeDuplicateCard()
-		cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-		maxCardId = cardArray.count
-
-		simpleCardArray.removeAll()
-		for card in cardArray {
-			simpleCardArray.append(generateSimpleCard(card))
-		}
+//		cardArray = removeDuplicateCard()
+//		cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
+//		maxCardId = cardArray.count
+//
+//		simpleCardArray.removeAll()
+//		for card in cardArray {
+//			simpleCardArray.append(generateSimpleCard(card))
+//		}
 	}
 
 	func generateSimpleCard(card: Card) -> SimpleCard {
@@ -105,7 +105,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 
 		for card in cardArray {
 			if let cardId = card.cardId {
-				cardDictionary.setValue(card, forKey: cardId)
+				cardDictionary.setValue(card, forKey: cardId!)
 			}
 		}
 
@@ -116,17 +116,27 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 		return cleanCardArray
 	}
 
+//	func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
+//		cardArray = CardManager().queryCardsByFilterDictionary(filterDictionary)
+//		cardArray = removeDuplicateCard()
+//		cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
+//
+//		simpleCardArray.removeAll()
+//		for card in cardArray {
+//			simpleCardArray.append(generateSimpleCard(card))
+//		}
+//
+//		cardCollectionView?.reloadData()
+//	}
+
 	func applyFilterDictionary(filterDictionary: NSMutableDictionary) {
-		cardArray = CardManager().queryCardsByFilterDictionary(filterDictionary)
-		cardArray = removeDuplicateCard()
-		cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
+		let cardService = CardService()
 
-		simpleCardArray.removeAll()
-		for card in cardArray {
-			simpleCardArray.append(generateSimpleCard(card))
-		}
-
-		cardCollectionView?.reloadData()
+		cardService.getCardsByFilter(["rarity": "UR"], callback: {
+			(filterCards: NSArray) -> Void in
+			self.cardArray = filterCards
+			self.cardCollectionView?.reloadData()
+		})
 	}
 
 	func showNotFinishAlert(title: String, message: String) {
@@ -155,13 +165,13 @@ extension CardController {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
 		cell.backgroundColor = Color.Blue50()
 
-		let simpleCard = simpleCardArray[indexPath.row]
-		if (shouldShowNonIdolizedImage(simpleCard)) {
-			if let url = simpleCard.roundCardImage {
+		let card = cardArray[indexPath.row]
+		if (shouldShowNonIdolizedImage(card as! NSDictionary)) {
+			if let url = card["round_card_image"] as? String {
 				cell.imageView!.sd_setImageWithURL(NSURL(string: url))
 			}
 		} else {
-			if let url = simpleCard.roundCardIdolizedImage {
+			if let url = card["round_card_idolized_image"] as? String {
 				cell.imageView!.sd_setImageWithURL(NSURL(string: url))
 			}
 		}
@@ -170,10 +180,10 @@ extension CardController {
 	}
 
 	override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-		let simpleCard = simpleCardArray[indexPath.row]
+		let card = cardArray[indexPath.row]
 		if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
 			selectedIndexPath = indexPath
-			if (isPromoCard(simpleCard)) {
+			if (isPromoCard(card as! NSDictionary)) {
 				performSegueWithIdentifier(promoSegueIdentifier, sender: cell)
 			} else {
 				performSegueWithIdentifier(segueIdentifier, sender: cell)
@@ -195,7 +205,7 @@ extension CardController {
 
 	func showCardDetailView(segue: UIStoryboardSegue) {
 		let cardDetailController = segue.destinationViewController as! CardDetailController
-		cardDetailController.cardId = simpleCardArray[(selectedIndexPath?.row)!].cardId
+		cardDetailController.card = cardArray[(selectedIndexPath?.row)!] as! NSDictionary
 		selectedIndexPath = nil
 	}
 
@@ -207,12 +217,12 @@ extension CardController {
 		filterController.delegate = self
 	}
 
-	func shouldShowNonIdolizedImage(simpleCard: SimpleCard) -> Bool {
-		return !isIdolized && simpleCard.isSpecial == 0 && simpleCard.isPromo == 0
+	func shouldShowNonIdolizedImage(card: NSDictionary) -> Bool {
+		return !isIdolized && card["is_special"] as? Bool == false && card["is_promo"] as? Bool == false
 	}
 
-	func isPromoCard(simpleCard: SimpleCard) -> Bool {
-		return simpleCard.isSpecial == 1 || simpleCard.isPromo == 1
+	func isPromoCard(card: NSDictionary) -> Bool {
+		return card["is_special"] as! Bool == true || card["is_promo"] as! Bool == true
 	}
 
 	func isCardDetailSegue(identifier: String) -> Bool {
