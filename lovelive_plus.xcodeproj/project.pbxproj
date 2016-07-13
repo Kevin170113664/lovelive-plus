@@ -10,9 +10,7 @@
 		2B1B6D2D96A62EF1F8531CD4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EBD935EAAA33FDDC66019D /* Pods.framework */; };
 		2F21F39EEAB909693AD95B60 /* Pods_lovelive_plusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA729E9562627A51602164B /* Pods_lovelive_plusTests.framework */; };
 		32ABF0E5AC9035B27D072C49 /* SkillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFABDC06A6251E1047DE2 /* SkillType.swift */; };
-		32ABF2008F4463ADBA26677A /* IdolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF6648425C9143CD9270B /* IdolModel.swift */; };
 		32ABF24F331E2B2815CD98B5 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF835CFE93C1B244E9553 /* Grade.swift */; };
-		32ABF2732CC84E86CDDB65F3 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD621D1D051269A38970 /* SongModel.swift */; };
 		32ABF34F3D6AF826868DBA9C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8DBFFACA0C5E70AFBBA /* Card.swift */; };
 		32ABF372DCFE4EC7C42FCEC4 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF974A3C80D09F52238F0 /* EventService.swift */; };
 		32ABF43A85BCDE0DAB858AD7 /* Idol+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */; };
@@ -20,16 +18,13 @@
 		32ABF526BACB22E24D2BC83F /* CardServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFAD87AF4C19432653168 /* CardServiceTests.swift */; };
 		32ABF52A5DFE6989AF1424EF /* Cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFA04173E3C52EEE5B458 /* Cv.swift */; };
 		32ABF549D80E95BAC4D745F2 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8E9CF3E09673908DD59 /* CardManager.swift */; };
-		32ABF5511CC6FE76230090C0 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFEC834338F753EFBECD8 /* CardModel.swift */; };
 		32ABF628764EE9A032CDA492 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF28775796FBC7D394862 /* Collection.swift */; };
 		32ABF650CF70B2A62BBBF5CF /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF982228318258A3765F7 /* Rarity.swift */; };
 		32ABF6D25B6A3B4C94CEF728 /* CardServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFAD87AF4C19432653168 /* CardServiceTests.swift */; };
 		32ABF6E5EC581ABF696E24B6 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */; };
-		32ABF6EF33BD0A370A485271 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF61FED645E39EF36E744 /* EventModel.swift */; };
 		32ABF6F7097B570BD5D9A41B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF9600074381B815AC620 /* Event+CoreDataProperties.swift */; };
 		32ABF9307034F5583660F2ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF8CD8859DF3FF88132A7 /* Event.swift */; };
 		32ABF9682AFCA758A06217D7 /* CardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF79D115D9BD39B04FF5F /* CardDetailController.swift */; };
-		32ABFA1101331056028C3476 /* CharactarVoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF48A572B10384B9DBE1A /* CharactarVoiceModel.swift */; };
 		32ABFA1B30A147EBE0186999 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF6696FA58C382466512C /* API.swift */; };
 		32ABFA95C96FF0F2E4EAB5FB /* Cv+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */; };
 		32ABFB71436DB98AD907474E /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ABFCB1D60FD120E75D35DC /* CardService.swift */; };
@@ -85,10 +80,7 @@
 		32ABF2E6DA76F6B7EF9B9604 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		32ABF34F85DC2251C6011330 /* Idol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idol.swift; sourceTree = "<group>"; };
 		32ABF384D7FF3CE6D5CAA8E1 /* SubUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubUnit.swift; sourceTree = "<group>"; };
-		32ABF48A572B10384B9DBE1A /* CharactarVoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactarVoiceModel.swift; sourceTree = "<group>"; };
 		32ABF6034229FDEBB17818BD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		32ABF61FED645E39EF36E744 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		32ABF6648425C9143CD9270B /* IdolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdolModel.swift; sourceTree = "<group>"; };
 		32ABF6696FA58C382466512C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		32ABF719786B9C8DBE245FD2 /* Idol+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idol+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32ABF7841F957580BBDABD82 /* Cv+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cv+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -105,9 +97,7 @@
 		32ABFAD87AF4C19432653168 /* CardServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardServiceTests.swift; sourceTree = "<group>"; };
 		32ABFCB1D60FD120E75D35DC /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		32ABFD5835255F85377AF675 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		32ABFD621D1D051269A38970 /* SongModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		32ABFDAF9CBC599B7F4A64AB /* IdolName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdolName.swift; sourceTree = "<group>"; };
-		32ABFEC834338F753EFBECD8 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		32ABFFE34AEA18144D1559B5 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		38EBD935EAAA33FDDC66019D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A657DF5D7962CFD691CCFE6 /* Pods-lovelive_plusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lovelive_plusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lovelive_plusUITests/Pods-lovelive_plusUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -291,18 +281,6 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
-		C3AD307C1D08787B00D34B0E /* realmModel */ = {
-			isa = PBXGroup;
-			children = (
-				32ABF6648425C9143CD9270B /* IdolModel.swift */,
-				32ABF61FED645E39EF36E744 /* EventModel.swift */,
-				32ABF48A572B10384B9DBE1A /* CharactarVoiceModel.swift */,
-				32ABFD621D1D051269A38970 /* SongModel.swift */,
-				32ABFEC834338F753EFBECD8 /* CardModel.swift */,
-			);
-			name = realmModel;
-			sourceTree = "<group>";
-		};
 		C3EEC2F41C561A5400815404 /* factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +314,6 @@
 		C3F0D4EB1C22C9C2008EF6F6 /* lovelive_plus */ = {
 			isa = PBXGroup;
 			children = (
-				C3AD307C1D08787B00D34B0E /* realmModel */,
 				C36DCB241C7AF844004C5E27 /* cell */,
 				C3EEC2F41C561A5400815404 /* factory */,
 				C3BE86F11C2ED2AC00FB58EF /* lovelive_plus-Bridging-Header.h */,
@@ -671,11 +648,6 @@
 				C36DCB231C7AEE87004C5E27 /* SimpleEvent.swift in Sources */,
 				C36DCB211C7AECB2004C5E27 /* EventController.swift in Sources */,
 				C3C7B5D81C5F6264001A2BCE /* CalculatorCalendar.swift in Sources */,
-				32ABF2008F4463ADBA26677A /* IdolModel.swift in Sources */,
-				32ABF6EF33BD0A370A485271 /* EventModel.swift in Sources */,
-				32ABFA1101331056028C3476 /* CharactarVoiceModel.swift in Sources */,
-				32ABF2732CC84E86CDDB65F3 /* SongModel.swift in Sources */,
-				32ABF5511CC6FE76230090C0 /* CardModel.swift in Sources */,
 				32ABFA1B30A147EBE0186999 /* API.swift in Sources */,
 				32ABFF315246C44C422D734B /* IdolName.swift in Sources */,
 				32ABF24F331E2B2815CD98B5 /* Grade.swift in Sources */,

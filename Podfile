@@ -5,7 +5,6 @@ use_frameworks!
 pod 'Alamofire', '~> 3.4'
 pod 'SwiftyJSON', '~> 2.3.2'
 pod 'SDWebImage', '~>3.8'
-pod 'RealmSwift'
 
 def testing_pods
   pod 'Quick'
