@@ -40,7 +40,8 @@ class API {
 			"japan_only",
 			"is_promo",
 			"is_special",
-			"is_event"
+			"is_event",
+			"page"
 		]
 
 		for avaiableFilter in avaiableFilters {

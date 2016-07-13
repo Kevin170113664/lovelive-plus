@@ -31,7 +31,7 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 	func loadUrCardArray() {
 		let cardService = CardService()
 
-		cardService.getCardsByFilter(["rarity": "UR", "is_promo": "False", "is_special": "False"], callback: {
+		cardService.getCardsByFilter(["rarity": "UR", "is_promo": "False", "is_special": "False", "page": "2"], callback: {
 			(filterCards: NSArray) -> Void in
 			self.cardArray = self.sortByIdDesc(filterCards)
 			self.cardCollectionView?.reloadData()
