@@ -24,96 +24,18 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		loadCardArray()
+		loadUrCardArray()
 		cardCollectionView?.backgroundColor = Color.Blue50()
 	}
 
-	func loadCardArray() {
-		cardArray = CardManager().queryAllCards()
-		if cardArray.count < maxCardId {
-			fetchCardDataFromInternet()
-		} else {
-			updateCardArray()
-			updateLatestCards()
-		}
-	}
+	func loadUrCardArray() {
+		let cardService = CardService()
 
-	func fetchCardDataFromInternet() {
-		showNotFinishAlert("温馨提示", message: "第一次下载数据需要30秒左右，请耐心等待噢~")
-		CardService().getAllCardIds({
-			(cardIdArray: NSArray) -> Void in
-			self.maxCardId = cardIdArray.lastObject as! Int
-			self.fetchCardAccordingToMaxCardId()
+		cardService.getCardsByFilter(["rarity": "UR", "is_promo": "False", "is_special": "False"], callback: {
+			(filterCards: NSArray) -> Void in
+			self.cardArray = self.sortByIdDesc(filterCards)
+			self.cardCollectionView?.reloadData()
 		})
-	}
-
-	func updateLatestCards() {
-		CardService().getAllCardIds({
-			(cardIdArray: NSArray) -> Void in
-			CardManager().updateLatest20Cards(cardIdArray.lastObject as! Int)
-		})
-	}
-
-	func fetchCardAccordingToMaxCardId() {
-		if cardArray.count < maxCardId {
-			CardManager().cacheAllCards({
-				() -> Void in
-				self.cardArray = CardManager().queryAllCards()
-				self.updateCardArray()
-				self.cardCollectionView?.reloadData()
-			})
-		}
-	}
-
-	func updateCardArray() {
-		generateSimpleCardArray()
-
-		CardService().getAllCardIds({
-			(cardIdArray: NSArray) -> Void in
-			self.maxCardId = cardIdArray.lastObject as! Int
-			if (self.maxCardId > self.cardArray.count) {
-				self.fetchCardAccordingToMaxCardId()
-			}
-		})
-	}
-
-	func generateSimpleCardArray() {
-//		cardArray = removeDuplicateCard()
-//		cardArray = cardArray.sort({ Int($0.cardId!) > Int($1.cardId!) })
-//		maxCardId = cardArray.count
-//
-//		simpleCardArray.removeAll()
-//		for card in cardArray {
-//			simpleCardArray.append(generateSimpleCard(card))
-//		}
-	}
-
-	func generateSimpleCard(card: Card) -> SimpleCard {
-		let simpleCard = SimpleCard()
-		simpleCard.cardId = card.cardId!
-		simpleCard.isPromo = card.isPromo
-		simpleCard.isSpecial = card.isSpecial
-		simpleCard.roundCardIdolizedImage = card.roundCardIdolizedImage
-		simpleCard.roundCardImage = card.roundCardImage
-
-		return simpleCard
-	}
-
-	func removeDuplicateCard() -> [Card] {
-		let cardDictionary = NSMutableDictionary()
-		var cleanCardArray = [Card]()
-
-		for card in cardArray {
-			if let cardId = card.cardId {
-				cardDictionary.setValue(card, forKey: cardId!)
-			}
-		}
-
-		for d in cardDictionary {
-			cleanCardArray.append(d.value as! Card)
-		}
-
-		return cleanCardArray
 	}
 
 	func applyFilterDictionary(filter: NSDictionary) {
@@ -121,21 +43,15 @@ class CardController: UICollectionViewController, FilterPopoverDelegate {
 
 		cardService.getCardsByFilter(filter, callback: {
 			(filterCards: NSArray) -> Void in
-			self.cardArray = filterCards
+			self.cardArray = self.sortByIdDesc(filterCards)
 			self.cardCollectionView?.reloadData()
 		})
 	}
 
-	func showNotFinishAlert(title: String, message: String) {
-		let delay = 10 * Double(NSEC_PER_SEC)
-		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-		let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-
-		presentViewController(alertController, animated: true, completion: nil)
-		dispatch_after(time, dispatch_get_main_queue(), {
-			alertController.dismissViewControllerAnimated(true, completion: nil)
-		})
+	func sortByIdDesc(cards: NSArray) -> NSArray {
+		return cards.sort({ $0["id"] as! Int > $1["id"] as! Int })
 	}
+
 }
 
 extension CardController {
