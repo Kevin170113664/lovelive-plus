@@ -5,6 +5,7 @@ class API {
 	let baseUrl = "http://schoolido.lu/api/"
 	let cards = "cards/"
 	let cardIds = "cardids/"
+	let songs = "songs/"
 
 	func getCards() -> String {
 		return baseUrl + cards
@@ -51,5 +52,9 @@ class API {
 		}
 
 		return (baseUrl + cards + query + "page_size=48").stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+	}
+
+	func getSongsByAttribute(attibute: String!) -> String {
+		return baseUrl + songs + "?attribute=" + attibute + "&page_size=100"
 	}
 }
