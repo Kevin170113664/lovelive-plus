@@ -92,19 +92,21 @@ class CardDetailController: UIViewController {
 	func setCardImage() {
 		if showImage {
 			if (nonIdolizedImageExist()) {
-				cardNonIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["card_image"]! as! String), forState: UIControlState.Normal)
+				cardNonIdolizedImageButton.sd_setImageWithURL(NSURL(string: card["card_image"]! as! String), forState: UIControlState.Normal)
 				cardNonIdolizedImage = card["card_image"] as? String
 			}
-			cardIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["card_idolized_image"]! as! String), forState: UIControlState.Normal)
+			cardIdolizedImageButton.sd_setImageWithURL(NSURL(string: card["card_idolized_image"]! as! String), forState: UIControlState.Normal)
 			cardIdolizedImage = card["card_idolized_image"] as? String
 		}
 
 		if showTransparentImage {
 			if (nonIdolizedImageExist()) {
-				cardNonIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["transparent_image"]! as! String), forState: UIControlState.Normal)
+				cardNonIdolizedImageButton.sd_setImageWithURL(NSURL(string: card["transparent_image"]! as! String), forState: UIControlState.Normal)
+				cardNonIdolizedImageButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
 				cardNonIdolizedImage = card["transparent_image"] as? String
 			}
-			cardIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["transparent_idolized_image"]! as! String), forState: UIControlState.Normal)
+			cardIdolizedImageButton.sd_setImageWithURL(NSURL(string: card["transparent_idolized_image"]! as! String), forState: UIControlState.Normal)
+			cardIdolizedImageButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
 			cardIdolizedImage = card["transparent_idolized_image"] as? String
 		}
 
@@ -115,14 +117,13 @@ class CardDetailController: UIViewController {
 				setCardImage()
 			} else {
 				if (nonIdolizedImageExist()) {
-					cardNonIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["clean_ur"]! as! String), forState: UIControlState.Normal)
+					cardNonIdolizedImageButton.sd_setImageWithURL(NSURL(string: card["clean_ur"]! as! String), forState: UIControlState.Normal)
 					cardNonIdolizedImage = card["clean_ur"] as? String
 				}
-				cardIdolizedImageButton.sd_setBackgroundImageWithURL(NSURL(string: card["clean_ur_idolized"]! as! String), forState: UIControlState.Normal)
+				cardIdolizedImageButton.sd_setImageWithURL(NSURL(string: card["clean_ur_idolized"]! as! String), forState: UIControlState.Normal)
 				cardIdolizedImage = card["clean_ur_idolized"] as? String
 			}
 		}
-
 	}
 
 	func setBasicInfo() {

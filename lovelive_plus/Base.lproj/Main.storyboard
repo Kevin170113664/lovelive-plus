@@ -1686,7 +1686,7 @@
             </objects>
             <point key="canvasLocation" x="1138" y="-1536"/>
         </scene>
-        <!--Title-->
+        <!--卡牌详情-->
         <scene sceneID="GMu-Rq-8Jk">
             <objects>
                 <viewController id="8Pr-yP-gZ1" customClass="CardDetailController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -1704,13 +1704,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H28-Xc-NKC">
                                         <rect key="frame" x="15" y="0.0" width="570" height="567.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW5-G1-Qhl">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW5-G1-Qhl">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="401"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="OW5-G1-Qhl" secondAttribute="height" multiplier="145:204" id="hb2-2A-jyq"/>
                                                 </constraints>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-tA-KR1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-tA-KR1">
                                                 <rect key="frame" x="285" y="0.0" width="285" height="401"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ill-tA-KR1" secondAttribute="height" multiplier="145:204" id="PIu-PK-B9g"/>
@@ -1926,7 +1926,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="tMd-LP-Y9I" secondAttribute="bottom" constant="10" id="TfA-od-UDu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="hb9-Eh-vLY">
+                    <navigationItem key="navigationItem" title="卡牌详情" id="hb9-Eh-vLY">
                         <barButtonItem key="rightBarButtonItem" image="faceIcon" id="Fwt-Ql-l2W">
                             <connections>
                                 <action selector="changeCardImageAction:" destination="8Pr-yP-gZ1" id="lFP-Nb-8r4"/>
@@ -2843,7 +2843,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zb-Vq-FxF">
                                         <rect key="frame" x="15" y="0.0" width="570" height="401"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dld-Gs-Iup">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dld-Gs-Iup">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="401"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dld-Gs-Iup" secondAttribute="height" multiplier="145:204" id="CcI-xO-JUA"/>
