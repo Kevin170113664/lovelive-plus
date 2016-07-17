@@ -37,6 +37,8 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
 	let eventRankData = ["S", "A", "B", "C", "-"]
 	let eventComboData = ["S", "A", "B", "C", "-"]
 	let normalDifficultyData = ["Expert", "Hard", "Normal", "Easy"];
+    
+	var EventPoint = NSDictionary()
 
 	@IBAction func advancedOptionsButton(sender: UIButton) {
 		cardViewHeight.constant -= eventTimeView.hidden ? 0 : eventTimeViewHeight
@@ -62,11 +64,17 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
 		}
 	}
 
+	@IBAction func switchServer(sender: UISwitch) {
+		EventPoint = readNormalEventPointsFile(isChineseExp.on ? "normalEvent" : "newNormalEvent")
+        updateOncePoints()
+	}
+
 	override func viewDidLoad() {
 		setBackground()
 		initCalculatorCardView()
 		initEventTimePanel()
 		addObserverToListenKeyboardEvent()
+		EventPoint = readNormalEventPointsFile("newNormalEvent")
 	}
 
 	func addObserverToListenKeyboardEvent() {
@@ -228,7 +236,6 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
 	}
 
 	func updateOncePoints() {
-		let eventPoint = readNormalEventPointsFile()
 		var pointMultiply = 1
 		var difficulty = eventDifficultyData[eventDifficulty.selectedRowInComponent(0)]
 		var rank = eventRankData[eventRank.selectedRowInComponent(0)]
@@ -245,17 +252,16 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
 			combo = "D"
 		}
 
-		oncePoints.text = String(pointMultiply * (eventPoint[difficulty]![rank]!![combo] as! Int))
+		oncePoints.text = String(pointMultiply * (EventPoint[difficulty]![rank]!![combo] as! Int))
 	}
 
-	func readNormalEventPointsFile() -> NSDictionary {
-		if let path = NSBundle.mainBundle().pathForResource("normalEvent", ofType: "json") {
-			if let data = try? NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe) {
-				let json = JSON(data: data)
-				return json.dictionaryObject!
-			}
-		}
-		return NSDictionary()
+	func readNormalEventPointsFile(assetName: String) -> NSDictionary {
+    if let asset = NSDataAsset(name: assetName, bundle: NSBundle.mainBundle()) {
+      let json = JSON(data: asset.data)
+      return json.dictionaryObject!
+		} else {
+	    fatalError("Can not read event points json.")
+    }
 	}
 
 	func fillEventEndTime() {
