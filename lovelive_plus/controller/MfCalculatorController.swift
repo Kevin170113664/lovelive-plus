@@ -195,8 +195,7 @@ class MfCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     currentLp: currentLp.text,
                     currentExperience: currentExp.text,
                     eventEndDay: eventEndDay.text,
-                    eventLastTime: eventLastHour.text,
-                    isChineseExp: isChineseExp.on)
+                    eventLastTime: eventLastHour.text)
             calculatorFactory.calculateMfProcess()
 
             setReportFields(calculateReportController, calculatorFactory: calculatorFactory)

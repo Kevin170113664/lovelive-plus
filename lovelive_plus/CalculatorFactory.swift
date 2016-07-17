@@ -29,7 +29,6 @@ class CalculatorFactory {
     var eventCombo: String?
     var oncePoints: CLong?
     var consumeLp: CLong?
-    var expRatio: Int?
 
     var playRank: String?
     var songRank: String?
@@ -49,7 +48,7 @@ class CalculatorFactory {
          wastedLpEveryDay: String!, currentLp: String!, currentExperience: String!,
          eventEndDay: String!, eventLastTime: String!, currentItem: String!,
          eventDifficulty: String!, eventRank: String!, eventCombo: String!,
-         oncePoints: String!, consumeLp: String!, isChineseExp: Bool) {
+         oncePoints: String!, consumeLp: String!) {
         self.objectivePoints = parseLongField(objectivePoints)
         self.currentPoints = parseLongField(currentPoints)
         self.currentRank = parseLongField(currentRank)
@@ -64,13 +63,12 @@ class CalculatorFactory {
         self.eventCombo = eventCombo
         self.oncePoints = parseLongField(oncePoints)
         self.consumeLp = parseLongField(consumeLp)
-        self.expRatio = isChineseExp ? 1 : 2
     }
     
     init(objectivePoints: String!, currentPoints: String!, currentRank: String!,
         wastedLpEveryDay: String!, currentLp: String!, currentExperience: String!,
         eventEndDay: String!, eventLastTime: String!, difficulty: String!,
-        oncePoints: String!, isChineseExp: Bool) {
+        oncePoints: String!) {
             self.objectivePoints = parseLongField(objectivePoints)
             self.currentPoints = parseLongField(currentPoints)
             self.currentRank = parseLongField(currentRank)
@@ -81,14 +79,13 @@ class CalculatorFactory {
             self.eventLastTime = parseDoubleField(eventLastTime)
             self.difficulty = difficulty
             self.oncePoints = parseLongField(oncePoints)
-            self.expRatio = isChineseExp ? 1 : 2
     }
     
     init(objectivePoints: String!, currentPoints: String!, currentRank: String!,
         songAmount: String!, difficulty: String!, wastedLpEveryDay: String!,
         eventPointsAddition: Bool, expAddition: Bool, songRankRatio: String!,
         comboRankRatio: String!, currentLp: String!, currentExperience: String!,
-        eventEndDay: String!, eventLastTime: String!, isChineseExp: Bool) {
+        eventEndDay: String!, eventLastTime: String!) {
             self.objectivePoints = parseLongField(objectivePoints)
             self.currentPoints = parseLongField(currentPoints)
             self.currentRank = parseLongField(currentRank)
@@ -103,7 +100,6 @@ class CalculatorFactory {
             self.currentExperience = parseLongField(currentExperience)
             self.eventEndDay = parseLongField(eventEndDay)
             self.eventLastTime = parseDoubleField(eventLastTime)
-            self.expRatio = isChineseExp ? 1 : 2
     }
     
     func parseDoubleField(value: String?) -> Double {
@@ -350,10 +346,10 @@ class CalculatorFactory {
             return 0
         }
         if rank < 34 {
-            return lround(Double(rank) * Double(rank) * 0.56 / Double(expRatio!))
+            return lround(Double(rank) * Double(rank) * 0.56 / 2.0)
         }
         if rank < 100 {
-            return lround((34.45 * Double(rank) - 551) / Double(expRatio!))
+            return lround((34.45 * Double(rank) - 551) / 2.0)
         }
         if rank >= 100 {
             return lround(34.45 * Double(rank) - 551)

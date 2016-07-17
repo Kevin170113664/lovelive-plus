@@ -192,8 +192,7 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 				eventEndDay: eventEndDay.text,
 				eventLastTime: eventLastHour.text,
 				difficulty: difficultyData[songDifficulty.selectedRowInComponent(0)],
-				oncePoints: oncePoints.text,
-				isChineseExp: isChineseExp.on)
+				oncePoints: oncePoints.text)
 			calculatorFactory.calculateSmProcess()
 
 			setReportFields(calculateReportController, calculatorFactory: calculatorFactory)

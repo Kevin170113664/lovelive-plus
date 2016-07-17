@@ -198,7 +198,7 @@ class NormalCalculatorController: UIViewController, UIPickerViewDelegate, UIPick
 				currentItem: currentItems.text, eventDifficulty: eventDifficultyData[eventDifficulty.selectedRowInComponent(0)],
 				eventRank: eventRankData[eventRank.selectedRowInComponent(0)],
 				eventCombo: eventComboData[eventCombo.selectedRowInComponent(0)],
-				oncePoints: oncePoints.text, consumeLp: consumeLp.text, isChineseExp: isChineseExp.on)
+				oncePoints: oncePoints.text, consumeLp: consumeLp.text)
 			calculatorFactory.calculateNormalProcess()
 
 			setReportFields(calculateReportController, calculatorFactory: calculatorFactory)
