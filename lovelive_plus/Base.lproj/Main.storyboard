@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTy-gU-7fJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTy-gU-7fJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1686,7 +1686,7 @@
             </objects>
             <point key="canvasLocation" x="1138" y="-1536"/>
         </scene>
-        <!--卡牌详情-->
+        <!--Title-->
         <scene sceneID="GMu-Rq-8Jk">
             <objects>
                 <viewController id="8Pr-yP-gZ1" customClass="CardDetailController" customModule="lovelive_plus" customModuleProvider="target" sceneMemberID="viewController">
@@ -1926,7 +1926,13 @@
                             <constraint firstAttribute="bottomMargin" secondItem="tMd-LP-Y9I" secondAttribute="bottom" constant="10" id="TfA-od-UDu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="卡牌详情" id="ERy-Jb-iW1"/>
+                    <navigationItem key="navigationItem" title="Title" id="hb9-Eh-vLY">
+                        <barButtonItem key="rightBarButtonItem" image="faceIcon" id="Fwt-Ql-l2W">
+                            <connections>
+                                <action selector="changeCardImageAction:" destination="8Pr-yP-gZ1" id="lFP-Nb-8r4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cardDetailScrollView" destination="tMd-LP-Y9I" id="oTL-dR-Duo"/>
                         <outlet property="cardDetailView" destination="kqc-Vk-grW" id="pYB-7H-NFv"/>
@@ -3083,7 +3089,13 @@
                             <constraint firstItem="mbz-4T-FZZ" firstAttribute="top" secondItem="2lu-DU-KEw" secondAttribute="topMargin" constant="15" id="guW-8q-iph"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="卡牌详情" id="qe8-SG-8SK"/>
+                    <navigationItem key="navigationItem" title="卡牌详情" id="qe8-SG-8SK">
+                        <barButtonItem key="rightBarButtonItem" image="faceIcon" id="Uhk-9i-jdR">
+                            <connections>
+                                <action selector="changeCardImageAction:" destination="1kL-qg-mop" id="Exx-bF-fzY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cardDetailScrollView" destination="mbz-4T-FZZ" id="jkj-uS-kqS"/>
                         <outlet property="cardDetailView" destination="2lu-DU-KEw" id="xu2-Sz-sNW"/>
