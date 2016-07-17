@@ -47,6 +47,18 @@ class API {
 			"page_size"
 		]
 
+		if let idolYear = filters["idol_year"] as? String {
+			if idolYear == "一年级" {
+				filters.setValue("First", forKey: "idol_year")
+			}
+			if idolYear == "二年级" {
+				filters.setValue("Second", forKey: "idol_year")
+			}
+			if idolYear == "三年级" {
+				filters.setValue("Three", forKey: "idol_year")
+			}
+		}
+
 		if let isEvent = filters["is_event"] as? String {
 			if isEvent == "是" {
 				filters.setValue("True", forKey: "is_event")
