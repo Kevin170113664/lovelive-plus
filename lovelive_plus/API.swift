@@ -69,4 +69,8 @@ class API {
 	func getEvents() -> String {
 		return baseUrl + events + "?ordering=-beginning&page_size=100"
 	}
+
+	func getLatestEvent() -> String {
+		return baseUrl + events + "?ordering=-beginning&page_size=1"
+	}
 }

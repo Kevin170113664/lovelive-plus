@@ -13,7 +13,7 @@ class EventDetailController: UIViewController {
     @IBOutlet weak var points2: UILabel!
 
     internal var eventName : String?
-    internal var event : Event?
+    internal var event: NSDictionary = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +24,18 @@ class EventDetailController: UIViewController {
     }
     
     func setEventDetail() {
-        if let event: Event = EventManager().queryEventByName(eventName)[0] {
             showEventImage(event)
-            eventTitle.text = eventName
-            eventBeginTime.text = textForLabel(event.beginning)
-            eventEndTime.text = textForLabel(event.end)
-            rank1.text = textForLabel(event.japaneseT1Rank)
-            points1.text = textForLabel(event.japaneseT1Points)
-            rank2.text = textForLabel(event.japaneseT2Rank)
-            points2.text = textForLabel(event.japaneseT2Points)
-        }
+        eventTitle.text = event["japanese_name"] as? String
+        eventBeginTime.text = textForLabel(event["beginning"] as? String)
+        eventEndTime.text = textForLabel(event["end"] as? String)
+        rank1.text = textForLabel(event["japanese_t1_rank"] as? Int)
+        points1.text = textForLabel(event["japanese_t1_points"] as? Int)
+        rank2.text = textForLabel(event["japanese_t2_rank"] as? Int)
+        points2.text = textForLabel(event["japanese_t2_points"] as? Int)
     }
 
-    func showEventImage(event: Event!) {
-        if let eventImageUrl = event.image {
+    func showEventImage(event: NSDictionary) {
+        if let eventImageUrl = event["image"] as? String {
             let encodedUrl = eventImageUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
             eventImage.contentMode = UIViewContentMode.ScaleAspectFit
             eventImage.sd_setImageWithURL(NSURL(string: encodedUrl!))
