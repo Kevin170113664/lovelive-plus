@@ -47,6 +47,18 @@ class API {
 			"page_size"
 		]
 
+		if let skill = filters["skill"] as? String {
+			if skill == "加分" {
+				filters.setValue("Score Up", forKey: "skill")
+			}
+			if skill == "判定" {
+				filters.setValue("Perfect Lock", forKey: "skill")
+			}
+			if skill == "回复" {
+				filters.setValue("Healer", forKey: "skill")
+			}
+		}
+
 		if let idolYear = filters["idol_year"] as? String {
 			if idolYear == "一年级" {
 				filters.setValue("First", forKey: "idol_year")
