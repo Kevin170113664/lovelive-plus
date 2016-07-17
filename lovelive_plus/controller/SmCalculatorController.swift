@@ -33,9 +33,17 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 	let playRankData = ["平均", "第一名", "第二名", "第三名", "第四名"]
 	let difficultyData = ["Expert", "Hard", "Normal", "Easy"]
 	let songRankData = ["S", "A", "B", "C", "-"]
-	let difficultyBasicPointArray = ["Expert": 272.0, "Hard": 163.0, "Normal": 89.0, "Easy": 36.0]
+	let difficultyBasicPoints = ["Expert": 272.0, "Hard": 163.0, "Normal": 89.0, "Easy": 36.0]
+	let newDiffcultyBasicPoints = ["Expert": 357.0, "Hard": 177.0, "Normal": 100.0, "Easy": 42.0]
 	let playRankArray = ["平均": 1.1125, "第一名": 1.25, "第二名": 1.15, "第三名": 1.05, "第四名": 1.00]
 	let songRankArray = ["S": 1.20, "A": 1.15, "B": 1.10, "C": 1.05, "-": 1.00]
+
+    var basicPoints:[String:Double] = [:]
+
+	@IBAction func switchServer(sender: UISwitch) {
+		basicPoints = isChineseExp.on ? difficultyBasicPoints : newDiffcultyBasicPoints
+		updateOncePoints()
+	}
 
 	@IBAction func advancedOptionsButton(sender: UIButton) {
 		cardViewHeight.constant -= eventTimeView.hidden ? 0 : eventTimeViewHeight
@@ -66,6 +74,7 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 		initCalculatorCardView()
 		initEventTimePanel()
 		addObserverToListenKeyboardEvent()
+		basicPoints = newDiffcultyBasicPoints
 	}
 
 	func addObserverToListenKeyboardEvent() {
@@ -212,7 +221,7 @@ class SmCalculatorController: UIViewController, UIPickerViewDelegate, UIPickerVi
 		let rank = songRankData[songRank.selectedRowInComponent(0)]
 		let playedRank = playRankData[playRank.selectedRowInComponent(0)]
 
-		oncePoints.text = String(lround(difficultyBasicPointArray[difficulty]! * songRankArray[rank]! * playRankArray[playedRank]!))
+		oncePoints.text = String(lround(basicPoints[difficulty]! * songRankArray[rank]! * playRankArray[playedRank]!))
 	}
 
 	func fillEventEndTime() {
