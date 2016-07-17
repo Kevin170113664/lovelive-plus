@@ -6,6 +6,7 @@ class API {
 	let cards = "cards/"
 	let cardIds = "cardids/"
 	let songs = "songs/"
+	let events = "events/"
 
 	func getCards() -> String {
 		return baseUrl + cards
@@ -56,5 +57,9 @@ class API {
 
 	func getSongsByAttribute(attibute: String!) -> String {
 		return baseUrl + songs + "?attribute=" + attibute + "&page_size=100"
+	}
+
+	func getEvents() -> String {
+		return baseUrl + events + "?ordering=-beginning&page_size=100"
 	}
 }
