@@ -43,7 +43,8 @@ class API {
 			"is_promo",
 			"is_special",
 			"is_event",
-			"page"
+			"page",
+			"page_size"
 		]
 
 		for avaiableFilter in avaiableFilters {
@@ -52,7 +53,13 @@ class API {
 			}
 		}
 
-		return (baseUrl + cards + query + "page_size=48").stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+		if let pageSize = filters["page_size"] {
+			query += "page_size=" + String(pageSize)
+		} else {
+			query += "page_size=48"
+		}
+
+		return (baseUrl + cards + query).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
 	}
 
 	func getSongsByAttribute(attibute: String!) -> String {
