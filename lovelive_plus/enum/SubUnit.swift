@@ -9,4 +9,14 @@ class SubUnit {
 	let cYaRon = "CYaRon！"
 	let azalea = "AZALEA"
 	let guityKiss = "Guilty Kiss"
+
+	let subUnits = [
+		"小组",
+		"Printemps",
+		"BiBi",
+		"Lily White",
+		"CYaRon！",
+		"AZALEA",
+		"Guilty Kiss"
+	]
 }

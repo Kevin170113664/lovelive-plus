@@ -7,4 +7,13 @@ class Rarity {
 	let sr = "SR"
 	let r = "R"
 	let n = "N"
+
+	let rarities = [
+		"稀有度",
+		"UR",
+		"SSR",
+		"SR",
+		"R",
+		"N"
+	]
 }

@@ -16,4 +16,11 @@ class SkillType {
 	let perfectYell = "Perfect Yell"
 	let totalYell = "Total Yell"
 	let timerTrick = "Timer Trick"
+
+	let skillTypes = [
+		"技能类型",
+		"加分",
+		"判定",
+		"回复"
+	]
 }

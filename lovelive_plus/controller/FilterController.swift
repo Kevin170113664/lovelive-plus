@@ -27,20 +27,12 @@ class FilterController: UIViewController, UIPickerViewDelegate, UIPickerViewData
 
 	weak var delegate: FilterPopoverDelegate?
 
-	let filterMap = ["稀有度": "rarity", "角色": "japanese_name", "属性": "attribute", "年级": "idol_year",
+	let filterMap = ["稀有度": "rarity", "角色": "japanese_name", "属性": "attribute", "年级": "idol_year", "小组": "sub_unit",
 	                 "技能类型": "skill", "活动卡": "is_event", "特典卡": "is_promo", "卡牌主题": "japanese_collection"]
 
-	let firstLinePickerData = [["稀有度", "UR", "SR", "R", "N"],
-	                           ["角色", "高坂 穂乃果", "南 ことり", "園田 海未", "小泉 花陽", "西木野 真姫", "星空 凛", "東條 希", "矢澤 にこ", "絢瀬 絵里"],
-	                           ["属性", "Smile", "Pure", "Cool"]]
-	let secondLinePickerData = [["年级", "一年级", "二年级", "三年级"],
-	                            ["小组", "Printemps", "BiBi", "Lily White"],
-	                            ["技能类型", "加分", "判定", "回复"]]
-	let thirdLinePickerData = [["活动卡", "是", "否"], ["特典卡", "是", "否"],
-	                           ["卡牌主题", "クリスマス編", "舞踏会編", "動物編part2", "くのいち編", "プール編", "マリン編", "手品師編",
-	                            "サイバー編", "職業編Part2", "ホワイトデー編", "バレンタイン編", "七福神編", "雪山編", "星座編",
-	                            "ハロウィン編", "カフェメイド編", "チャイナドレス編", "7月編", "6月編", "5月編", "4月編",
-	                            "3月編", "2月編", "1月編", "12月編", "11月編", "10月編", "9月編", "8月編", "動物編", "職業編", "初期", ]]
+	let firstLinePickerData = [Rarity().rarities, IdolName().idolNames, Attribute().attributes]
+	let secondLinePickerData = [Grade().grades, SubUnit().subUnits, SkillType().skillTypes]
+	let thirdLinePickerData = [["活动卡", "是", "否"], ["特典卡", "是", "否"], Collection().collections]
 
 	func getPickerArray() -> [UIPickerView:Array<Array<String>>] {
 		var pickerArray = [UIPickerView: Array < Array < String>>]()
