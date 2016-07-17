@@ -47,6 +47,24 @@ class API {
 			"page_size"
 		]
 
+		if let isEvent = filters["is_event"] as? String {
+			if isEvent == "是" {
+				filters.setValue("True", forKey: "is_event")
+			}
+			if isEvent == "否" {
+				filters.setValue("False", forKey: "is_event")
+			}
+		}
+
+		if let isPromo = filters["is_promo"] as? String {
+			if isPromo == "是" {
+				filters.setValue("True", forKey: "is_promo")
+			}
+			if isPromo == "否" {
+				filters.setValue("False", forKey: "is_promo")
+			}
+		}
+
 		for avaiableFilter in avaiableFilters {
 			if let f: String = filters[avaiableFilter] as? String {
 				query += avaiableFilter + "=" + f + "&"
@@ -59,6 +77,7 @@ class API {
 			query += "page_size=48"
 		}
 
+		print(baseUrl + cards + query)
 		return (baseUrl + cards + query).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
 	}
 
